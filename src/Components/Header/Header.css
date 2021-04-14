@@ -1,7 +1,14 @@
-#logo {
-    width: 1 em;
+#header {
+    background-color: #e4f0d8;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    height: 20rem;
 }
 
 svg {
-    fill: blue;
+    width: 30rem;
+    fill: red;
+    margin: 0;
+    display: inline-block;
 }
