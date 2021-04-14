@@ -3,9 +3,12 @@
     display: flex;
     align-items: center;
     text-align: center;
-    height: 20em;
+    height: 20rem;
 }
 
 svg {
-    width: 30em;
+    width: 30rem;
+    fill: red;
+    margin: 0;
+    display: inline-block;
 }
