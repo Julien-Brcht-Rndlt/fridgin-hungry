@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 
 const Header = () => (
-    <div id="logo">
+    <div id="header">
         <svg
             version="1.2"
             baseProfile="tiny"
@@ -286,6 +286,11 @@ const Header = () => (
                 />
             </g>
         </svg>
+
+        <div>
+            <h1>Fridgin Hungry!</h1>
+            <h2>"Empty your fridge, fuel your body"</h2>
+        </div>
     </div>
 )
 
