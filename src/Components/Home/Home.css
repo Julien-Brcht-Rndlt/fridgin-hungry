@@ -1,0 +1,12 @@
+#catchPhrase {
+    background-color: rgb(240, 235, 230);
+    display: block;
+    border: 1px solid black;
+}
+
+#emptyFridge {
+    background-color: rgb(240, 235, 230);
+    display: block;
+    border-radius: 50%;
+
+}
