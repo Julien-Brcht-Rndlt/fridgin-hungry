@@ -1,0 +1,48 @@
+
+.beige-bg {
+    background-color: rgb(240, 235, 230);
+    height: 40rem;
+    width:100%;
+}
+
+.emptyFridge {
+    background-color: rgb(240, 235, 230);
+    display: flex;
+    border-radius: 50%;
+    width: 25rem;
+    height: 25rem;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px #555;
+    margin-top: 7rem;
+    color: rgb(55, 55, 55);
+}
+
+.emptyFridge h2 {
+    font-size: 2.25rem;
+}
+
+.whitesmoke-bg {
+    background-color: whitesmoke;
+    height: 80rem;
+    width:100%;
+}
+
+.description-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 2.3rem;
+    padding: 10rem;
+    border-bottom: 1px solid black;
+    width: 30%;
+    margin: 0 auto;
+    color: rgb(55, 55, 55);
+}
+
+p {
+    padding: 0.5rem;
+}
