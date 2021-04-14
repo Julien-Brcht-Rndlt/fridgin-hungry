@@ -2,7 +2,7 @@ import React from 'react'
 import './Header.css'
 
 const Header = () => (
-    <div id="header">
+    <div className="header">
         <div>
             <svg
                 version="1.2"

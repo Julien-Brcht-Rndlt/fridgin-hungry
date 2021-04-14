@@ -1,4 +1,4 @@
-#header {
+.header {
     background-color: #e4f0d8;
     display: flex;
     align-items: center;
@@ -6,9 +6,20 @@
     height: 20rem;
 }
 
+.header h1 {
+    font-size: 5.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+}
+
 svg {
     width: 30rem;
-    fill: red;
+    height: 20rem;
     margin: 0;
-    display: inline-block;
+    display: flex;
 }
+
