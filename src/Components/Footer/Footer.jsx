@@ -16,6 +16,12 @@ const Footer = () => {
                 <div>
                     <a href="https://twitter.com/FridginH" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter-square']} className="social-icon" /></a>
                 </div>
+                <div>
+                    <a href="https://www.instagram.com/fridginhungry/" target="_blank"><FontAwesomeIcon icon={['fab', 'instagram-square']} className="social-icon" /></a>
+                </div>
+                <div>
+                    <a href="https://github.com/Julien-Brcht-Rndlt/fridgin-hungry" target="_blank"><FontAwesomeIcon icon={['fab', 'github-square']} className="social-icon" /></a>
+                </div>
             </div>
             <div>
                <p>Contact us</p>
