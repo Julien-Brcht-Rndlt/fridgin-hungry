@@ -10,3 +10,10 @@
     position: relative;
     bottom: 0;
 }
+
+.social-medias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 5rem;
+}

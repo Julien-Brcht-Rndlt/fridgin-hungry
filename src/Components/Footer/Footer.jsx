@@ -6,13 +6,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 const Footer = () => {
     return (
         <div className="footer">
-           <p>Terms and Conditions</p>
             <div>
-                { /* <FontAwesomeIcon icon="coffee" /> */ }
-                <FontAwesomeIcon icon={['fab', 'facebook-square']} />
-                <FontAwesomeIcon icon={['fab', 'twitter-square']} />
+               <p>Terms and Conditions</p>
             </div>
-           <div>Contact us</div> 
+            <div className="social-medias">
+                <div>
+                    <FontAwesomeIcon icon={['fab', 'facebook-square']} />
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={['fab', 'twitter-square']} />
+                </div>
+            </div>
+            <div>
+               <p>Contact us</p>
+            </div> 
         </div>
     );
 };
