@@ -15,5 +15,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 5rem;
+    width: 7rem;
+}
+
+.social-medias a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-icon {
+    font-size: 3rem;
 }

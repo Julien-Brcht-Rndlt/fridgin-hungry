@@ -11,10 +11,10 @@ const Footer = () => {
             </div>
             <div className="social-medias">
                 <div>
-                    <FontAwesomeIcon icon={['fab', 'facebook-square']} />
+                    <a href="https://www.facebook.com/Fridgin-Hungry-106454081572173" target="_blank"><FontAwesomeIcon icon={['fab', 'facebook-square']} className="social-icon" /></a>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={['fab', 'twitter-square']} />
+                    <a href="https://twitter.com/FridginH" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter-square']} className="social-icon" /></a>
                 </div>
             </div>
             <div>
