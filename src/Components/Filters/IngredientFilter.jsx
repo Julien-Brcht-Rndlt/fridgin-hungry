@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './IngredientFilter.css'
 
-export const IngredientFilter = () => {
+const IngredientFilter = ({ setSearchResults }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
         ingredient3: '',
         ingredient4: '',
     })
-    const [searchResults, setSearchResults] = useState('')
 
     const handleClick = () => {
         let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=${Object.values(
@@ -62,3 +61,5 @@ export const IngredientFilter = () => {
         </div>
     )
 }
+
+export default IngredientFilter
