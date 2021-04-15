@@ -9,13 +9,12 @@
     color: white;
     position: relative;
     bottom: 0;
+    margin: auto 0;
 }
 
 .social-medias {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 15rem;
+    justify-content: center;
 }
 
 .social-medias a,
@@ -24,8 +23,12 @@ a:focus,
 a:active {
     text-decoration: none;
     color: inherit;
+    padding: 1rem;
 }
 
 .social-icon {
     font-size: 3rem;
+}
+
+.terms .contact {
 }
