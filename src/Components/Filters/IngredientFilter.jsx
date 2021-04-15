@@ -53,6 +53,7 @@ export const IngredientFilter = () => {
                             type="text"
                             value={ingredients[input]}
                             onChange={handleIngredientsChange}
+                            // {searchResults ? <RecipeResults /> : null}
                         />
                     </div>
                 )
