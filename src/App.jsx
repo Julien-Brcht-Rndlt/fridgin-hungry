@@ -15,11 +15,11 @@ library.add(
 
 function App() {
     return (
-    <>
-        <Header />
-        <Home />
-        <Footer />
-    </>
+        <>
+            <Header />
+            <Home />
+            <Footer />
+        </>
     )
 }
 
