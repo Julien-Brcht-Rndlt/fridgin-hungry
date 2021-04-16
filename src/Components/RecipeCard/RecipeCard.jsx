@@ -3,10 +3,10 @@ import './RecipeCard.css'
 
 const RecipeCard = ({ label, image, ingredients }) => {
     return (
-        <div>
-            <h3 className="name">{label}</h3>
-            <img src={image} alt={label} />
-            <p>{ingredients}</p>
+        <div className="recipeCard">
+            <h2 className="label">{label}</h2>
+            <img src={image} alt={label} className="recipeImage" />
+            <p className="ingredientsLines">{ingredients}</p>
         </div>
     )
 }
