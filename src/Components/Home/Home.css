@@ -23,15 +23,20 @@
 }
 
 .whitesmoke-bg {
-    background-color: whitesmoke;
+    background-color: #fff /*whitesmoke*/;
     height: 80rem;
     width: 100%;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 50rem 1fr;
     grid-template-rows: repeat(2, 50%);
+}
+
+.grid-container div {
+    align-self: center;
+    /* border: 1px solid black; */
 }
 
 .description-text {
@@ -42,7 +47,7 @@
     font-weight: bold;
     font-size: 2.3rem;
     padding: 10rem;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     margin: 0 auto;
     color: rgb(55, 55, 55);
 }
