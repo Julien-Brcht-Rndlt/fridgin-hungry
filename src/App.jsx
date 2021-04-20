@@ -1,13 +1,6 @@
 import React from 'react'
 import './App.css'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-import Footer from './Components/Footer/Footer'
-import Header from './Components/Header/Header'
-import Home from './Components/Home/Home'
-import RecipeCards from './Components/RecipeCards/RecipeCards'
-import RecipeCard from './Components/RecipeCard/RecipeCard'
-import Contact from './Components/Contact/Contact'
+import AppRouter from './Components/AppRouter'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
@@ -20,24 +13,9 @@ library.add(
 
 function App() {
     return (
-        <>
-        <Router>
-            <Header />
-            <Switch>
-                <Route exact path='/'>
-                    <Home />
-                </Route>
-                <Route exact path='/recipes'>
-                    <RecipeCards searchResults={[]}/>
-                </Route>
-                <Route exact path='/recipes/:id' render={(props) => (<RecipeCards {...props} searchResults={[]} />)} />
-                <Route exact path='/contact'>
-                    <Contact />
-                </Route>
-            </Switch>
-            <Footer />
-        </Router>
-        </>
+        <div>
+            <AppRouter />
+        </div>
     )
 }
 
