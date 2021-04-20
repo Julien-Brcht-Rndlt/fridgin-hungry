@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
 import IngredientFilter from '../Filters/IngredientFilter'
-import RecipeResults from '../RecipeResults/RecipeResults'
+import RecipeResults from '../RecipeCards/RecipeCards'
 
 const Home = () => {
     const [searchResults, setSearchResults] = useState([])

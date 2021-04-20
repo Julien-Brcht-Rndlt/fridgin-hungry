@@ -1,10 +1,12 @@
 import React from 'react'
 import './Header.css'
 
+import { Link } from 'react-router-dom';
+
 const Header = () => (
     <div className="header">
         <div>
-            <svg
+            <Link to='/'><svg
                 version="1.2"
                 baseProfile="tiny"
                 id="Calque_1"
@@ -287,6 +289,7 @@ const Header = () => (
                     />
                 </g>
             </svg>
+            </Link>
         </div>
         <div>
             <h1>Fridgin Hungry!</h1>
