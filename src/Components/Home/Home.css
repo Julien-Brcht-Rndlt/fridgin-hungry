@@ -1,8 +1,7 @@
-
 .beige-bg {
     background-color: rgb(240, 235, 230);
-    height: 40rem;
-    width:100%;
+    height: 80rem;
+    width: 100%;
 }
 
 .emptyFridge {
@@ -26,7 +25,13 @@
 .whitesmoke-bg {
     background-color: whitesmoke;
     height: 80rem;
-    width:100%;
+    width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 50%);
 }
 
 .description-text {
@@ -38,7 +43,6 @@
     font-size: 2.3rem;
     padding: 10rem;
     border-bottom: 1px solid black;
-    width: 30%;
     margin: 0 auto;
     color: rgb(55, 55, 55);
 }

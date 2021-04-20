@@ -8,15 +8,19 @@ const Home = () => {
 
     return (
         <div className="home">
-            <div className="whitesmoke-bg">
+            <div className="whitesmoke-bg grid-container">
+                <div></div>
                 <div className="description-text">
                     <p>Great recipe ideas</p>
                     <p>Zero Waste</p>
                     <p>100% Tasty</p>
                 </div>
+                <div></div>
+                <div></div>
                 <div className="emptyFridge">
                     <h2>Empty your fridge!</h2>
                 </div>
+                <div></div>
             </div>
 
             <div className="beige-bg">
