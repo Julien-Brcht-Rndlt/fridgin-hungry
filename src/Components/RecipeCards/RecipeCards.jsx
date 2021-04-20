@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import RecipeCard from '../RecipeCard/RecipeCard'
 import IngredientFilter from '../Filters/IngredientFilter'
 //import 'RecipeResults.css'
@@ -6,6 +8,10 @@ import IngredientFilter from '../Filters/IngredientFilter'
 const RecipeResults = ({ searchResults }) => {
     console.log(searchResults)
     return (
+        <>
+        <div>
+            <Link to='/'>Back</Link>
+        </div>
         <div className="recipeResults">
             {searchResults.map((card, index) => (
                 <RecipeCard
@@ -16,6 +22,7 @@ const RecipeResults = ({ searchResults }) => {
                 />
             ))}
         </div>
+        </>
     )
 }
 
