@@ -10,7 +10,7 @@ const RecipeCards = ({ searchResults, id }) => {
     return (
         <>
         <div>
-            <Link to='/'>Back</Link>
+            <Link to='/'><button className="nav-button">Back</button></Link>
         </div>
         <div className="recipe-cards">
             {searchResults.map((card, index) => (
