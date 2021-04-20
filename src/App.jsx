@@ -27,7 +27,7 @@ function App() {
                     <Home />
                 </Route>
                 <Route exact path='/recipes'>
-                    <RecipeCards />
+                    <RecipeCards searchResults={[]}/>
                 </Route>
                 <Route exact path='/contact'>
                     <Contact />

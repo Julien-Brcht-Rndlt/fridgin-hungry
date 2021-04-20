@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom'
 
 import RecipeCard from '../RecipeCard/RecipeCard'
 import IngredientFilter from '../Filters/IngredientFilter'
-//import 'RecipeResults.css'
+import './RecipeCards.css'
 
-const RecipeResults = ({ searchResults }) => {
+const RecipeCards = ({ searchResults }) => {
     console.log(searchResults)
     return (
         <>
         <div>
             <Link to='/'>Back</Link>
         </div>
-        <div className="recipeResults">
+        <div className="recipe-cards">
             {searchResults.map((card, index) => (
                 <RecipeCard
                     key={index}
@@ -26,4 +26,4 @@ const RecipeResults = ({ searchResults }) => {
     )
 }
 
-export default RecipeResults
+export default RecipeCards
