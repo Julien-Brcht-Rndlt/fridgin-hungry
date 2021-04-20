@@ -1,5 +1,7 @@
 import React from 'react'
 import './App.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 import Home from './Components/Home/Home'
@@ -16,9 +18,21 @@ library.add(
 function App() {
     return (
         <>
+        <Router>
             <Header />
-            <Home />
+            <Switch>
+                <Route exact path='/'>
+                    <Home />
+                </Route>
+                <Route exact path='/recipes'>
+                    <Cards />
+                </Route>
+                <Route exact path='/contact'>
+                    <Contact />
+                </Route>
+            </Switch>
             <Footer />
+        </Router>
         </>
     )
 }
