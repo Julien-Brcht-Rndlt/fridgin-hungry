@@ -5,7 +5,7 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import IngredientFilter from '../Filters/IngredientFilter'
 import './RecipeCards.css'
 
-const RecipeCards = ({ searchResults }) => {
+const RecipeCards = ({ searchResults, id }) => {
     console.log(searchResults)
     return (
         <>
