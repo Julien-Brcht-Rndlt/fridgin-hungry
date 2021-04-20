@@ -26,7 +26,7 @@ const Footer = () => {
                     </div>
             </div>
             <div className="contact">
-               <p><Link to='/contact'>Contact us</Link></p>
+               <p><Link to='/contact' style={{ textDecoration: 'none' }}>Contact us</Link></p>
             </div> 
         </div>
     );
