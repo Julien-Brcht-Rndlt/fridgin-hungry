@@ -8,3 +8,10 @@ html {
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
 }
+
+.nav-button {
+    padding: 2rem 6rem;
+    border: 2.5px solid rgb(55, 55, 55);
+    border-radius: 2rem;
+    background-color: #e4f0d8; /* rgb(240, 235, 230); */
+}
