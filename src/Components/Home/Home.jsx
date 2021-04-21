@@ -21,8 +21,8 @@ const Home = () => {
             </div>
 
             <div className="beige-bg">
-                <CalorieFilter />
-                <IngredientFilter setSearchResults={setSearchResults} />
+                <CalorieFilter setSearchResults={setSearchResults} />
+                <IngredientFilter setSearchResults={setSearchResults}/>
                 <RecipeResults searchResults={searchResults} />
             </div>
         </div>
