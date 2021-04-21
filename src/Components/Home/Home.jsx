@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Home.css'
 import IngredientFilter from '../Filters/IngredientFilter'
 import RecipeResults from '../RecipeResults/RecipeResults'
+import AllergiesFilter from '../Filters/AllergiesFilter'
 
 const Home = () => {
     const [searchResults, setSearchResults] = useState([])
@@ -21,6 +22,7 @@ const Home = () => {
 
             <div className="beige-bg">
                 <IngredientFilter setSearchResults={setSearchResults} />
+                <AllergiesFilter/>
                 <RecipeResults searchResults={searchResults} />
             </div>
         </div>
