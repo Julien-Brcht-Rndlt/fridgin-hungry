@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 const CalorieFilter = ({setSearchResults}) => {
 
     const classes = useStyles();
-    const [recipesCalories, setRecipesCalories] = useState([])
+    //const [recipesCalories, setRecipesCalories] = useState([])
     let [searchCalories, setSearchCalories] = useState("")
     let [searchProtein, setSearchProtein]= useState("")
     let [searchCarbs, setSearchCarbs]= useState("")
@@ -29,13 +29,19 @@ const CalorieFilter = ({setSearchResults}) => {
     //&nutrients%5BPROCNT%5D=${setSearchProtein}&nutrients%5BCHOCDF%5D=${setSearchCarbs}&nutrients%5BFAT%5D=${setSearchFat}
 
     const searchRecipes = () => {
-        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=chicken&calories=${searchCalories}`
+        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=chicken`
+        
+        searchUrl += searchCalories ? `&calories=${searchCalories}` : ''
+        searchUrl += searchProtein ? `&nutrients%5BPROCNT%5D${searchProtein}` : ''
+        searchUrl += searchCarbs ? `&nutrients%5BCHOCDF%5D=${searchCarbs}` : ''
+        searchUrl += searchFat ? `&nutrients%5BFAT%5D=${searchFat}` : ''
+        console.log(searchUrl);
+
         axios
             .get(searchUrl)
             .then((response) => response.data)
             .then((data) => {
                 setSearchResults(data.hits)
-                console.log(setSearchResults)
             }); 
     }
 
