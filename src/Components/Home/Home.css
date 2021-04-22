@@ -15,18 +15,14 @@
     padding-bottom: 0;
 }
 
-.whitesmoke-bg {
-    background-color: white;
-}
-
 .start-container {
     height: 60rem;
     width: 100%;
 }
 
 .whitesmoke-bg {
-    background-color: whitesmoke;
-    height: 80rem;
+    background-color: white;
+    height: 60rem;
     width: 100%;
 }
 
