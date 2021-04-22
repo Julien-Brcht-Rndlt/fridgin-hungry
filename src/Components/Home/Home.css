@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+.beige-bg {
+    background-color: rgb(240, 235, 230);
+    height: 40rem;
+    width: 100%;
+=======
 .top-container {
     height: 35rem;
     width: 100%;
@@ -7,6 +13,7 @@
     padding: 10rem;
     padding-top: 5rem;
     padding-bottom: 0;
+>>>>>>> dev
 }
 
 .whitesmoke-bg {
@@ -18,6 +25,12 @@
     width: 100%;
 }
 
+<<<<<<< HEAD
+.whitesmoke-bg {
+    background-color: whitesmoke;
+    height: 80rem;
+    width: 100%;
+=======
 .empty-fridge {
     background-image: url('./noun_Plate_3498787.svg');
     background-size: cover;
@@ -29,6 +42,7 @@
     justify-content: space-between;
     /* box-shadow: 0 0 10px #555; */
     color: rgb(55, 55, 55);
+>>>>>>> dev
 }
 
 .empty-fridge h2 {
@@ -46,6 +60,8 @@
 .description-text p {
     padding: 0.5rem;
 }
+<<<<<<< HEAD
+=======
 
 .filters-container {
     background-color: rgb(240, 235, 235);
@@ -70,3 +86,4 @@
     justify-content: center;
     align-items: center;
 }
+>>>>>>> dev

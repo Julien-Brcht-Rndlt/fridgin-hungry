@@ -7,7 +7,7 @@
     background-color: rgb(55, 55, 55);
     font-size: 1.75rem;
     color: white;
-    position: fixed;
+    position: auto;
     bottom: 0;
     margin: auto 0;
 }
