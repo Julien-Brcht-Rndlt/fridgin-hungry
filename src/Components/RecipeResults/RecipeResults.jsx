@@ -4,7 +4,6 @@ import IngredientFilter from '../Filters/IngredientFilter'
 //import 'RecipeResults.css'
 
 const RecipeResults = ({ searchResults }) => {
-    console.log(searchResults)
     return (
         <div className="recipeResults">
             {searchResults.map((card, index) => (
