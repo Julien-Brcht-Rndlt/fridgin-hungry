@@ -26,8 +26,6 @@ const CalorieFilter = ({setSearchResults}) => {
     let [searchCarbs, setSearchCarbs]= useState("")
     let [searchFat, setSearchFat]= useState("")
 
-    //&nutrients%5BPROCNT%5D=${setSearchProtein}&nutrients%5BCHOCDF%5D=${setSearchCarbs}&nutrients%5BFAT%5D=${setSearchFat}
-
     const searchRecipes = () => {
         let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=chicken`
         
