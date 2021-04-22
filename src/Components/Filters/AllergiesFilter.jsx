@@ -4,67 +4,62 @@ import "./AllergiesFilter.css";
 
 const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
 
-    const initialAllergies = [
-        {label:"Vegetarian", value:"vegetarian", selected:false},
-        {label:"Vegan", value:"vegan", selected:false},
-        {label: "Pork-free", value: "pork-free", selected: false},
-        {label: "Gluten-free", value: "gluten-free", selected: false},
-        {label: "Sugar-free", value: "low-sugar", selected: false},
-        {label: "Peanut-free", value: "peanut-free", selected: false},
-    ] 
-    
-      const [allergies, setAllergies] = useState(initialAllergies);
-    
-    
-      const handleClickAllergy = (e) => {
-        
+  const initialAllergies = [
+    { label: "Vegetarian", value: "vegetarian", selected: false },
+    { label: "Vegan", value: "vegan", selected: false },
+    { label: "Pork-free", value: "pork-free", selected: false },
+    { label: "Gluten-free", value: "gluten-free", selected: false },
+    { label: "Sugar-free", value: "low-sugar", selected: false },
+    { label: "Peanut-free", value: "peanut-free", selected: false },
+  ]
 
-        const allergyValue = e.target.value;
-        // console.log(allergyValue);
-    
-        const checkedAllergy = allergies.find(allergy => {
-          if(allergy.value === allergyValue) return true;
-          else return false;
-        });
-        checkedAllergy.selected = !checkedAllergy.selected;
+  const [allergies, setAllergies] = useState(initialAllergies);
 
-        /* const selectedBox = (checkedAllergy) => {
-          setSearchUrl += `&health=${selectedBox.value}`
-        }
-        */
 
-        // construction url +
-        // setSearchUrl
+  const handleClickAllergy = (e) => {
 
-        // console.log(checkedAllergy);
-        setAllergies([...allergies])
 
-      }
-    
-      // "&health=vegan&health=sugar"
-    
+    const allergyValue = e.target.value;
+
+    const checkedAllergy = allergies.find(allergy => {
+      if (allergy.value === allergyValue) return true;
+      else return false;
+    });
+    checkedAllergy.selected = !checkedAllergy.selected;
+
+    searchUrl = searchUrl.includes(`&health=${allergyValue}`) ? searchUrl.replace(`&health=${allergyValue}`, '') : `${searchUrl}&health=${allergyValue}`
+
+    setSearchUrl(searchUrl);
+    console.log(searchUrl);
+
+    setAllergies([...allergies])
+
+  }
+
+  // "&health=vegan&health=sugar"
+
+  return (
+    <section>
+      { allergies.map(allergy => {
+        //   console.log(allergy);
         return (
-          <section>
-          { allergies.map(allergy => {
-            //   console.log(allergy);
-              return (
-                <div>
-                  <input type="checkbox" 
-                  name="health" 
-                  value={allergy.value} 
-                  checked={allergy.selected} 
-                  onClick={handleClickAllergy}/> 
+          <div>
+            <input type="checkbox"
+              name="health"
+              value={allergy.value}
+              checked={allergy.selected}
+              onClick={handleClickAllergy} />
 
-                  <label htmlFor={allergy.value}>
-                      {allergy.label}
-                  </label> 
+            <label htmlFor={allergy.value}>
+              {allergy.label}
+            </label>
 
-                </div>
-              );
-            })
-          }
-          </section>
+          </div>
         );
-    };
-    
-    export default AllergiesFilter;
+      })
+      }
+    </section>
+  );
+};
+
+export default AllergiesFilter;
