@@ -44,7 +44,7 @@ const IngredientFilter = ({ setSearchResults }) => {
             <h3>Ingredients</h3>
             {inputs.map((input, index) => {
                 return (
-                    <div className="input">
+                    <div className="ingr-inputs">
                         <input
                             id=""
                             key={index}
@@ -52,12 +52,13 @@ const IngredientFilter = ({ setSearchResults }) => {
                             type="text"
                             value={ingredients[input]}
                             onChange={handleIngredientsChange}
+                            placeholder={`ingredient ${index + 1}`}
                             // {searchResults ? <RecipeResults /> : null}
                         />
                     </div>
                 )
             })}
-            <button onClick={handleClick}>Search</button>
+            <button className="action-button" onClick={handleClick}>Recipe ideas</button>
         </div>
     )
 }
