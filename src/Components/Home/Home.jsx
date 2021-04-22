@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Home.css'
 import IngredientFilter from '../Filters/IngredientFilter'
-import RecipeResults from '../RecipeResults/RecipeResults'
+import RecipeCards from '../RecipeCards/RecipeCards'
 import CalorieFilter from '../Filters/CalorieFilter'
 
 import { ReactComponent as NounPlate1 } from './noun_Plate_3498787.svg'
@@ -26,13 +26,12 @@ const Home = () => {
                 </div>
                 <div>
                 </div>               
-               
             </div>
 
             <div className="beige-bg">
                 <CalorieFilter setSearchResults={setSearchResults} />
                 <IngredientFilter setSearchResults={setSearchResults}/>
-                <RecipeResults searchResults={searchResults} />
+                <RecipeCards searchResults={searchResults} />
             </div>
 
             <div className="bottom-container whitesmoke-bg">

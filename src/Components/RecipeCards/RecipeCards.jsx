@@ -1,9 +1,8 @@
 import React from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
-import "./RecipeResults.css"
-//import 'RecipeResults.css'
+import "./RecipeCards.css"
 
-const RecipeResults = ({ searchResults }) => {
+const RecipeCards = ({ searchResults }) => {
     return (
         <div className="recipeResults">
             {searchResults.map((card, index) => (
@@ -18,4 +17,4 @@ const RecipeResults = ({ searchResults }) => {
     )
 }
 
-export default RecipeResults
+export default RecipeCards
