@@ -1,3 +1,9 @@
+.beige-bg {
+    background-color: rgb(240, 235, 230);
+    height: 40rem;
+    width: 100%;
+}
+
 .top-container {
     height: 35rem;
     width: 100%;
@@ -9,11 +15,13 @@
     padding-bottom: 0;
 }
 
-.whitesmoke-bg {
-    background-color: white;
+.start-container {
+    height: 60rem;
+    width: 100%;
 }
 
-.start-container {
+.whitesmoke-bg {
+    background-color: white;
     height: 60rem;
     width: 100%;
 }
