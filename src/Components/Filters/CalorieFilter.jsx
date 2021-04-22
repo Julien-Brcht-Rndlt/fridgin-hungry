@@ -32,11 +32,18 @@ const CalorieFilter = ({ url2, setUrl2, searchUrl, setSearchUrl }) => {
         
         setUrl2((prevState) => {
 
-            prevState = prevState.includes('&calories=') ? 
-            
-            prevState.split('&')
+            prevStateArr = prevState.split('&');
 
-            prevState +=  searchCalories ? `&calories=${searchCalories}` : ''}
+            prevStateArr.map((urlStr) => urlStr.includes('&calories') ? `&calories=${searchCalories}` : urlStr
+
+            //&calories=24
+            //&calories=34
+            
+            //&nutrients%5BPROCNT%5D5&nutrients%5BPROCNT%5D11&nutrients%5BPROCNT%5D14&nutrients%5BPROCNT%5D20&nutrients%5BPROCNT%5D21&nutrients%5BCHOCDF%5D=3&nutrients%5BCHOCDF%5D=12&nutrients%5BCHOCDF%5D=16&nutrients%5BCHOCDF%5D=26&nutrients%5BCHOCDF%5D=30&nutrients%5BCHOCDF%5D=33&nutrients%5BCHOCDF%5D=33&nutrients%5BFAT%5D=4&nutrients%5BFAT%5D=11&nutrients%5BFAT%5D=20&nutrients%5BFAT%5D=26&nutrients%5BFAT%5D=31&nutrients%5BFAT%5D=36
+
+           
+
+            prevState +=  searchCalories ?  : ''}
             );
     }
 
