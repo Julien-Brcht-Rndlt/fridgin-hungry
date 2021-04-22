@@ -29,7 +29,7 @@ const AllergiesFilter = () => {
         });
        
         checkedAllergy.selected = !checkedAllergy.selected;
-        console.log(checkedAllergy);
+        // console.log(checkedAllergy);
        
         setAllergies([...allergies])  
       }
