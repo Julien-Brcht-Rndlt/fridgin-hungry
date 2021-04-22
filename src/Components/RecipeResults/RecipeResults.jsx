@@ -1,21 +1,21 @@
-import React from 'react'
-import RecipeCard from '../RecipeCard/RecipeCard'
+import React, { useState} from 'react';
 import IngredientFilter from '../Filters/IngredientFilter'
-//import 'RecipeResults.css'
+import CalorieFilter from '../Filters/CalorieFilter'
+import AllergiesFilter from '../Filters/AllergiesFilter'
+import RecipeCards from '../RecipeCards/RecipeCards'
 
-const RecipeResults = ({ searchResults }) => {
+const RecipeResults = () => {
+    const [searchResults, setSearchResults] = useState([])
+
     return (
-        <div className="recipeResults">
-            {searchResults.map((card, index) => (
-                <RecipeCard
-                    key={index}
-                    label={card.recipe.label}
-                    image={card.recipe.image}
-                    ingredients={card.recipe.ingredientLines}
-                />
-            ))}
+        <div>
+              <CalorieFilter setSearchResults={setSearchResults} />
+                <IngredientFilter setSearchResults={setSearchResults}/>
+                <AllergiesFilter />
+                <RecipeCards searchResults={searchResults} />
+        
         </div>
-    )
-}
+    );
+};
 
-export default RecipeResults
+export default RecipeResults;

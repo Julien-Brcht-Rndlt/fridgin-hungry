@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import "./AllergiesFilter.css";
 
-const AllergiesFilter = () => {
+const AllergiesFilter = ({setSearchResults}) => {
 
     const initialAllergies = [
         {label:"Vegetarian", value:"vegetarian", selected:false},

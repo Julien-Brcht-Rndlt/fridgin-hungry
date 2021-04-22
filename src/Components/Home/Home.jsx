@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import './Home.css'
 import IngredientFilter from '../Filters/IngredientFilter'
-import RecipeResults from '../RecipeResults/RecipeResults'
+import RecipeCards from '../RecipeCards/RecipeCards'
 import CalorieFilter from '../Filters/CalorieFilter'
+import AllergiesFilter from '../Filters/AllergiesFilter'
+import RecipeResults from "../RecipeResults/RecipeResults"
 
 import { ReactComponent as NounPlate1 } from './noun_Plate_3498787.svg'
 
-const Home = () => {
-    const [searchResults, setSearchResults] = useState([])
+const Home = ({searchResults}) => {
+    
 
     const imageSrc = ['/salad-meal-1.jpg', '/salad-meal-2.png'];
 
@@ -26,13 +28,11 @@ const Home = () => {
                 </div>
                 <div>
                 </div>               
-               
             </div>
 
             <div className="beige-bg">
-                <CalorieFilter setSearchResults={setSearchResults} />
-                <IngredientFilter setSearchResults={setSearchResults}/>
-                <RecipeResults searchResults={searchResults} />
+                <RecipeResults />
+                
             </div>
 
             <div className="bottom-container whitesmoke-bg">
