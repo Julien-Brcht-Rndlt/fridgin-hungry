@@ -4,7 +4,7 @@ import IngredientFilter from '../Filters/IngredientFilter'
 import RecipeResults from "../RecipeResults/RecipeResults"
 //import 'RecipeCards.css'
 
-const RecipeCards = ({ searchResults }) => {
+const RecipeCards = ({ searchResults = [] }) => {
     return (
         <div className="recipeResults">
             {searchResults.map((card, index) => (

@@ -6,7 +6,7 @@ input[type='checkbox'] + label {
 }
 
 input[type='checkbox'] {
-    display: none;
+    /* display: none; */
 }
 
 input[type='checkbox'] + label:before {
@@ -32,7 +32,7 @@ input[type='checkbox'] + label:active:before {
 input[type='checkbox']:checked + label:before {
     background-color: #a9d171;
     border-color: #a9d171;
-}v
+}
 
 input[type='checkbox']:disabled + label:before {
     transform: scale(3);

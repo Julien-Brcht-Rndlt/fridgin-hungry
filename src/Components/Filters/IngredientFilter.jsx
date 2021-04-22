@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ url1, setUrl1, searchUrl, setSearchUrl }) => {
+const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
         ingredient3: '',
         ingredient4: '',
     })
+    useEffect(() => {
+        setSearchUrl(makeUrlPart(searchUrl))
+
+    }, [ingredients])
 
     const [inputs, setInputs] = useState([
         'ingredient1', //input1
@@ -15,6 +19,18 @@ const IngredientFilter = ({ url1, setUrl1, searchUrl, setSearchUrl }) => {
         'ingredient3', //input3
         'ingredient4', //input4
     ])
+
+    const makeUrlPart = (url) => {
+
+        const startIndex = url.indexOf('q=');
+        let endOfIngredients = url.substr(startIndex, url.length).indexOf('&');
+        endOfIngredients = endOfIngredients > -1 ? endOfIngredients : url.length;
+        const urlPart = url.substr(startIndex, endOfIngredients);
+
+        url = url.replace(urlPart, `q=${Object.values(ingredients).filter((ingredient) => ingredient.trim().length > 0).join(', ')}`);
+
+        return url;
+    }
 
     const handleIngredientsChange = (event) => {
         setIngredients((prevState) => {
@@ -24,12 +40,6 @@ const IngredientFilter = ({ url1, setUrl1, searchUrl, setSearchUrl }) => {
             }
 
         })
-        //construction de l'url en fonction des valeurs inputs
-       
-        setUrl1(`&q=${Object.values(ingredients).join(', ')}`)
-
-        //`&q=${Object.values(ingredients).join(', ')}`
-        // setSearchUrl
     }
 
     return (
@@ -44,16 +54,15 @@ const IngredientFilter = ({ url1, setUrl1, searchUrl, setSearchUrl }) => {
                             type="text"
                             value={ingredients[input]}
                             onChange={handleIngredientsChange}
-                            placeholder={`ingredient ${index + 1}`}
-                            // {searchResults ? <RecipeResults /> : null}
+                            placeholder={`ingredient ${index + 1} `}
                         />
                     </div>
                 )
             })}
-            
+
         </div>
     )
- 
+
 }
 
 export default IngredientFilter
