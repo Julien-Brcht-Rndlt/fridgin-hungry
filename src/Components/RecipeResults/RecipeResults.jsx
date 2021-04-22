@@ -1,6 +1,6 @@
 import React from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
-import IngredientFilter from '../Filters/IngredientFilter'
+import "./RecipeResults.css"
 //import 'RecipeResults.css'
 
 const RecipeResults = ({ searchResults }) => {
