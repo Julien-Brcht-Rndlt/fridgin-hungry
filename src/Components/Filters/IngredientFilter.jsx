@@ -1,28 +1,13 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ setSearchResults }) => {
+const IngredientFilter = ({ url1, setUrl1, searchUrl, setSearchUrl }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
         ingredient3: '',
         ingredient4: '',
     })
-
-    const handleClick = () => {
-        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=${Object.values(
-            ingredients
-        ).join(', ')}`
-        console.log(searchUrl)
-
-        axios
-            .get(searchUrl)
-            .then((response) => response.data)
-            .then((data) => {
-                setSearchResults(data.hits)
-            })
-    }
 
     const [inputs, setInputs] = useState([
         'ingredient1', //input1
@@ -31,13 +16,21 @@ const IngredientFilter = ({ setSearchResults }) => {
         'ingredient4', //input4
     ])
 
-    const handleIngredientsChange = (event) =>
+    const handleIngredientsChange = (event) => {
         setIngredients((prevState) => {
             return {
                 ...prevState,
                 [event.target.name]: event.target.value,
             }
+
         })
+        //construction de l'url en fonction des valeurs inputs
+       
+        setUrl1(`&q=${Object.values(ingredients).join(', ')}`)
+
+        //`&q=${Object.values(ingredients).join(', ')}`
+        // setSearchUrl
+    }
 
     return (
         <div className="ingredients">
@@ -46,7 +39,6 @@ const IngredientFilter = ({ setSearchResults }) => {
                 return (
                     <div className="ingr-inputs">
                         <input
-                            id=""
                             key={index}
                             name={input}
                             type="text"
@@ -58,9 +50,10 @@ const IngredientFilter = ({ setSearchResults }) => {
                     </div>
                 )
             })}
-            <button className="action-button" onClick={handleClick}>Recipe ideas</button>
+            
         </div>
     )
+ 
 }
 
 export default IngredientFilter

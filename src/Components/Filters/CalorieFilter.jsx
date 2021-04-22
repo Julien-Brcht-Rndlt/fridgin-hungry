@@ -15,7 +15,7 @@ const useStyles = makeStyles({
     }
 })
 
-const CalorieFilter = ({setSearchResults}) => {
+const CalorieFilter = ({ url2, setUrl2, searchUrl, setSearchUrl }) => {
 
     const classes = useStyles();
     //const [recipesCalories, setRecipesCalories] = useState([])
@@ -24,21 +24,40 @@ const CalorieFilter = ({setSearchResults}) => {
     let [searchCarbs, setSearchCarbs]= useState("")
     let [searchFat, setSearchFat]= useState("")
 
-    const searchRecipes = () => {
-        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=chicken`
+    const handleCaloriesSlider = (e, newValue) => {
         
-        searchUrl += searchCalories ? `&calories=${searchCalories}` : ''
-        searchUrl += searchProtein ? `&nutrients%5BPROCNT%5D${searchProtein}` : ''
-        searchUrl += searchCarbs ? `&nutrients%5BCHOCDF%5D=${searchCarbs}` : ''
-        searchUrl += searchFat ? `&nutrients%5BFAT%5D=${searchFat}` : ''
-        console.log(searchUrl);
+        setSearchCalories((prevState) => prevState = newValue)
 
-        axios
-            .get(searchUrl)
-            .then((response) => response.data)
-            .then((data) => {
-                setSearchResults(data.hits)
-            }); 
+
+        
+        setUrl2((prevState) => {
+
+            prevState = prevState.includes('&calories=') ? 
+            
+            prevState.split('&')
+
+            prevState +=  searchCalories ? `&calories=${searchCalories}` : ''}
+            );
+    }
+
+    const handleProteinSlider = (e, newValue) => {
+        
+        setSearchProtein((prevState) => prevState = newValue)
+    
+        setUrl2((prevState) => prevState +=  searchProtein ? `&nutrients%5BPROCNT%5D${searchProtein}` : '');
+    }
+
+    const handleCarbsSlider = (e, newValue) => {
+        
+        setSearchCarbs((prevState) => prevState = newValue)
+        
+        setUrl2((prevState) => prevState +=  searchCarbs ? `&nutrients%5BCHOCDF%5D=${searchCarbs}` : '');
+    }
+
+    const handleFatSlider = (e, newValue) => {
+        
+        setSearchFat((prevState) => prevState = newValue)
+        setUrl2((prevState) => prevState +=  searchFat ? `&nutrients%5BFAT%5D=${searchFat}` : '');
     }
 
     return (
@@ -58,10 +77,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     valueLabelDisplay='auto'
                     getAriaValueText={() => `${setSearchCalories}`}
                     value={searchCalories}
-                    onChange={(e, newValue) => {
-                        setSearchCalories((prevState) => prevState = newValue)
-                        console.log(newValue)
-                    }}                
+                    onChange={handleCaloriesSlider}                
                 />
                 
             </div>
@@ -79,9 +95,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchProtein}
-                    onChange={(e, newValue) => {
-                        setSearchProtein((prevState) => prevState = newValue)
-                        console.log(newValue)}}
+                    onChange={handleProteinSlider}
                 />
             </div>
             <div>
@@ -98,9 +112,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchCarbs}
-                    onChange={(e, newValue) => {
-                        setSearchCarbs((prevState) => prevState = newValue)
-                        }}
+                    onChange={handleCarbsSlider}
                 />
             </div>
             <div>
@@ -117,12 +129,9 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchFat}
-                    onChange={(e, newValue) => {
-                        setSearchFat((prevState) => prevState = newValue)
-                        }}
+                    onChange={handleFatSlider}
                 />
             </div>
-            <button onClick={searchRecipes}>Search</button>
         </div>
     );
 

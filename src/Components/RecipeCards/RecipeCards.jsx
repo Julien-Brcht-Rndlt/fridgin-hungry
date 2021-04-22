@@ -1,6 +1,7 @@
 import React from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import IngredientFilter from '../Filters/IngredientFilter'
+import RecipeResults from "../RecipeResults/RecipeResults"
 //import 'RecipeCards.css'
 
 const RecipeCards = ({ searchResults }) => {

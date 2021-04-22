@@ -1,0 +1,13 @@
+.filterContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.RecipeResults {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+}

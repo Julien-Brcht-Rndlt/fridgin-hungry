@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import "./AllergiesFilter.css";
 
-const AllergiesFilter = ({setSearchResults}) => {
+const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
 
     const initialAllergies = [
         {label:"Vegetarian", value:"vegetarian", selected:false},
@@ -20,20 +20,28 @@ const AllergiesFilter = ({setSearchResults}) => {
         
 
         const allergyValue = e.target.value;
-        console.log(allergyValue);
-       
+        // console.log(allergyValue);
     
         const checkedAllergy = allergies.find(allergy => {
           if(allergy.value === allergyValue) return true;
           else return false;
         });
-       
         checkedAllergy.selected = !checkedAllergy.selected;
+
+        /* const selectedBox = (checkedAllergy) => {
+          setSearchUrl += `&health=${selectedBox.value}`
+        }
+        */
+
+        // construction url +
+        // setSearchUrl
+
         // console.log(checkedAllergy);
-       
-        setAllergies([...allergies])  
+        setAllergies([...allergies])
+
       }
     
+      // "&health=vegan&health=sugar"
     
         return (
           <section>
@@ -47,7 +55,7 @@ const AllergiesFilter = ({setSearchResults}) => {
                   checked={allergy.selected} 
                   onClick={handleClickAllergy}/> 
 
-                  <label for={allergy.value}>
+                  <label htmlFor={allergy.value}>
                       {allergy.label}
                   </label> 
 

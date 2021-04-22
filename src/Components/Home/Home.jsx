@@ -8,8 +8,7 @@ import RecipeResults from "../RecipeResults/RecipeResults"
 
 import { ReactComponent as NounPlate1 } from './noun_Plate_3498787.svg'
 
-const Home = ({searchResults}) => {
-    
+const Home = ({ searchResults, setSearchResults }) => {
 
     const imageSrc = ['/salad-meal-1.jpg', '/salad-meal-2.png'];
 
@@ -30,8 +29,9 @@ const Home = ({searchResults}) => {
                 </div>               
             </div>
 
-            <div className="beige-bg">
-                <RecipeResults />
+            <div className="filters-container beige-bg">
+                <RecipeResults setSearchResults={setSearchResults}/>
+                <RecipeCards searchResults={searchResults}/>
                 
             </div>
 

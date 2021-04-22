@@ -25,27 +25,24 @@ input[type='checkbox'] + label:before {
 }
 
 input[type='checkbox'] + label:active:before {
-    transform: scale(1.9);
+    transform: scale(3);
+    background-color: grey;
 }
 
 input[type='checkbox']:checked + label:before {
     background-color: #a9d171;
     border-color: #a9d171;
-}
+}v
 
 input[type='checkbox']:disabled + label:before {
     transform: scale(3);
     border-color: #aaa;
 }
 
-input[type='checkbox']:checked:disabled + label:before {
+/* input[type='checkbox']:checked:disabled + label:before {
     background-color: #bfb;
     border-color: #bfb;
-}
-
-#vegan {
-    font-size: 1.8em;
-}
+} */
 
 label {
     font-size: larger;
