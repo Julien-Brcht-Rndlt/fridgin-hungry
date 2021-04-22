@@ -8,3 +8,12 @@ html {
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
 }
+
+.action-button {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(240, 235, 235);
+    border: 3px solid rgb(55, 55, 55);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
