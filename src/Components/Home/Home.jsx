@@ -30,8 +30,7 @@ const Home = ({ searchResults, setSearchResults }) => {
             </HashLink>
         </div>          
         <div id="filters" className="filters-container beige-bg">
-                <RecipeResults setSearchResults={setSearchResults}/>
-                <RecipeCards searchResults={searchResults}/>       
+                <RecipeResults setSearchResults={setSearchResults}/>       
         </div>
         <div className="bottom-container whitesmoke-bg">
             <img src={imageSrc[1]} alt={'third salad meal'} />
