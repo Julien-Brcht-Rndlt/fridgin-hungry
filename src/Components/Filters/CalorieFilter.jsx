@@ -5,8 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import './CalorieFilter.css'
 
-
-
 const useStyles = makeStyles({
     root: {
         color: 'black',
@@ -17,7 +15,7 @@ const useStyles = makeStyles({
     }
 })
 
-const CalorieFilter = ({setSearchResults}) => {
+const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
     const classes = useStyles();
     //const [recipesCalories, setRecipesCalories] = useState([])
@@ -26,21 +24,66 @@ const CalorieFilter = ({setSearchResults}) => {
     let [searchCarbs, setSearchCarbs]= useState("")
     let [searchFat, setSearchFat]= useState("")
 
-    const searchRecipes = () => {
-        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=chicken`
+    /**
+     * function
+     */
+    const updateUrlParams = (url, param, value) => {
         
-        searchUrl += searchCalories ? `&calories=${searchCalories}` : ''
-        searchUrl += searchProtein ? `&nutrients%5BPROCNT%5D${searchProtein}` : ''
-        searchUrl += searchCarbs ? `&nutrients%5BCHOCDF%5D=${searchCarbs}` : ''
-        searchUrl += searchFat ? `&nutrients%5BFAT%5D=${searchFat}` : ''
-        console.log(searchUrl);
+        let urlParts = url? url.split('&') : [];
+        urlParts = urlParts.map((urlPart) => urlPart.includes(`${param}`) ? value : urlPart);
 
-        axios
-            .get(searchUrl)
-            .then((response) => response.data)
-            .then((data) => {
-                setSearchResults(data.hits)
-            }); 
+        return urlParts.join('&');
+    }
+
+    const removeUrlNullValues = (url, param) => url.includes(`&${param}=0`) ? url.replace(`&${param}=0`,'') : url;
+
+
+    const handleCaloriesSlider = (e, newValue) => {
+        
+        setSearchCalories((prevState) => prevState = newValue);
+
+        searchUrl = searchUrl.includes('calories=') ? updateUrlParams(searchUrl, 'calories', `calories=${searchCalories}`) : `${searchUrl}&calories=${searchCalories}`;
+
+        searchUrl = removeUrlNullValues(searchUrl, 'calories');
+
+        setSearchUrl(searchUrl);
+        console.log(searchUrl)
+    }
+
+    const handleProteinSlider = (e, newValue) => {
+        
+        setSearchProtein((prevState) => prevState = newValue)
+
+        searchUrl = searchUrl.includes('nutrients%5BPROCNT%5D5=') ? updateUrlParams(searchUrl, 'nutrients%5BPROCNT%5D5', `nutrients%5BPROCNT%5D5=${searchProtein}`) : `${searchUrl}&nutrients%5BPROCNT%5D5=${searchProtein}`;
+
+        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BPROCNT%5D5');
+
+        setSearchUrl(searchUrl);
+        console.log(searchUrl)
+    }
+
+    const handleCarbsSlider = (e, newValue) => {
+        
+        setSearchCarbs((prevState) => prevState = newValue)
+
+        searchUrl = searchUrl.includes('nutrients%5BCHOCDF%5D=') ? updateUrlParams(searchUrl, 'nutrients%5BCHOCDF%5D', `nutrients%5BCHOCDF%5D=${searchCarbs}`) : `${searchUrl}&nutrients%5BCHOCDF%5D=${searchCarbs}`;
+
+        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BCHOCDF%5D');
+
+        setSearchUrl(searchUrl);
+        console.log(searchUrl)
+    }
+
+    const handleFatSlider = (e, newValue) => {
+        
+        setSearchFat((prevState) => prevState = newValue)
+
+        searchUrl = searchUrl.includes('nutrients%5BFAT%5D=') ? updateUrlParams(searchUrl, 'nutrients%5BFAT%5D', `nutrients%5BFAT%5D=${searchFat}`) : `${searchUrl}&nutrients%5BFAT%5D=${searchFat}`;
+
+        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BFAT%5D');
+
+        setSearchUrl(searchUrl);
+        console.log(searchUrl)
     }
 
     return (
@@ -60,10 +103,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     valueLabelDisplay='auto'
                     getAriaValueText={() => `${setSearchCalories}`}
                     value={searchCalories}
-                    onChange={(e, newValue) => {
-                        setSearchCalories((prevState) => prevState = newValue)
-                        console.log(newValue)
-                    }}                
+                    onChange={handleCaloriesSlider}                
                 />
                 
             </div>
@@ -81,9 +121,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchProtein}
-                    onChange={(e, newValue) => {
-                        setSearchProtein((prevState) => prevState = newValue)
-                        console.log(newValue)}}
+                    onChange={handleProteinSlider}
                 />
             </div>
             <div>
@@ -100,9 +138,7 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchCarbs}
-                    onChange={(e, newValue) => {
-                        setSearchCarbs((prevState) => prevState = newValue)
-                        }}
+                    onChange={handleCarbsSlider}
                 />
             </div>
             <div>
@@ -119,12 +155,9 @@ const CalorieFilter = ({setSearchResults}) => {
                     defaultValue={0}
                     valueLabelDisplay='auto'
                     value={searchFat}
-                    onChange={(e, newValue) => {
-                        setSearchFat((prevState) => prevState = newValue)
-                        }}
+                    onChange={handleFatSlider}
                 />
             </div>
-            <button onClick={searchRecipes}>Search</button>
         </div>
     );
 

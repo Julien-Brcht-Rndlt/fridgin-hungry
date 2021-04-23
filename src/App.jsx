@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
@@ -11,13 +11,15 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 library.add(
     fab,
     faCoffee
- )
+)
 
 function App() {
+    const [searchResults, setSearchResults] = useState([])
+
     return (
         <>
             <Header />
-            <Home />
+            <Home searchResults={searchResults} setSearchResults={setSearchResults}/>
             <Footer />
         </>
     )
