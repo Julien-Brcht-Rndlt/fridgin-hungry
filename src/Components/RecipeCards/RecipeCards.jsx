@@ -1,13 +1,17 @@
 import React from 'react'
-import RecipeCard from '../RecipeCard/RecipeCard'
-import IngredientFilter from '../Filters/IngredientFilter'
-import RecipeResults from "../RecipeResults/RecipeResults"
-//import 'RecipeCards.css'
+import { Link } from 'react-router-dom'
 
-const RecipeCards = ({ searchResults = [] }) => {
+import RecipeCard from '../RecipeCard/RecipeCard'
+import './RecipeCards.css'
+
+const RecipeCards = ({ searchResults, id }) => {
+    console.log(searchResults)
     return (
-        <div className="recipeResults">
-            {searchResults.map((card, index) => (
+        <div className="recipe-cards">
+        <div>
+            <Link to='/'><button className="nav-button">Back</button></Link>
+        </div>
+        {searchResults.map((card, index) => (
                 <RecipeCard
                     key={index}
                     label={card.recipe.label}
