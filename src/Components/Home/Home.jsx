@@ -29,7 +29,7 @@ const Home = ({ searchResults, setSearchResults }) => {
                 </div>
             </HashLink>
         </div>          
-        <div className="filters-container beige-bg">
+        <div id="filters" className="filters-container beige-bg">
                 <RecipeResults setSearchResults={setSearchResults}/>
                 <RecipeCards searchResults={searchResults}/>       
         </div>
