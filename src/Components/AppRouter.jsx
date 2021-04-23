@@ -7,7 +7,7 @@ import Home from './Home/Home'
 import RecipeCards from './RecipeCards/RecipeCards'
 import Contact from './Contact/Contact'
 
-const AppRouter = () => {
+const AppRouter = ({ searchResults, setSearchResults}) => {
 
     return(
         <>

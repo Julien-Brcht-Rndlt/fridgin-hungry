@@ -16,7 +16,7 @@ function App() {
 
     return (
         <div>
-            <AppRouter />
+            <AppRouter searchResults={searchResults} setSearchResults={setSearchResults}/>
         </div>
     )
 }
