@@ -1,47 +1,80 @@
-.beige-bg {
-    background-color: rgb(240, 235, 230);
-    height: 80rem;
+.top-container {
+    height: 35rem;
     width: 100%;
 }
 
-.emptyFridge {
-    background-color: rgb(240, 235, 230);
-    display: flex;
-    border-radius: 50%;
-    width: 25rem;
-    height: 25rem;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 10px #555;
-    margin-top: 7rem;
-    color: rgb(55, 55, 55);
+.top-container img {
+    padding: 10rem;
+    padding-top: 5rem;
+    padding-bottom: 0;
 }
 
-.emptyFridge h2 {
-    font-size: 2.25rem;
+.start-container {
+    height: 60rem;
+    width: 100%;
 }
 
 .whitesmoke-bg {
-    background-color: whitesmoke;
-    height: 40rem;
+    background-color: white;
+    height: 60rem;
     width: 100%;
 }
 
-.description-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.empty-fridge {
+    background-image: url('./noun_Plate_3498787.svg');
+    background-size: cover;
+    width: 32rem;
+    height: 32rem;
+    margin: auto;
+    padding: 10rem;
+
+    justify-content: space-between;
+    /* box-shadow: 0 0 10px #555; */
+    color: rgb(55, 55, 55);
+}
+
+.empty-fridge h2 {
+    font-size: 3.7rem;
+    margin-bottom: 4rem;
+}
+
+.description {
     font-weight: bold;
     font-size: 2.3rem;
-    padding: 10rem;
-    border-bottom: 1px solid black;
-    width: 30%;
     margin: 0 auto;
     color: rgb(55, 55, 55);
 }
 
-p {
+.description-text p {
     padding: 0.5rem;
+}
+
+.beige-bg {
+    background-color: rgb(240, 235, 230);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.filters-container {
+    height: 50rem;
+    width: 100%;
+}
+
+.bottom-container {
+    height: 50rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottom-container img {
+    padding: 10rem;
+}
+
+.flex-col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

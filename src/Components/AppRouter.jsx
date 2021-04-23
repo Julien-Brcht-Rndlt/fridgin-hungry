@@ -15,7 +15,7 @@ const AppRouter = () => {
             <Header />
             <Switch>
                 <Route exact path='/'>
-                    <Home />
+                    <Home searchResults={searchResults} setSearchResults={setSearchResults}/>
                 </Route>
                 <Route path='/recipes'>
                     <RecipeCards searchResults={[]}/>
