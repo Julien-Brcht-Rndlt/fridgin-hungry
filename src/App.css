@@ -12,7 +12,8 @@ html {
 .action-button {
     font-size: 2rem;
     font-weight: bold;
-    background-color: rgb(240, 235, 235);
+    color: white;
+    background-color: rgb(55, 55, 55); /* #e4f0d8; */ /* rgb(240, 235, 235); */
     border: 3px solid rgb(55, 55, 55);
     border-radius: 1rem;
     padding: 1.5rem;
