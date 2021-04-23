@@ -1,29 +1,45 @@
+.whitesmoke-bg {
+    background-color: white;
+    width: 100%;
+}
+
 .beige-bg {
     background-color: rgb(240, 235, 230);
     height: 40rem;
     width: 100%;
-}
-
-.top-container {
-    height: 35rem;
-    width: 100%;
-}
-
-.top-container img {
-    padding: 10rem;
-    padding-top: 5rem;
-    padding-bottom: 0;
+    margin-top: 60rem;
 }
 
 .start-container {
-    height: 60rem;
+    height: 100rem;
     width: 100%;
 }
 
-.whitesmoke-bg {
-    background-color: white;
-    height: 60rem;
+.top-container {
+    height: auto;
     width: 100%;
+    margin-top: 0;
+}
+
+.top-container img {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 10rem;
+}
+
+.middle-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 50%;
+    padding-right: 15rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+.middle-container img {
+    width: 20%;
+    height: 70%;
+    padding-top: 0;
+    margin-top: 0;
 }
 
 .empty-fridge {
