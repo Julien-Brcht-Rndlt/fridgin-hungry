@@ -18,7 +18,7 @@ const Home = ({ searchResults, setSearchResults }) => {
         <div className="top-container"><img src={imageSrc[0]} alt={'second salad meal'} />
         </div>
         <div className="whitesmoke-bg start-container">
-            <HashLink to="#filters" scroll={(element) => element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})}>
+            <HashLink to="#filters" scroll={(element) => element.scrollIntoView({behavior: "smooth", block: "center", inline: "center"})}>
                 <div className="empty-fridge flex-col-container">
                     <h2>Empty you Fridge!</h2>
                     <div className="description flex-col-container">
