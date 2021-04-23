@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 .recipeResults {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+=======
+.recipe-cards {
+    display: flex;
+}
+
+.filterContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+>>>>>>> dev

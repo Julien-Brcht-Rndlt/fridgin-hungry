@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
 
+import { Link } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
@@ -24,7 +26,7 @@ const Footer = () => {
                     </div>
             </div>
             <div className="contact">
-               <p>Contact us</p>
+               <p><Link to='/contact' style={{ textDecoration: 'none' }}>Contact us</Link></p>
             </div> 
         </div>
     );
