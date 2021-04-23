@@ -1,28 +1,17 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ setSearchResults }) => {
+const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
         ingredient3: '',
         ingredient4: '',
     })
+    useEffect(() => {
+        setSearchUrl(makeUrlPart(searchUrl))
 
-    const handleClick = () => {
-        let searchUrl = `https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=${Object.values(
-            ingredients
-        ).join(', ')}`
-        console.log(searchUrl)
-
-        axios
-            .get(searchUrl)
-            .then((response) => response.data)
-            .then((data) => {
-                setSearchResults(data.hits)
-            })
-    }
+    }, [ingredients])
 
     const [inputs, setInputs] = useState([
         'ingredient1', //input1
@@ -31,13 +20,27 @@ const IngredientFilter = ({ setSearchResults }) => {
         'ingredient4', //input4
     ])
 
-    const handleIngredientsChange = (event) =>
+    const makeUrlPart = (url) => {
+
+        const startIndex = url.indexOf('q=');
+        let endOfIngredients = url.substr(startIndex, url.length).indexOf('&');
+        endOfIngredients = endOfIngredients > -1 ? endOfIngredients : url.length;
+        const urlPart = url.substr(startIndex, endOfIngredients);
+
+        url = url.replace(urlPart, `q=${Object.values(ingredients).filter((ingredient) => ingredient.trim().length > 0).join(', ')}`);
+
+        return url;
+    }
+
+    const handleIngredientsChange = (event) => {
         setIngredients((prevState) => {
             return {
                 ...prevState,
                 [event.target.name]: event.target.value,
             }
+
         })
+    }
 
     return (
         <div className="ingredients">
@@ -46,21 +49,20 @@ const IngredientFilter = ({ setSearchResults }) => {
                 return (
                     <div className="ingr-inputs">
                         <input
-                            id=""
                             key={index}
                             name={input}
                             type="text"
                             value={ingredients[input]}
                             onChange={handleIngredientsChange}
-                            placeholder={`ingredient ${index + 1}`}
-                            // {searchResults ? <RecipeResults /> : null}
+                            placeholder={`ingredient ${index + 1} `}
                         />
                     </div>
                 )
             })}
-            <button className="action-button" onClick={handleClick}>Recipe ideas</button>
+
         </div>
     )
+
 }
 
 export default IngredientFilter
