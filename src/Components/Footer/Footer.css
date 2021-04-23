@@ -17,6 +17,15 @@
     justify-content: center;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+}
+
 .social-medias a,
 a:hover,
 a:focus,
