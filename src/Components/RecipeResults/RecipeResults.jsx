@@ -5,6 +5,7 @@ import CalorieFilter from '../Filters/CalorieFilter'
 import AllergiesFilter from '../Filters/AllergiesFilter'
 import RecipeCards from '../RecipeCards/RecipeCards'
 import "./RecipeResults.css"
+import { Link } from "react-router-dom"
 
 const RecipeResults = ({ setSearchResults = [] }) => {
     const [searchUrl, setSearchUrl] = useState(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`);
@@ -19,7 +20,6 @@ const RecipeResults = ({ setSearchResults = [] }) => {
                 setSearchResults(data.hits)
             })
     }
-
     return (
         <div className="filterContainer">
             <div className="RecipeResults">
@@ -28,7 +28,9 @@ const RecipeResults = ({ setSearchResults = [] }) => {
                 <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
             </div>
             <div>
-                <button className="action-button" onClick={handleClick}>Get recipes</button>
+                <Link to='/recipes'>
+                    <button className="action-button" onClick={handleClick}>Get recipes</button>
+                </Link>
             </div>
         </div>
     );

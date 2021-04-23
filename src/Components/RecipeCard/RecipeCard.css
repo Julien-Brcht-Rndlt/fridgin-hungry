@@ -1,15 +1,22 @@
 .recipe-card {
+    padding: 1em;
+    margin: 1em;
+    background: rgb(240, 235, 235);
+    width: 35rem;
+    height: 60rem;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    border-radius: 2%;
 }
 
 .label {
     font-size: 2.5rem;
+    text-align: center;
 }
 
 .ingredientsLines {
     font-size: 1.5rem;
+    text-align: justify;
 }

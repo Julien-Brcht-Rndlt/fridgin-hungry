@@ -18,7 +18,7 @@ const AppRouter = ({ searchResults, setSearchResults}) => {
                     <Home searchResults={searchResults} setSearchResults={setSearchResults}/>
                 </Route>
                 <Route path='/recipes'>
-                    <RecipeCards searchResults={[]}/>
+                    <RecipeCards searchResults={searchResults}/>
                 </Route>
                 <Route path='/recipes/:id' render={(props) => (<RecipeCards {...props} searchResults={[]} />)} />
                 <Route path='/contact'>

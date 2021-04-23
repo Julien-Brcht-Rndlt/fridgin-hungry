@@ -1,4 +1,11 @@
 
+.filterContainer {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .RecipeResults {
     width: 100%;
     display: flex;
