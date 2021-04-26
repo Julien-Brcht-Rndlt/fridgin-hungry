@@ -1,13 +1,18 @@
 .top-container {
-    height: 35rem;
+    background: url('./veggies.jpg') no-repeat no-repeat;
+    background-size: cover;
+    height: 45rem;
     width: 100%;
+    animation: swapDiapo;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
 }
 
-.top-container img {
+/*.top-container img {
     padding: 10rem;
     padding-top: 5rem;
     padding-bottom: 0;
-}
+}*/
 
 .start-container {
     height: 60rem;
@@ -77,4 +82,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes swapDiapo {
+    0% {
+        background-image: url('./veggies.jpg');
+    }
+
+    25% {
+        background-image: url('./cooking-2.jpg');
+    }
+
+    75% {
+        background-image: url('./cooking-4.jpg');
+    }
+
+    85% {
+        background-image: url('./cooking-3.jpg');
+    }
+
+    100% {
+        background-image: url('./veggies.jpg');
+    }
 }
