@@ -76,7 +76,8 @@
 .bottom-container {
     display: flex;
     justify-content: space-around;
-    height: 50rem;
+    align-items: baseline;
+    height: 45rem;
     width: 100%;
 }
 
@@ -89,4 +90,9 @@
     max-height: 100%;
     max-width: 100%;
     padding: 1.5rem;
+}
+
+
+.img-first-child {
+    margin-bottom: 5rem;
 }

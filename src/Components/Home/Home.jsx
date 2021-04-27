@@ -40,7 +40,7 @@ const Home = ({ searchResults, setSearchResults }) => {
         </div>
         <div className="bottom-container whitesmoke-bg">
             <div>
-                <img src={imageSrc[2]} alt={'1st meal sample'} />
+                <img src={imageSrc[2]} alt={'1st meal sample'} className="img-first-child" />
             </div>
             <div>
                 <img src={imageSrc[3]} alt={'2nd meal sample'} />
