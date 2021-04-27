@@ -7,8 +7,8 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
 
         <div className='recipe-card-detail'>
             <div className='headSection'>
-                <h2 className='label'>{label}</h2>
-                <img src={image} alt={label} className='recipeImage' />
+                <h2 className='labelDetail'>{label}</h2>
+                <img src={image} alt={label} className='recipeImageDetail' />
             </div>
             <div className='quickInfos'>
                 <p>Servings: {servings} </p>

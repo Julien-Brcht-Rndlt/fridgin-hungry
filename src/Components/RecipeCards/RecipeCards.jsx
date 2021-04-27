@@ -44,7 +44,9 @@ const RecipeCards = ({ match, searchResults }) => {
                         key={index}
                         label={card.recipe.label}
                         image={card.recipe.image}
-                        ingredients={card.recipe.ingredientLines}
+                        servings={card.recipe.yield}
+                        totalTime={card.recipe.totalTime}
+                        dietLabel={card.recipe.dietLabels}
                     /></Link>
                     )}
                 
