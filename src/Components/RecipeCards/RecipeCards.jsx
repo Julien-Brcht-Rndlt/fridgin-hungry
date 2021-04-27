@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import "./RecipeCards.css"
 
 const RecipeCards = ({ searchResults = [], id }) => {
-    console.log(searchResults)
+
     return (
         <div>
             <div>
