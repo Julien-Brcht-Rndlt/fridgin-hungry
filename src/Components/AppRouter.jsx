@@ -1,6 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Footer from './Footer/Footer'
 import Header from './Header/Header'
 import Home from './Home/Home'
@@ -15,7 +14,7 @@ const AppRouter = ({ searchResults, setSearchResults}) => {
             <Header />
             <Switch>
                 <Route exact path='/'>
-                    <Home searchResults={searchResults} setSearchResults={setSearchResults}/>
+                    <Home setSearchResults={setSearchResults}/>
                 </Route>
                 <Route path='/recipes'>
                     <RecipeCards searchResults={searchResults}/>
@@ -28,7 +27,7 @@ const AppRouter = ({ searchResults, setSearchResults}) => {
             <Footer />
         </Router>
         </>
-    );
+    )
 }
 
-export default AppRouter;
+export default AppRouter
