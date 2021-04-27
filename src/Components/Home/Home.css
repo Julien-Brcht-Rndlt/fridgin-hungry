@@ -4,16 +4,10 @@
     height: 45rem;
     width: 100%;
     animation: swapDiapo;
-    animation-duration: 60s;
-    animation-delay: 15s;
+    animation-duration: 45s;
+    animation-delay: 25s;
     animation-iteration-count: infinite;
 }
-
-/*.top-container img {
-    padding: 10rem;
-    padding-top: 5rem;
-    padding-bottom: 0;
-}*/
 
 .start-container {
     height: 60rem;
@@ -35,7 +29,6 @@
     padding: 10rem;
 
     justify-content: space-between;
-    /* box-shadow: 0 0 10px #555; */
     color: rgb(55, 55, 55);
 }
 
@@ -103,7 +96,6 @@
     }
 
     100% {
-        /* background-image: url('./cooking-1.jpg'); */
         background-image: url('./cooking-5.jpg');
     }
 }
