@@ -11,22 +11,22 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
                 <img src={image} alt={label} className='recipeImage' />
             </div>
             <div className='quickInfos'>
-                <span>Servings: {servings} </span>
-                <span>Total time: {totalTime}</span>
-                <span>Calories: {calories}</span>
+                <p>Servings: {servings} </p>
+                <p>Total time: {totalTime}</p>
+                <p>Calories: {calories}</p>
             </div>
             <div className='dietInfos'>
-                <span>Health Labels: {allergyFilter}</span>
-                <span>Diet Label: {dietLabel}</span>
+                <p>Health Labels: {allergyFilter}</p>
+                <p>Diet Label: {dietLabel}</p>
             </div>
             <div className='nutritionInfos'>
-                <span>Cholesterol: {cholesterol}</span>
-                <span>Sodium: {sodium}mg</span>
-                <span>Fiber: {fiber}g</span>
-                <span>Sugar: {sugar}g</span>
-                <span>Carbs: {carbs}g</span>
-                <span>Fat: {fat}g</span>
-                <span>Saturated fat: {saturatedFat}g</span>
+                <p>Cholesterol: {cholesterol}mg</p>
+                <p>Sodium: {sodium}mg</p>
+                <p>Fiber: {fiber}g</p>
+                <p>Sugar: {sugar}g</p>
+                <p>Carbs: {carbs}g</p>
+                <p>Fat: {fat}g</p>
+                <p>Saturated fat: {saturatedFat}g</p>
             </div>
             <p className='ingredientsLines'>{ingredients}</p>
         </div>

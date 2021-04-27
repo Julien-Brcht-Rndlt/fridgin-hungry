@@ -33,6 +33,12 @@ const RecipeCards = ({ match, searchResults }) => {
                         allergyFilter={card.recipe.healthLabels}
                         dietLabel={card.recipe.dietLabels}
                         cholesterol={card.recipe.totalNutrients.CHOLE.quantity}
+                        sodium={card.recipe.totalNutrients.NA.quantity}
+                        fiber={card.recipe.totalNutrients.FIBTG.quantity}
+                        Sugar={card.recipe.totalNutrients.SUGAR.quantity}
+                        carbs={card.recipe.totalNutrients.CHOCDF.quantity}
+                        fat={card.recipe.totalNutrients.FAT.quantity}
+                        saturatedFat={card.recipe.totalNutrients.FASAT.quantity}
                         ingredients={card.recipe.ingredientLines} /> 
                     : <Link to={`/recipes/${index}`}><RecipeCard
                         key={index}
