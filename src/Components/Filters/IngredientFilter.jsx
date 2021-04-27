@@ -20,16 +20,17 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
         'ingredient4', //input4
     ])
 
+    // function to dynamically update/refresh url
     const makeUrlPart = (url) => {
 
-        const startIndex = url.indexOf('q=');
-        let endOfIngredients = url.substr(startIndex, url.length).indexOf('&');
-        endOfIngredients = endOfIngredients > -1 ? endOfIngredients : url.length;
-        const urlPart = url.substr(startIndex, endOfIngredients);
+        const startIndex = url.indexOf('q=')
+        let endOfIngredients = url.substr(startIndex, url.length).indexOf('&')
+        endOfIngredients = endOfIngredients > -1 ? endOfIngredients : url.length
+        const urlPart = url.substr(startIndex, endOfIngredients)
 
-        url = url.replace(urlPart, `q=${Object.values(ingredients).filter((ingredient) => ingredient.trim().length > 0).join(', ')}`);
+        url = url.replace(urlPart, `q=${Object.values(ingredients).filter((ingredient) => ingredient.trim().length > 0).join(', ')}`)
 
-        return url;
+        return url
     }
 
     const handleIngredientsChange = (event) => {
@@ -38,7 +39,6 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
                 ...prevState,
                 [event.target.name]: event.target.value,
             }
-
         })
     }
 
@@ -59,10 +59,8 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
                     </div>
                 )
             })}
-
         </div>
     )
-
 }
 
 export default IngredientFilter
