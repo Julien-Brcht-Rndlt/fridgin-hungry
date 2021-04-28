@@ -8,13 +8,13 @@ const Home = ({ setSearchResults }) => {
     const imageSrc = ['/meal-1.png', '/meal-2.png', '/meal-3.png']
 
     return (
-    <div className="home  flex-col-container">
-        <div className="top-container">
+    <div className='home flex-col-container'>
+        <div className='top-container'>
         </div>
         <div className='whitesmoke-bg start-container'>
             <HashLink to='#filters' scroll={(element) => element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})}>
                 <div className='empty-fridge flex-col-container'>
-                    <h2>Empty you Fridge!</h2>
+                    <h2>Empty your Fridge!</h2>
                     <div className='description flex-col-container'>
                         <p>Great recipe ideas</p>
                         <p>Zero Waste</p>

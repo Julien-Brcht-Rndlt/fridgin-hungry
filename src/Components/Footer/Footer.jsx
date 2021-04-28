@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <div className='terms'>
-            <p>Terms and Conditions</p>
+            <p>Fridgin' Hungry! © 2021</p>
             </div>
             <div className='social-medias'>
                 <div>
@@ -24,7 +24,7 @@ const Footer = () => {
                     </div>
             </div>
             <div className='contact'>
-            <p><Link to='/contact' style={{ textDecoration: 'none' }}>Contact us</Link></p>
+            <p><Link to='/contact' style={{ textDecoration: 'none' }}>About us</Link></p>
             </div> 
         </div>
     )

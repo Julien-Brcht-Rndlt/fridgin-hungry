@@ -39,6 +39,7 @@
     height: 29rem;
     padding: 10rem;
     justify-content: space-between;
+    margin-top: 6rem;
     color: rgb(55, 55, 55);
 }
 
@@ -122,4 +123,38 @@
 
 .img-first-child {
     margin-bottom: 5rem;
+}
+
+
+@media (max-width: 768px) and (min-width: 568px){
+    .empty-fridge {
+        padding: 7rem;
+        margin-top: 8rem;
+    }
+    .filters-container {
+        height: 120rem;
+    }
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .empty-fridge {
+        padding: 4rem;
+        margin-top: 8rem;
+    }
+
+    .filters-container {
+        height: 120rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .empty-fridge {
+        padding: 1rem;
+        margin-top: 8rem;
+    }
+
+    .filters-container {
+        height: 140rem;
+    }
 }
