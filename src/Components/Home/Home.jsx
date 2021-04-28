@@ -3,6 +3,7 @@ import { HashLink } from 'react-router-hash-link'
 import './Home.css'
 import RecipeResults from '../RecipeResults/RecipeResults'
 import SwingAnim from './SwingAnim'
+import TestComp from './TestComp'
 
 const Home = ({ setSearchResults }) => {
 
@@ -13,8 +14,9 @@ const Home = ({ setSearchResults }) => {
         <div className="top-container">
         </div>
         <div className='whitesmoke-bg start-container'>
+          {/*    <SwingAnim rotation={5} timing={150}> */}
+            <SwingAnim x={0} y={0} rotation={0} scale={1.1} timing={150}>
                 <HashLink to='#filters' scroll={(element) => element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})}>
-                    <SwingAnim rotation={30} timing={200}>
                     <div className='empty-fridge flex-col-container'>
                         <h2>Empty you Fridge!</h2>
                         <div className='description flex-col-container'>
@@ -23,8 +25,8 @@ const Home = ({ setSearchResults }) => {
                             <p>100% Tasty</p>
                         </div> 
                     </div>
-                    </SwingAnim>
                 </HashLink>
+            </SwingAnim>
         </div>
              
         <div id="filters" className="filters-container beige-bg">
