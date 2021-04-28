@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import './Home.css'
 import RecipeResults from '../RecipeResults/RecipeResults'
+import Carousel from './Carousel'
 
 const Home = ({ setSearchResults }) => {
 
@@ -9,8 +10,9 @@ const Home = ({ setSearchResults }) => {
 
     return (
     <div className="home  flex-col-container">
-        <div className="top-container">
-        </div>
+
+        <Carousel duration={25} delay={15} isInfinite={true} />
+
         <div className='whitesmoke-bg start-container'>
             <HashLink to='#filters' scroll={(element) => element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})}>
                 <div className='empty-fridge flex-col-container'>
