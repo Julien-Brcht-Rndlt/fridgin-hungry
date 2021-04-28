@@ -16,15 +16,17 @@ html {
     padding: 2rem 6rem;
     border: 3px solid rgb(55, 55, 55);
     border-radius: 1.5rem;
-    background-color: #e4f0d8; /* rgb(240, 235, 230); */
+    background-color: #e4f0d8;
 }
 
 .action-button {
     font-size: 2rem;
     font-weight: bold;
     color: white;
-    background-color: rgb(55, 55, 55); /* #e4f0d8; */ /* rgb(240, 235, 235); */
+    background-color: rgb(55, 55, 55);
     border: 3px solid rgb(55, 55, 55);
     border-radius: 1rem;
     padding: 1.5rem;
+    margin-top: 30%;
+    box-shadow: 0px 8px 24px 1px rgb(55, 55, 55);
 }

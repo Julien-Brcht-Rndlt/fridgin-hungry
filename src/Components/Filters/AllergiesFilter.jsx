@@ -1,51 +1,47 @@
-import React from 'react';
-import { useState } from 'react';
-import "./AllergiesFilter.css";
+import React from 'react'
+import { useState } from 'react'
+import './AllergiesFilter.css'
 
 const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
 
   const initialAllergies = [
-    { label: "Vegetarian", value: "vegetarian", selected: false },
-    { label: "Vegan", value: "vegan", selected: false },
-    { label: "Pork-free", value: "pork-free", selected: false },
-    { label: "Gluten-free", value: "gluten-free", selected: false },
-    { label: "Sugar-free", value: "low-sugar", selected: false },
-    { label: "Peanut-free", value: "peanut-free", selected: false },
+    { label: 'Vegetarian', value: 'vegetarian', selected: false },
+    { label: 'Vegan', value: 'vegan', selected: false },
+    { label: 'Pork-free', value: 'pork-free', selected: false },
+    { label: 'Gluten-free', value: 'gluten-free', selected: false },
+    { label: 'Sugar-free', value: 'low-sugar', selected: false },
+    { label: 'Peanut-free', value: 'peanut-free', selected: false },
   ]
 
-  const [allergies, setAllergies] = useState(initialAllergies);
-
+  const [allergies, setAllergies] = useState(initialAllergies)
 
   const handleClickAllergy = (e) => {
 
-
-    const allergyValue = e.target.value;
+    const allergyValue = e.target.value
 
     const checkedAllergy = allergies.find(allergy => {
-      if (allergy.value === allergyValue) return true;
-      else return false;
-    });
-    checkedAllergy.selected = !checkedAllergy.selected;
-
+      if (allergy.value === allergyValue) return true
+      else return false
+    })
+    checkedAllergy.selected = !checkedAllergy.selected
+    
+    // dynamic refresh of the search url used for the filters.
     searchUrl = searchUrl.includes(`&health=${allergyValue}`) ? searchUrl.replace(`&health=${allergyValue}`, '') : `${searchUrl}&health=${allergyValue}`
 
-    setSearchUrl(searchUrl);
-    console.log(searchUrl);
+    setSearchUrl(searchUrl)
 
     setAllergies([...allergies])
-
   }
-
-  // "&health=vegan&health=sugar"
-
+  
   return (
-    <section>
+   
+       <div className='allergyFilter'>
+      <h3>Health</h3>
       { allergies.map(allergy => {
-        //   console.log(allergy);
         return (
-          <div>
-            <input type="checkbox"
-              name="health"
+             <div className='allergies'>
+            <input type='checkbox'
+              name='health'
               value={allergy.value}
               checked={allergy.selected}
               onClick={handleClickAllergy} />
@@ -53,13 +49,13 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
             <label htmlFor={allergy.value}>
               {allergy.label}
             </label>
-
-          </div>
-        );
+           </div>    
+        )
       })
       }
-    </section>
-  );
-};
+      </div>
+   
+  )
+}
 
-export default AllergiesFilter;
+export default AllergiesFilter

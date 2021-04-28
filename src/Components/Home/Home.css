@@ -1,3 +1,11 @@
+
+.flex-col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .top-container {
     background: url('./veggies.jpg') no-repeat no-repeat;
     background-size: cover;
@@ -10,8 +18,12 @@
 }
 
 .start-container {
+    display: flex;
+    justify-content: center;
     height: 60rem;
     width: 100%;
+    animation-name: slideEmptyFridge;
+    animation-duration: 2s;
 }
 
 .whitesmoke-bg {
@@ -24,10 +36,8 @@
     background-image: url('./noun_Plate_3498787.svg');
     background-size: cover;
     width: 32rem;
-    height: 32rem;
-    margin: auto;
+    height: 29rem;
     padding: 10rem;
-
     justify-content: space-between;
     color: rgb(55, 55, 55);
 }
@@ -35,12 +45,13 @@
 .empty-fridge h2 {
     font-size: 3.7rem;
     margin-bottom: 4rem;
+    text-align: right;
+    width: 35rem;
 }
 
 .description {
     font-weight: bold;
     font-size: 2.3rem;
-    margin: 0 auto;
     color: rgb(55, 55, 55);
 }
 
@@ -56,20 +67,29 @@
 }
 
 .filters-container {
-    height: 50rem;
+    height: 60rem;
     width: 100%;
 }
 
 .bottom-container {
-    height: 50rem;
-    width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: baseline;
+    height: 45rem;
+    width: 100%;
+}
+
+.bottom-container div {
+    height: 40rem;
+    width: 40rem;
 }
 
 .bottom-container img {
-    padding: 10rem;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
 }
+
 
 .flex-col-container {
     display: flex;
@@ -98,4 +118,8 @@
     100% {
         background-image: url('./cooking-5.jpg');
     }
+}
+
+.img-first-child {
+    margin-bottom: 5rem;
 }
