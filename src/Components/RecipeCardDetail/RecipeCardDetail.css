@@ -1,29 +1,91 @@
 .recipe-card-detail {
-    padding: 1em;
-    margin: 1em;
-    background: rgb(240, 235, 235);
+    padding: 2rem;
+    margin: 2rem;
+    background-color: rgb(55, 55, 55);
+    border-radius: 30px;
     width: 90%;
-    height: 70rem;
+    height: 42rem;
     display: flex;
+    flex-flow: wrap;
     justify-content: space-around;
     align-items: center;
-    flex-flow: column wrap;
-    border-radius: 2%;
 }
 
 .headSection {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: space-evenly;
+    width: 20%;
+    height: auto;
+
+}
+
+.labelDetail {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    color: whitesmoke;
+}
+
+.recipeImageDetail {
+    border-radius: 15px;
+}
+
+.quickInfos {
+    display: flex;
+    flex-flow: column wrap;
+    width: 10%;
+    height: auto;
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.dietInfos {
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    height: auto;
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.nutritionInfos {
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    height: auto;
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.ingredientsLines {
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    height: auto;
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.recipe-icon {
+    color: greenyellow;
+}
+
+/* .headSection {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-flow: column wrap;
-    width: 50%;
+    padding-left: 5rem;
 }
 
 
 .labelDetail {
     font-size: 2.5rem;
     text-align: center;
-    flex: 3;
+    margin-bottom: 2rem;
 }
 
 .quickInfos, .dietInfos, .nutritionInfos {
@@ -33,6 +95,7 @@
 .quickInfos, .nutritionInfos {
     border: 1px solid black;
     border-radius: 3%;
+    background-color: whitesmoke;
 }
 
 .dietInfos, .ingredientsLines {
@@ -42,4 +105,4 @@
     width: 60%;
     justify-content: center;
     align-items: center;
-}
+} */

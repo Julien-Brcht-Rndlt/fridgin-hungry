@@ -3,6 +3,7 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link,  useParams } from 'react-router-dom'
 import "./RecipeCards.css"
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
+import CardAnim from './CardAnim'
 
 const RecipeCards = ({ match, searchResults }) => {
 
@@ -14,9 +15,9 @@ const RecipeCards = ({ match, searchResults }) => {
 
     return (
         <div>
-            <div>
+            {/* <div>
                 <Link to='/'><button className="nav-button">Back</button></Link>
-            </div>
+            </div> */}
             <div className="recipe-cards">
                 {searchResults.map((card, index) => {
 
@@ -24,7 +25,7 @@ const RecipeCards = ({ match, searchResults }) => {
 
                     return (
                     (id !== undefined && id === index) 
-                    ? <RecipeCardDetail 
+                    ?<RecipeCardDetail 
                         label={card.recipe.label}
                         image={card.recipe.image}
                         servings={card.recipe.yield}
@@ -40,14 +41,18 @@ const RecipeCards = ({ match, searchResults }) => {
                         fat={card.recipe.totalNutrients.FAT.quantity}
                         saturatedFat={card.recipe.totalNutrients.FASAT.quantity}
                         ingredients={card.recipe.ingredientLines} /> 
-                    : <Link to={`/recipes/${index}`}><RecipeCard
-                        key={index}
-                        label={card.recipe.label}
-                        image={card.recipe.image}
-                        servings={card.recipe.yield}
-                        totalTime={card.recipe.totalTime}
-                        dietLabel={card.recipe.dietLabels}
-                    /></Link>
+                    : <Link to={`/recipes/${index}`}>
+                        <CardAnim rotation={5} timing={150}>
+                            <RecipeCard
+                            key={index}
+                            label={card.recipe.label}
+                            image={card.recipe.image}
+                            servings={card.recipe.yield}
+                            totalTime={card.recipe.totalTime}
+                            dietLabel={card.recipe.dietLabels}
+                            />
+                        </CardAnim>
+                    </Link>
                     )}
                 
                 )}
