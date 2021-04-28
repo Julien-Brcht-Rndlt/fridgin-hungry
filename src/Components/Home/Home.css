@@ -21,33 +21,6 @@
     width: 100%;
 }
 
-.empty-fridge {
-    background-image: url('./noun_Plate_3498787.svg');
-    background-size: cover;
-    width: 32rem;
-    height: 29rem;
-    padding: 10rem;
-    justify-content: space-between;
-    color: rgb(55, 55, 55);
-}
-
-.empty-fridge h2 {
-    font-size: 3.7rem;
-    margin-bottom: 4rem;
-    text-align: right;
-    width: 35rem;
-}
-
-.description {
-    font-weight: bold;
-    font-size: 2.3rem;
-    color: rgb(55, 55, 55);
-}
-
-.description-text p {
-    padding: 0.5rem;
-}
-
 .beige-bg {
     background-color: rgb(240, 235, 230);
     width: 100%;
@@ -60,33 +33,9 @@
     width: 100%;
 }
 
-.bottom-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    height: 45rem;
-    width: 100%;
-}
-
-.bottom-container div {
-    height: 40rem;
-    width: 40rem;
-}
-
-.bottom-container img {
-    max-height: 100%;
-    max-width: 100%;
-    padding: 1.5rem;
-}
-
-
 .flex-col-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.img-first-child {
-    margin-bottom: 5rem;
 }
