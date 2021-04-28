@@ -38,3 +38,16 @@ a:active {
 .social-icon {
     font-size: 3rem;
 }
+
+
+@media (max-width: 567px) {
+    .footer {
+      flex-direction: column;
+      padding: 5px;
+      height: 8rem;
+    }
+
+    p {
+        padding: 5px;
+    }
+}

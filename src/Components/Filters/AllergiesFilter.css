@@ -25,3 +25,23 @@ input[type='checkbox']:checked {
     font-size: medium;
   }
 
+  .allergyFilter h3 {
+    color: rgb(55, 55, 55);
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.allergyFilter {
+  border: 2px solid rgb(55, 55, 55);
+  padding: 2rem;
+  border-radius: 30px;
+  padding: 3%;
+  width: 15%;
+  box-shadow: 0px 8px 24px 1px rgb(55, 55, 55);
+}
+
+.allergies {
+  padding-bottom: inherit;
+}
+

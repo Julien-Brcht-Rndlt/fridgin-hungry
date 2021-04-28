@@ -34,10 +34,12 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
   }
   
   return (
-    <section>
+   
+       <div className='allergyFilter'>
+      <h3>Health</h3>
       { allergies.map(allergy => {
         return (
-          <div>
+             <div className='allergies'>
             <input type='checkbox'
               name='health'
               value={allergy.value}
@@ -47,11 +49,12 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
             <label htmlFor={allergy.value}>
               {allergy.label}
             </label>
-          </div>
+           </div>    
         )
       })
       }
-    </section>
+      </div>
+   
   )
 }
 
