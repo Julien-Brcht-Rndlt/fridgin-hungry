@@ -49,18 +49,20 @@ svg {
 @media (max-width: 567px) {
     .header {
        flex-direction: column;
-       height: 22rem;
+       height: 25rem;
     }
 
     .header h1 {
-        font-size: 3.5rem;
-        padding-bottom: 0
+        font-size: 4rem;
+        padding-bottom: 0.5rem;
+        -webkit-text-stroke: 0.5px rgb(196, 192, 192);
     }
 
     .header h2 {
-        display: none;
+        font-size: 1.4rem;
     }
 
+    
     .header a {
         padding: 0;
     }
