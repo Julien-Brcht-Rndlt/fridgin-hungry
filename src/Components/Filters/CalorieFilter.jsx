@@ -82,6 +82,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
     return (
         <div className='calorieFilter'>
+            <h3>Macros</h3>
             <div>
                 <Typography
                     align='center'
