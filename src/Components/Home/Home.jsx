@@ -5,7 +5,7 @@ import RecipeResults from '../RecipeResults/RecipeResults'
 
 const Home = ({ setSearchResults }) => {
 
-    const imageSrc = ['/salad-meal-1.jpg', '/salad-meal-2.png']
+    const imageSrc = ['/meal-1.png', '/meal-2.png', '/meal-3.png']
 
     return (
     <div className="home  flex-col-container">
@@ -29,13 +29,13 @@ const Home = ({ setSearchResults }) => {
         </div>
         <div className="bottom-container whitesmoke-bg">
             <div>
-                <img src={imageSrc[2]} alt={'1st meal sample'} className="img-first-child" />
+                <img src={imageSrc[0]} alt={'1st meal sample'} className="img-first-child" />
             </div>
             <div>
-                <img src={imageSrc[3]} alt={'2nd meal sample'} />
+                <img src={imageSrc[1]} alt={'2nd meal sample'} />
             </div>
             <div>
-                <img src={imageSrc[1]} alt={'3th meal sample'} />
+                <img src={imageSrc[2]} alt={'3th meal sample'} />
             </div>
             
         </div>
