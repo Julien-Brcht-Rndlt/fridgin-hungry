@@ -4,15 +4,14 @@ import { Link } from 'react-router-dom'
 
 const Header = () => (
     <div className='header'>
-        <div>
             <Link to='/'><svg
                 version='1.2'
                 baseProfile='tiny'
                 id='Calque_1'
                 x='0px'
                 y='0px'
-                width='960px'
-                height='560px'
+                width='300px'
+                height='200px'
                 viewBox='0 0 960 560'
             >
                 <metadata>
@@ -289,8 +288,7 @@ const Header = () => (
                 </g>
             </svg>
             </Link>
-        </div>
-        <div>
+        <div className='headerTitle'>
             <h1>Fridgin Hungry!</h1>
             <h2>'Empty your fridge, fuel your body'</h2>
         </div>
