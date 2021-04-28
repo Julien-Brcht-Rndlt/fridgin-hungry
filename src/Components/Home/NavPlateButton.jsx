@@ -1,12 +1,11 @@
 import React from 'react'
 import { HashLink } from 'react-router-hash-link'
+import './NavPlateButton.css'
 
 const NavPlateButton = ({ title, sentences, target }) => {
 
 
     const style = {
-        backgroundImage: 'url("./noun_Plate_3498787.svg")',
-        backgroundSize: 'cover',
         width: '32rem',
         height: '29rem',
         padding: '10rem',
@@ -37,7 +36,7 @@ const NavPlateButton = ({ title, sentences, target }) => {
 
     return (
         <HashLink to={`#${target}`} scroll={(element) => element.scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})}>
-            <div style={{ ...style, ...flexContainer}}>
+            <div className="nav-plate-button" style={{ ...style, ...flexContainer}}>
                 <h2 style={titleStyle}>{ title }</h2>
                 <div style={flexContainer}>
                 { sentences.map((sentence) => <p style={descStyle}>{sentence}</p>) }
