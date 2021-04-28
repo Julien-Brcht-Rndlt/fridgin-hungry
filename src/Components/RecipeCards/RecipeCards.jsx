@@ -20,9 +20,7 @@ const RecipeCards = ({ match, searchResults }) => {
             </div> */}
             <div className="recipe-cards">
                 {searchResults.map((card, index) => {
-
                     console.log("here: " + id)
-
                     return (
                     (id !== undefined && id === index) 
                     ?<RecipeCardDetail 
