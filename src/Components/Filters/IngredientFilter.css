@@ -38,7 +38,7 @@
 @media (max-width: 567px) and (min-width: 320px) {
     .ingredients {
         margin-bottom: 4rem;
-        width: 40%;
+        width: 50%;
         height: 240px;
     }
 
@@ -56,7 +56,7 @@
 @media (max-width: 319px) {
     .ingredients {
         margin-bottom: 4rem;
-        width: 40%;
+        width: 50%;
     }
 
     .ingr-inputs input[type='text'] {

@@ -7,7 +7,7 @@ import './CalorieFilter.css'
 const useStyles = makeStyles({
     root: {
         color: 'black',
-        width: '15rem',
+        width: '100%',
     },
     valueLabel: {
         fontSize: '1rem'

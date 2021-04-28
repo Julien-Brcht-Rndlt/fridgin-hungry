@@ -27,7 +27,7 @@
 @media (max-width: 567px) and (min-width: 320px) {
     .calorieFilter {
         margin-bottom: 4rem;
-        width: 40%;
+        width: 50%;
     }
     .calorieFilter h3 {
         font-size: 2rem;
@@ -41,7 +41,7 @@
 @media (max-width: 319px) {
     .calorieFilter {
         margin-bottom: 4rem;
-        width: 40%;
+        width: 50%;
     }
     .calorieFilter h3 {
     font-size: 1.5rem;
