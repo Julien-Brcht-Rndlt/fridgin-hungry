@@ -3,7 +3,6 @@ import { HashLink } from 'react-router-hash-link'
 import './Home.css'
 import RecipeResults from '../RecipeResults/RecipeResults'
 import SwingAnim from './SwingAnim'
-import TestComp from './TestComp'
 
 const Home = ({ setSearchResults }) => {
 
