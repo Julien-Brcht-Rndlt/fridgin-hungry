@@ -13,7 +13,6 @@ const RecipeResults = ({ setSearchResults = [] }) => {
 
     // const finalUrl = urlIngredients
     const handleClick = () => {
-        console.log('filter1:' + searchUrl);
         axios
             .get(searchUrl)
             .then((response) => response.data)
@@ -21,9 +20,10 @@ const RecipeResults = ({ setSearchResults = [] }) => {
                 setSearchResults(data.hits)
             })
     }
+
     return (
         <div className="filterContainer">
-            <div className="RecipeResults">
+            <div className="recipeResults">
                 
                 <FilterDisplay title={'Ingredients'}>
                     <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
