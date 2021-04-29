@@ -45,3 +45,30 @@ input[type='checkbox']:checked {
   padding-bottom: inherit;
 }
 
+@media (max-width: 768px) and (min-width: 568px){
+  .allergyFilter {
+      margin-bottom: 2rem;
+      width: 40%;
+  }
+}
+  
+
+@media (max-width: 567px) and (min-width: 320px) {
+  .allergyFilter {
+      margin-bottom: 2rem;
+      width: 50%;
+  }
+  .allergyFilter h3 {
+    font-size: 2rem;
+    }
+}
+
+@media (max-width: 319px) {
+  .allergyFilter {
+      margin-bottom: 2rem;
+      width: 50%;
+  }
+  .allergyFilter h3 {
+    font-size: 1.5rem;
+    }
+}
