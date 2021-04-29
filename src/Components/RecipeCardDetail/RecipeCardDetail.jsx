@@ -2,7 +2,7 @@ import React from 'react'
 import './RecipeCardDetail.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, dietLabel, sodium, cholesterol, fiber, sugar, fat, saturatedFat, carbs, calories, allergyFilter, url }) => {
+const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, dietLabel, sodium, cholesterol, fiber, sugar, fat, saturatedFat, carbs, calories, proteins, allergyFilter, url }) => {
     
     return (
 
@@ -25,6 +25,7 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Fiber: {fiber}g</p>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Sugar: {sugar}g</p>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Carbs: {carbs}g</p>
+                <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Proteins: {proteins}g</p>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Fat: {fat}g</p>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Saturated fat: {saturatedFat}g</p>
             </div>
