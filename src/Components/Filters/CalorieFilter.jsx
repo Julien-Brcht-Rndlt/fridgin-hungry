@@ -82,7 +82,6 @@ const CalorieFilter = ({ searchUrl, setSearchUrl, children }) => {
 
     return (
         <div className='calorieFilter'>
-            <h3>{children}</h3>
             <div>
                 <Typography
                     align='center'

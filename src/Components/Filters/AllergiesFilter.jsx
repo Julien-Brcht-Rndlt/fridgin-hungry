@@ -36,7 +36,6 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
   return (
    
        <div className='allergyFilter'>
-      <h3>{children}</h3>
       { allergies.map(allergy => {
         return (
              <div className='allergies'>

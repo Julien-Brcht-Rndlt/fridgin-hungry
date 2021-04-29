@@ -44,7 +44,7 @@ const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
 
     return (
         <div className="ingredients">
-            <h3>{children}</h3>
+            
             {inputs.map((input, index) => {
                 return (
                     <div className="ingr-inputs">

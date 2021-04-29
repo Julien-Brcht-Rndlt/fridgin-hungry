@@ -3,6 +3,7 @@ import axios from 'axios'
 import IngredientFilter from '../Filters/IngredientFilter'
 import CalorieFilter from '../Filters/CalorieFilter'
 import AllergiesFilter from '../Filters/AllergiesFilter'
+import FilterDisplay from '../Filters/FilterDisplay'
 import RecipeCards from '../RecipeCards/RecipeCards'
 import "./RecipeResults.css"
 import { Link } from "react-router-dom"
@@ -23,9 +24,19 @@ const RecipeResults = ({ setSearchResults = [] }) => {
     return (
         <div className="filterContainer">
             <div className="RecipeResults">
-                <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Ingredients</IngredientFilter>
-                <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Macros</CalorieFilter>
-                <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Health</AllergiesFilter>
+                
+                <FilterDisplay title={'Ingredients'}>
+                    <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                </FilterDisplay>
+
+                <FilterDisplay title={'Macros'}>
+                <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                </FilterDisplay>
+
+                <FilterDisplay title={'Health'}>
+                <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                </FilterDisplay>
+
             </div>
             <div>
                 <Link to='/recipes'>
