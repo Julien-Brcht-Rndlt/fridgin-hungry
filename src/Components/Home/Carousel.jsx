@@ -15,8 +15,7 @@ const Carousel = ({ duration, delay, isInfinite }) => {
     }
 
     return (
-        <div className="top-container" style={style}>
-        </div>
+        <div className="top-container" style={style} />
     )
 
 }
