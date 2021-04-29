@@ -54,11 +54,6 @@
     }
 }
 
-.img-first-child {
-    margin-bottom: 5rem;
-}
-
-
 @media (max-width: 768px) and (min-width: 568px){
     .start-container {
         height: 53rem
