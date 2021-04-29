@@ -10,15 +10,13 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
             <div className='headSection'>
                 <h2 className='labelDetail'>{label}</h2>
                 <img src={image} alt={label} className='recipeImageDetail' />
-            </div>
-            <div className='quickInfos'>
                 <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /><span className='infoTitle'>  Servings:</span> {servings} </p>
                 <p><FontAwesomeIcon icon="stopwatch" className='recipe-icon' /> Total time: {totalTime}</p>
                 <p><FontAwesomeIcon icon="cubes" className='recipe-icon' /> Calories: {calories}</p>
-            </div>
-            <div className='dietInfos'>
-                <p><FontAwesomeIcon icon="check-double" className='recipe-icon' /> Health Labels: {allergyFilter}</p>
                 <p><FontAwesomeIcon icon="balance-scale" className='recipe-icon' /> Diet Label: {dietLabel}</p>
+            </div>
+            <div className='ingredientsLines'>
+            <p><FontAwesomeIcon icon="shopping-basket" className='recipe-icon' />{ingredients}</p>
             </div>
             <div className='nutritionInfos'>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Cholesterol: {cholesterol}mg</p>
@@ -29,7 +27,10 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Fat: {fat}g</p>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Saturated fat: {saturatedFat}g</p>
             </div>
-            <p className='ingredientsLines'><FontAwesomeIcon icon="shopping-basket" className='recipe-icon' />{ingredients}</p>
+            <div className='healthInfos'>
+                <p><FontAwesomeIcon icon="check-double" className='recipe-icon' /> Health Labels: {allergyFilter}</p>
+                
+            </div>
         </div>
     )
 }

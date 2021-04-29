@@ -28,17 +28,17 @@ const RecipeCards = ({ match, searchResults }) => {
                         image={card.recipe.image}
                         servings={card.recipe.yield}
                         totalTime={card.recipe.totalTime}
-                        calories={(card.recipe.calories)}
-                        allergyFilter={card.recipe.healthLabels}
+                        calories={(card.recipe.calories).toFixed(2)}
+                        allergyFilter={(card.recipe.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
                         dietLabel={card.recipe.dietLabels}
-                        cholesterol={card.recipe.totalNutrients.CHOLE.quantity}
-                        sodium={card.recipe.totalNutrients.NA.quantity}
-                        fiber={card.recipe.totalNutrients.FIBTG.quantity}
-                        Sugar={card.recipe.totalNutrients.SUGAR.quantity}
-                        carbs={card.recipe.totalNutrients.CHOCDF.quantity}
-                        fat={card.recipe.totalNutrients.FAT.quantity}
-                        saturatedFat={card.recipe.totalNutrients.FASAT.quantity}
-                        ingredients={card.recipe.ingredientLines} /> 
+                        cholesterol={(card.recipe.totalNutrients.CHOLE.quantity).toFixed(2)}
+                        sodium={(card.recipe.totalNutrients.NA.quantity).toFixed(2)}
+                        fiber={(card.recipe.totalNutrients.FIBTG.quantity).toFixed(2)}
+                        Sugar={(card.recipe.totalNutrients.SUGAR.quantity).toFixed(2)}
+                        carbs={(card.recipe.totalNutrients.CHOCDF.quantity).toFixed(2)}
+                        fat={(card.recipe.totalNutrients.FAT.quantity).toFixed(2)}
+                        saturatedFat={(card.recipe.totalNutrients.FASAT.quantity).toFixed(2)}
+                        ingredients={(card.recipe.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} /> 
                     : <Link to={`/recipes/${index}`}>
                         <CardAnim rotation={5} timing={150}>
                             <RecipeCard
