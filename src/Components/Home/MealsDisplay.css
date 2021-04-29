@@ -1,17 +1,18 @@
-.img-first-child {
-    margin-bottom: 5rem;
-}
 
 .meals-display {
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     height: 45rem;
     width: 100%;
 }
 
+.img-first-child {
+    display: flex;
+    justify-content: center;
+}
+
 .meals-display div {
-    height: 40rem;
     width: 40rem;
 }
 
@@ -19,4 +20,25 @@
     max-height: 100%;
     max-width: 100%;
     padding: 1.5rem;
+}
+
+
+@media (max-width: 1300px) and (min-width: 768px){
+    .img-first-child {
+        display: none;
+    }
+}
+    
+
+@media (max-width: 769px) and (min-width: 320px) {
+    .img-first-child, .img-third-child {
+        display: none;
+    }
+
+}
+
+@media (max-width: 319px) {
+    .img-first-child, .img-third-child {
+        display: none;
+    }
 }
