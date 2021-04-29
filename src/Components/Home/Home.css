@@ -22,6 +22,34 @@
     width: 100%;
 }
 
+.empty-fridge {
+    background-image: url('./noun_Plate_3498787.svg');
+    background-size: cover;
+    width: 32rem;
+    height: 29rem;
+    padding: 10rem;
+    justify-content: space-between;
+    margin-top: 6rem;
+    color: rgb(55, 55, 55);
+}
+
+.empty-fridge h2 {
+    font-size: 3.7rem;
+    margin-bottom: 4rem;
+    text-align: right;
+    width: 35rem;
+}
+
+.description {
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: rgb(55, 55, 55);
+}
+
+.description-text p {
+    padding: 0.5rem;
+}
+
 .beige-bg {
     background-color: rgb(240, 235, 230);
     width: 100%;
@@ -39,4 +67,64 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@keyframes swapDiapo {
+    0% {
+        background-image: url('./veggies.jpg');
+    }
+
+    25% {
+        background-image: url('./cooking-2.jpg');
+    }
+
+    50% {
+        background-image: url('./cooking-4.jpg');
+    }
+
+    75% {
+        background-image: url('./cooking-3.jpg');
+    }
+
+    100% {
+        background-image: url('./cooking-5.jpg');
+    }
+}
+
+.img-first-child {
+    margin-bottom: 5rem;
+}
+
+
+@media (max-width: 768px) and (min-width: 568px){
+    .empty-fridge {
+        padding: 7rem;
+        margin-top: 8rem;
+    }
+    .filters-container {
+        height: 120rem;
+    }
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .empty-fridge {
+        padding: 4rem;
+        margin-top: 8rem;
+    }
+
+    .filters-container {
+        height: 120rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .empty-fridge {
+        padding: 1rem;
+        margin-top: 8rem;
+    }
+
+    .filters-container {
+        height: 120rem;
+    }
 }

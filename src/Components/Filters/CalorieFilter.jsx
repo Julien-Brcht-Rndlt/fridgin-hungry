@@ -7,7 +7,7 @@ import './CalorieFilter.css'
 const useStyles = makeStyles({
     root: {
         color: 'black',
-        width: '15rem',
+        width: '100%',
     },
     valueLabel: {
         fontSize: '1rem'
@@ -83,6 +83,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
     return (
         <div className='calorieFilter'>
             <h3>Macros</h3>
+            <div className='sliders'>
             <div>
                 <Typography
                     align='center'
@@ -100,8 +101,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                     value={searchCalories}
                     onChange={handleCaloriesSlider}                
                 />
-                
-            </div>
+             </div>
             <div>
                 <Typography
                     align='center'
@@ -152,6 +152,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                     value={searchFat}
                     onChange={handleFatSlider}
                 />
+            </div>
             </div>
         </div>
     )

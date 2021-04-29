@@ -10,7 +10,6 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
 }
 
 .recipeResults {
@@ -20,3 +19,25 @@
     align-content: center;
 }
 
+
+@media (max-width: 768px) and (min-width: 568px){
+    .RecipeResults {
+        flex-direction: column;
+        align-items: center;        
+    }
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .RecipeResults {
+        flex-direction: column;
+        align-items: center;
+     }
+}
+
+@media (max-width: 319px) {
+    .RecipeResults {
+        flex-direction: column;
+        align-items: center;
+      }
+}
