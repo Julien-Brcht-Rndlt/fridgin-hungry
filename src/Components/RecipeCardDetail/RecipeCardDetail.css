@@ -17,7 +17,7 @@
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    align-items: space-evenly;
+    align-items: flex-start;
     width: 20%;
     height: auto;
     font-size: 2.5rem;
@@ -37,13 +37,21 @@
     margin-bottom: 2rem;
 }
 
-.healthInfos {
+.ingredientsLines {
     display: flex;
     flex-flow: column wrap;
     width: 20%;
     height: auto;
     font-size: 2.2rem;
     color: whitesmoke;
+}
+
+.directions {
+    color: greenyellow;
+}
+
+.directions:hover{
+    text-decoration: underline;
 }
 
 .nutritionInfos {
@@ -55,7 +63,7 @@
     color: whitesmoke;
 }
 
-.ingredientsLines {
+.healthInfos {
     display: flex;
     flex-flow: column wrap;
     width: 20%;

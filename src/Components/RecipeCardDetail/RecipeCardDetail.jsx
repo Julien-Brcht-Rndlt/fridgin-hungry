@@ -2,7 +2,7 @@ import React from 'react'
 import './RecipeCardDetail.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, dietLabel, sodium, cholesterol, fiber, sugar, fat, saturatedFat, carbs, calories, allergyFilter }) => {
+const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, dietLabel, sodium, cholesterol, fiber, sugar, fat, saturatedFat, carbs, calories, allergyFilter, url }) => {
     
     return (
 
@@ -10,13 +10,14 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
             <div className='headSection'>
                 <h2 className='labelDetail'>{label}</h2>
                 <img src={image} alt={label} className='recipeImageDetail' />
-                <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /><span className='infoTitle'>  Servings:</span> {servings} </p>
+                <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /> Servings: {servings} </p>
                 <p><FontAwesomeIcon icon="stopwatch" className='recipe-icon' /> Total time: {totalTime}</p>
                 <p><FontAwesomeIcon icon="cubes" className='recipe-icon' /> Calories: {calories}</p>
                 <p><FontAwesomeIcon icon="balance-scale" className='recipe-icon' /> Diet Label: {dietLabel}</p>
             </div>
             <div className='ingredientsLines'>
             <p><FontAwesomeIcon icon="shopping-basket" className='recipe-icon' />{ingredients}</p>
+            <p><FontAwesomeIcon icon="book" className='recipe-icon' /> Directions: <a href={url} target='_blank'> <span className='directions'>Click here</span> </a></p>
             </div>
             <div className='nutritionInfos'>
                 <p><FontAwesomeIcon icon="chart-pie" className='recipe-icon' /> Cholesterol: {cholesterol}mg</p>

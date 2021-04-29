@@ -38,7 +38,8 @@ const RecipeCards = ({ match, searchResults }) => {
                         carbs={(card.recipe.totalNutrients.CHOCDF.quantity).toFixed(2)}
                         fat={(card.recipe.totalNutrients.FAT.quantity).toFixed(2)}
                         saturatedFat={(card.recipe.totalNutrients.FASAT.quantity).toFixed(2)}
-                        ingredients={(card.recipe.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} /> 
+                        ingredients={(card.recipe.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
+                        url={card.recipe.url}/> 
                     : <Link to={`/recipes/${index}`}>
                         <CardAnim rotation={5} timing={150}>
                             <RecipeCard
