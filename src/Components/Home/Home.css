@@ -6,18 +6,8 @@
     align-items: center;
 }
 
-.top-container {
-    background: url('./veggies.jpg') no-repeat no-repeat;
-    background-size: cover;
-    height: 45rem;
-    width: 100%;
-    animation: swapDiapo;
-    animation-duration: 45s;
-    animation-delay: 25s;
-    animation-iteration-count: infinite;
-}
-
 .start-container {
+    /*background-image: url('./noun_Plate_3498787.svg');*/
     display: flex;
     justify-content: center;
     height: 60rem;
@@ -71,26 +61,6 @@
     height: 60rem;
     width: 100%;
 }
-
-.bottom-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
-    height: 45rem;
-    width: 100%;
-}
-
-.bottom-container div {
-    height: 40rem;
-    width: 40rem;
-}
-
-.bottom-container img {
-    max-height: 100%;
-    max-width: 100%;
-    padding: 1.5rem;
-}
-
 
 .flex-col-container {
     display: flex;
