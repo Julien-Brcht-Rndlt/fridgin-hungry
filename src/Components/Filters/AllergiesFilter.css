@@ -45,6 +45,13 @@ input[type='checkbox']:checked {
   padding-bottom: inherit;
 }
 
+@media (max-width: 900px) and (min-width: 769px){
+  .allergyFilter {
+      margin-bottom: 4rem;
+      width: 20%;
+  }
+}
+
 @media (max-width: 768px) and (min-width: 568px){
   .allergyFilter {
       margin-bottom: 2rem;

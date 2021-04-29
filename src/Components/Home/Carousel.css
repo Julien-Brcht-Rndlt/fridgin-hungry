@@ -19,3 +19,9 @@
         background-image: url('./cooking-5.jpg');
     }
 }
+
+@media (max-width: 319px) {
+    .top-container {
+        display: none;
+}
+}
