@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     }
 })
 
-const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
+const CalorieFilter = ({ searchUrl, setSearchUrl, children }) => {
 
     const classes = useStyles()
 
@@ -82,7 +82,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
     return (
         <div className='calorieFilter'>
-            <h3>Macros</h3>
+            <h3>{children}</h3>
             <div>
                 <Typography
                     align='center'

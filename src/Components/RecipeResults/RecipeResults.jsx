@@ -23,9 +23,9 @@ const RecipeResults = ({ setSearchResults = [] }) => {
     return (
         <div className="filterContainer">
             <div className="RecipeResults">
-                <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
-                <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
-                <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Ingredients</IngredientFilter>
+                <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Macros</CalorieFilter>
+                <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} >Health</AllergiesFilter>
             </div>
             <div>
                 <Link to='/recipes'>

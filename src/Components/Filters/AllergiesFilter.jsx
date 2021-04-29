@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './AllergiesFilter.css'
 
-const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
+const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
 
   const initialAllergies = [
     { label: 'Vegetarian', value: 'vegetarian', selected: false },
@@ -36,7 +36,7 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
   return (
    
        <div className='allergyFilter'>
-      <h3>Health</h3>
+      <h3>{children}</h3>
       { allergies.map(allergy => {
         return (
              <div className='allergies'>
