@@ -14,52 +14,15 @@
     width: 100%;
     animation-name: slideEmptyFridge;
     animation-duration: 2s;
-}
-
-.whitesmoke-bg {
     background-color: white;
-    height: 60rem;
-    width: 100%;
-}
-
-.empty-fridge {
-    background-image: url('./noun_Plate_3498787.svg');
-    background-size: cover;
-    width: 32rem;
-    height: 29rem;
-    padding: 10rem;
-    justify-content: space-between;
-    margin-top: 6rem;
-    color: rgb(55, 55, 55);
-}
-
-.empty-fridge h2 {
-    font-size: 3.7rem;
-    margin-bottom: 4rem;
-    text-align: right;
-    width: 35rem;
-}
-
-.description {
-    font-weight: bold;
-    font-size: 2.3rem;
-    color: rgb(55, 55, 55);
-}
-
-.description-text p {
-    padding: 0.5rem;
-}
-
-.beige-bg {
-    background-color: rgb(240, 235, 230);
-    width: 100%;
-    display: flex;
-    align-items: center;
 }
 
 .filters-container {
     height: 60rem;
     width: 100%;
+    background-color: rgb(240, 235, 230);
+    display: flex;
+    align-items: center;
 }
 
 .flex-col-container {
@@ -97,6 +60,10 @@
 
 
 @media (max-width: 768px) and (min-width: 568px){
+    .start-container {
+        height: 53rem
+}
+
     .filters-container {
         height: 120rem;
     }
@@ -104,12 +71,19 @@
     
 
 @media (max-width: 567px) and (min-width: 320px) {
+    .start-container {
+        height: 45rem
+}
+
     .filters-container {
         height: 120rem;
     }
 }
 
 @media (max-width: 319px) {
+    .start-container {
+        height: 45rem
+}
      .filters-container {
         height: 120rem;
     }

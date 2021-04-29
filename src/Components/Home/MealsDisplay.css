@@ -1,11 +1,8 @@
-.img-first-child {
-    margin-bottom: 5rem;
-}
 
 .meals-display {
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     height: 45rem;
     width: 100%;
 }
@@ -19,4 +16,27 @@
     max-height: 100%;
     max-width: 100%;
     padding: 1.5rem;
+}
+
+
+@media (max-width: 768px) and (min-width: 568px){
+    .start-container {
+        height: 53rem
+}
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .start-container {
+        height: 45rem
+}
+
+
+}
+
+@media (max-width: 319px) {
+    .start-container {
+        height: 45rem
+}
+  
 }
