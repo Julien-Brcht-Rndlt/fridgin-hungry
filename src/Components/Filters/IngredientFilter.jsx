@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
+const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
@@ -44,7 +44,7 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
 
     return (
         <div className="ingredients">
-            <h3>Ingredients</h3>
+            
             {inputs.map((input, index) => {
                 return (
                     <div className="ingr-inputs">

@@ -289,7 +289,7 @@ const Header = () => (
             </svg>
             </Link>
         <div className='headerTitle'>
-            <h1>Fridgin Hungry!</h1>
+            <h1>Fridgin' Hungry!</h1>
             <h2>'Empty your fridge, fuel your body'</h2>
         </div>
     </div>

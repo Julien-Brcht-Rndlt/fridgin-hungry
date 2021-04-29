@@ -1,0 +1,57 @@
+.filter-display {
+    color: rgb(55, 55, 55);
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    padding: 3%;
+    border: 2px solid rgb(55, 55, 55);
+    width: 15%;
+    box-shadow: 0px 8px 24px 1px rgb(55, 55, 55);
+}
+
+.filter-display h3 {
+    color: rgb(55, 55, 55);
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+@media (max-width: 900px) and (min-width: 769px){
+    .filter-display {
+        margin-bottom: 4rem;
+        width: 20%;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 568px){
+    .filter-display {
+        margin-bottom: 4rem;
+        width: 40%;
+        height: 30%;
+    }
+}
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .filter-display {
+        margin-bottom: 4rem;
+        width: 50%;
+        height: 40%;
+    }
+
+    .filter-display h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .filter-display {
+        margin-bottom: 4rem;
+        width: 50%;
+    }
+
+    .filter-display h3 {
+        font-size: 1.5rem;
+    }
+}
