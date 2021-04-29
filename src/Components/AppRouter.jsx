@@ -16,10 +16,12 @@ const AppRouter = ({ searchResults, setSearchResults}) => {
                 <Route exact path='/'>
                     <Home setSearchResults={setSearchResults}/>
                 </Route>
-                <Route path='/recipes'>
+                <Route exact path='/recipes'>
                     <RecipeCards searchResults={searchResults}/>
                 </Route>
-                <Route path='/recipes/:id' render={(props) => (<RecipeCards {...props} searchResults={[]} />)} />
+                <Route path='/recipes/:id' render={ (props) => (<RecipeCards {...props} searchResults={searchResults} />) } />
+                    {/*<RecipeCards searchResults={searchResults} />
+                </Route>  */}
                 <Route path='/contact'>
                     <Contact />
                 </Route>

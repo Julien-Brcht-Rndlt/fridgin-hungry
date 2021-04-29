@@ -42,9 +42,9 @@ a:active {
 
 @media (max-width: 567px) {
     .footer {
-      flex-direction: column;
-      padding: 5px;
-      height: 8rem;
+        flex-direction: column;
+        padding: 5px;
+        height: 8rem;
     }
 
     p {

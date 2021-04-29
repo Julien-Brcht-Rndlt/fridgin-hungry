@@ -1,3 +1,9 @@
+.filterContainer {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
 .filterContainer {
     display: flex;
@@ -32,12 +38,12 @@
     .RecipeResults {
         flex-direction: column;
         align-items: center;
-     }
+    }
 }
 
 @media (max-width: 319px) {
     .RecipeResults {
         flex-direction: column;
         align-items: center;
-      }
+    }
 }

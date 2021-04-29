@@ -1,0 +1,115 @@
+.recipe-card-detail {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: rgb(55, 55, 55);
+    border-radius: 30px;
+    width: 90%;
+    height: 63rem;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headSection {
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 20%;
+    height: auto;
+    font-size: 2.5rem;
+    color: whitesmoke;
+
+}
+
+.labelDetail {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.recipeImageDetail {
+    border-radius: 15px;
+    margin-bottom: 2rem;
+}
+
+.ingredientsLines {
+    display: flex;
+    flex-flow: column wrap;
+    width: 30%;
+    height: 100%;
+    font-size: 2.2rem;
+    color: whitesmoke;
+    justify-content: space-evenly;
+    text-align: justify;
+}
+
+.directions {
+    color: greenyellow;
+}
+
+.directions:hover{
+    text-decoration: underline;
+}
+
+.nutritionInfos {
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    height: 100%;
+    justify-content: center;
+    font-size: 2.2rem;
+    color: whitesmoke;
+}
+
+.healthInfos {
+    display: flex;
+    flex-flow: column wrap;
+    width: 20%;
+    height: 100%;
+    font-size: 2.2rem;
+    color: whitesmoke;
+    justify-content: center;
+}
+
+.recipe-icon {
+    color: greenyellow;
+}
+
+/* .headSection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column wrap;
+    padding-left: 5rem;
+}
+
+
+.labelDetail {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quickInfos, .dietInfos, .nutritionInfos {
+    font-size: 1.5rem;
+}
+
+.quickInfos, .nutritionInfos {
+    border: 1px solid black;
+    border-radius: 3%;
+    background-color: whitesmoke;
+}
+
+.dietInfos, .ingredientsLines {
+    font-size: 1.5rem;
+    text-align: justify;
+    display: inline-flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+} */
