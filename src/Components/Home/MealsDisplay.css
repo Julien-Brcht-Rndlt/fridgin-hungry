@@ -1,3 +1,22 @@
 .img-first-child {
     margin-bottom: 5rem;
 }
+
+.meals-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    height: 45rem;
+    width: 100%;
+}
+
+.meals-display div {
+    height: 40rem;
+    width: 40rem;
+}
+
+.meals-display img {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+}
