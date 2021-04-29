@@ -16,6 +16,13 @@
     padding-bottom: 2rem;
 }
 
+@media (max-width: 900px) and (min-width: 769px){
+    .calorieFilter {
+        margin-bottom: 4rem;
+        width: 20%;
+    }
+}
+
 @media (max-width: 768px) and (min-width: 568px){
     .calorieFilter {
         margin-bottom: 4rem;

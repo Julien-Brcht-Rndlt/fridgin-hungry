@@ -8,19 +8,16 @@ import MealsDisplay from './MealsDisplay'
 const Home = ({ setSearchResults }) => {
 
     return (
-        <div className="home  flex-col-container">
+        <div className="home flex-col-container">
                 <Carousel duration={25} delay={15} isInfinite={true} />
-            <div className='whitesmoke-bg start-container'>
-                <NavPlateButton title={'Empty you Fridge!'} sentences={['Great recipe ideas', 'Zero Waste', '100% Tasty']} target={'filters'}/>
+            <div className='start-container'>
+                <NavPlateButton title={'Empty your Fridge!'} sentences={['Great recipe ideas', 'Zero Waste', '100% Tasty']} target={'filters'}/>
             </div>
                 
-            <div id="filters" className="filters-container beige-bg">
+            <div id="filters" className="filters-container">
                 <RecipeResults setSearchResults={setSearchResults}/>
             </div>
-
-            <div className="bottom-container whitesmoke-bg">
                 <MealsDisplay />           
-            </div>
         </div>
     )
 }
