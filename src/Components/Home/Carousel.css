@@ -1,0 +1,21 @@
+@keyframes swapDiapo {
+    0% {
+        background-image: url('./veggies.jpg');
+    }
+
+    25% {
+        background-image: url('./cooking-2.jpg');
+    }
+
+    50% {
+        background-image: url('./cooking-4.jpg');
+    }
+
+    75% {
+        background-image: url('./cooking-3.jpg');
+    }
+
+    100% {
+        background-image: url('./cooking-5.jpg');
+    }
+}
