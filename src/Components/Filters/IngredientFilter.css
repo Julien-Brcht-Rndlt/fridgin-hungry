@@ -1,0 +1,8 @@
+.ingr-inputs input[type='text'] {
+    padding: 9px;
+    margin: auto;
+    width: 90%;
+    border: 2px solid rgb(55, 55, 55);
+    border-radius: 10px;
+    margin-bottom: 5%;
+}

@@ -1,0 +1,26 @@
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type='checkbox'] {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+input[type='checkbox']:checked {
+    background: rgb(55, 55, 55);
+    margin:0px;
+    position: relative;
+  }
+
+  label {
+    display: inline-block;
+    vertical-align: super;
+    padding-left: 5px;
+    font-size: medium;
+  }

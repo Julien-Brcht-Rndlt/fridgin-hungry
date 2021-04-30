@@ -1,0 +1,85 @@
+
+.flex-col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-container {
+    /*background-image: url('./noun_Plate_3498787.svg');*/
+    display: flex;
+    justify-content: center;
+    height: 60rem;
+    width: 100%;
+    animation-name: slideEmptyFridge;
+    animation-duration: 2s;
+    background-color: white;
+}
+
+.filters-container {
+    height: 60rem;
+    width: 100%;
+    background-color: rgb(240, 235, 230);
+    display: flex;
+    align-items: center;
+}
+
+.flex-col-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes swapDiapo {
+    0% {
+        background-image: url('./veggies.jpg');
+    }
+
+    25% {
+        background-image: url('./cooking-2.jpg');
+    }
+
+    50% {
+        background-image: url('./cooking-4.jpg');
+    }
+
+    75% {
+        background-image: url('./cooking-3.jpg');
+    }
+
+    100% {
+        background-image: url('./cooking-5.jpg');
+    }
+}
+
+@media (max-width: 768px) and (min-width: 568px){
+    .start-container {
+        height: 53rem
+}
+
+    .filters-container {
+        height: 120rem;
+    }
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .start-container {
+        height: 45rem
+}
+
+    .filters-container {
+        height: 120rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .start-container {
+        height: 45rem
+}
+     .filters-container {
+        height: 120rem;
+    }
+}

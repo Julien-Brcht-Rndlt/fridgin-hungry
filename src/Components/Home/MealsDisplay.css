@@ -1,0 +1,37 @@
+
+.meals-display {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 45rem;
+    width: 100%;
+}
+
+.img-first-child {
+    display: flex;
+    justify-content: center;
+}
+
+.meals-display div {
+    width: 40rem;
+}
+
+.meals-display img {
+    max-height: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+}
+
+
+@media (max-width: 1300px) and (min-width: 768px){
+    .img-first-child {
+        display: none;
+    }
+}
+    
+
+@media (max-width: 769px) {
+    .img-first-child, .img-third-child {
+        display: none;
+    }
+}

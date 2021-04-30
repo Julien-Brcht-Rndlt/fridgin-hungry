@@ -1,0 +1,101 @@
+.header {
+    background-color: #e4f0d8;
+    display: flex;
+   justify-content: flex-start;
+   align-items: center;
+    text-align: center;
+    height: 15rem;
+    height: 20rem;
+    width: 100%
+}
+
+.header h1 {
+    font-size: 5.5rem;
+    padding-bottom: 0.5rem;
+    color: white;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+}
+
+svg {
+    width: 30rem;
+    height: 20rem;
+    margin: 0;
+    display: flex;
+}
+
+@media (max-width: 768px) and (min-width: 568px){
+    .headerTitle {
+        position: absolute;
+        left: 35%
+    }
+
+    .header h1 {
+        font-size: 4.3rem;
+    }
+    
+    .header h2 {
+        font-size: 1.6rem;
+    }
+
+    svg {
+        width: 25rem;
+        height: 15rem;
+    }
+}
+    
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .header {
+       flex-direction: column;
+       height: 25rem;
+    }
+
+    .header h1 {
+        font-size: 4rem;
+        padding-bottom: 0.5rem;
+        -webkit-text-stroke: 0.5px rgb(196, 192, 192);
+    }
+
+    .header h2 {
+        font-size: 1.4rem;
+    }
+
+    .header a {
+        padding: 0;
+    }
+  
+    svg {
+        width: 25rem;
+        height: 15rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .header {
+        flex-direction: column;
+        height: 30rem;
+     }
+
+     .header h1 {
+        font-size: 4rem;
+        padding-bottom: 0.5rem;
+        -webkit-text-stroke: 0.5px rgb(196, 192, 192);
+    }
+
+    .header h2 {
+        font-size: 1.4rem;
+    }
+
+    .header a {
+        padding: 0;
+    }
+  
+    svg {
+        width: 25rem;
+        height: 15rem;
+    }
+}
+

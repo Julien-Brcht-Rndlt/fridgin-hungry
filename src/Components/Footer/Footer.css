@@ -1,0 +1,53 @@
+.footer {
+    height: 6rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(55, 55, 55);
+    font-size: 1.75rem;
+    color: white;
+    position: auto;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.social-medias {
+    display: flex;
+    justify-content: center;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+}
+
+.social-medias a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+}
+
+.social-icon {
+    font-size: 3rem;
+}
+
+
+@media (max-width: 567px) {
+    .footer {
+        flex-direction: column;
+        padding: 5px;
+        height: 8rem;
+    }
+
+    p {
+        padding: 5px;
+    }
+}
