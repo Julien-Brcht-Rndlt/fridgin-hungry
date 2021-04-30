@@ -1,0 +1,82 @@
+.nav-plate-button {
+    background-image: url('./noun_Plate_3498787.svg');
+    background-size: cover;
+    width: 32rem;
+    height: 29rem;
+    padding: 10rem;
+    justify-content: space-between;
+    color: rgb(55, 55, 5);
+    margin-top: 6rem;
+}
+
+.nav-plate-button h2 {
+    font-size: 3.7rem;
+    margin-bottom: 4rem;
+    text-align: center;
+    width: 35rem;
+}
+
+.nav-plate-button p {
+    font-weight: bold;
+    font-size: 2.3rem;
+    color: rgb(55, 55, 55);
+    padding: 0.5rem;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 768px) and (min-width: 568px){
+    .nav-plate-button {
+        width: 26rem;
+        height: 20rem;
+        margin-top: 7rem;
+    }
+
+    .nav-plate-button h2 {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+    
+    }
+
+    .nav-plate-button p {
+    font-size: 2rem;
+    }
+}
+
+@media (max-width: 567px) and (min-width: 320px) {
+    .nav-plate-button {
+        width: 20rem;
+        height: 14rem;
+    }
+
+    .nav-plate-button h2 {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .nav-plate-button p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 319px) {
+    .nav-plate-button {
+        padding: 1rem;
+        margin-top: 8rem;
+    }
+
+    .nav-plate-button h2 {
+        font-size: 2.2rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .nav-plate-button p {
+        font-size: 1.5rem;
+    }
+}
