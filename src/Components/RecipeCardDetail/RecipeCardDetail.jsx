@@ -6,7 +6,7 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
     
     return (
 
-        <div className='recipe-card-detail'>
+        <div id="card-detail" className='recipe-card-detail'>
             <div className='headSection'>
                 <h2 className='labelDetail'>{label}</h2>
                 <img src={image} alt={label} className='recipeImageDetail' />

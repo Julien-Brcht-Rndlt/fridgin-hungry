@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import "./RecipeCards.css"
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 
-const RecipeCards = ({ match, searchResults }) => {
+const RecipeCards = ({ searchResults }) => {
 
-   /*  const { id } = useParams();
-    console.log("id : " + id); */
-
-    const id = match && parseInt(match.params.id)
-    const cardDetail = id !== undefined && searchResults && searchResults[id]
+    const { id } = useParams()
+    const cardId = id ? parseInt(id) : undefined
+    
+    const showCardDetail = cardId !== undefined && searchResults
+    const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
     return (
         <div>
@@ -20,7 +21,7 @@ const RecipeCards = ({ match, searchResults }) => {
             </div> */}
             <div className="recipe-cards">
 
-            { cardDetail &&
+            { showCardDetail &&
                
                 <RecipeCardDetail
                     label={cardDetail.recipe.label}
@@ -45,8 +46,8 @@ const RecipeCards = ({ match, searchResults }) => {
 
             {     
                 searchResults.map((card, index) => 
-                    <Link to={`/recipes/${index}`}>
-                        { (id === undefined || id !== index) &&
+                    <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
+                        { (!showCardDetail || cardId !== index) &&
                             <CardAnim rotation={5} timing={150}>
                                 <RecipeCard
                                     key={index}
@@ -58,7 +59,7 @@ const RecipeCards = ({ match, searchResults }) => {
                                     />
                             </CardAnim>
                         }
-                    </Link>)
+                    </HashLink>)
                 }
             </div>
         </div>
