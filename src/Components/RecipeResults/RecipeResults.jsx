@@ -11,13 +11,28 @@ import { Link } from "react-router-dom"
 const RecipeResults = ({ setSearchResults = [] }) => {
     const [searchUrl, setSearchUrl] = useState(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`);
 
+    // random prep time
+    const prepTimes = [15, 30, 45, 60]
+    const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
+
     // const finalUrl = urlIngredients
     const handleClick = () => {
         axios
             .get(searchUrl)
             .then((response) => response.data)
             .then((data) => {
-                setSearchResults(data.hits)
+                // grab API data + populate our own recipe JS objects
+                const recipeProperties = ['label', 'image', 'yield', 'totalTime', 'calories', 'healthLabels', 'dietLabels', 'totalNutrients', 'ingredientLines', 'url']
+                let recipes = []
+                data.hits.map((recipeData) => {
+                    const recipe = {}
+                    recipeProperties.forEach((property) => {
+                        recipe[property] = recipeData['recipe'][property]
+                    })
+                    recipe.totalTime = recipe.totalTime !== 0 ? recipe.totalTime : randomPrepTime()
+                    recipes = [...recipes, recipe]
+                })
+                setSearchResults(recipes)
             })
     }
 

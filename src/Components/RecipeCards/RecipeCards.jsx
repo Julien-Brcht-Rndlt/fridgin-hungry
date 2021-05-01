@@ -11,7 +11,6 @@ const RecipeCards = ({ match, searchResults }) => {
     console.log("id : " + id); */
 
     const id = match && parseInt(match.params.id);
-    console.log("id : " + id);
 
     return (
         <div>
@@ -19,42 +18,40 @@ const RecipeCards = ({ match, searchResults }) => {
                 <Link to='/'><button className="nav-button">Back</button></Link>
             </div> */}
             <div className="recipe-cards">
-                {searchResults.map((card, index) => {
-                    console.log("here: " + id)
-                    return (
-                    (id !== undefined && id === index) 
-                    ?<RecipeCardDetail 
-                        label={card.recipe.label}
-                        image={card.recipe.image}
-                        servings={card.recipe.yield}
-                        totalTime={card.recipe.totalTime}
-                        calories={(card.recipe.calories).toFixed(2)}
-                        allergyFilter={(card.recipe.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
-                        dietLabel={card.recipe.dietLabels}
-                        cholesterol={(card.recipe.totalNutrients.CHOLE.quantity).toFixed(2)}
-                        sodium={(card.recipe.totalNutrients.NA.quantity).toFixed(2)}
-                        fiber={(card.recipe.totalNutrients.FIBTG.quantity).toFixed(2)}
-                        Sugar={(card.recipe.totalNutrients.SUGAR.quantity).toFixed(2)}
-                        carbs={(card.recipe.totalNutrients.CHOCDF.quantity).toFixed(2)}
-                        proteins={(card.recipe.totalNutrients.PROCNT.quantity).toFixed(2)}
-                        fat={(card.recipe.totalNutrients.FAT.quantity).toFixed(2)}
-                        saturatedFat={(card.recipe.totalNutrients.FASAT.quantity).toFixed(2)}
-                        ingredients={(card.recipe.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
-                        url={card.recipe.url}/> 
-                    : <Link to={`/recipes/${index}`}>
-                        <CardAnim rotation={5} timing={150}>
-                            <RecipeCard
-                            key={index}
-                            label={card.recipe.label}
-                            image={card.recipe.image}
-                            servings={card.recipe.yield}
-                            totalTime={card.recipe.totalTime}
-                            dietLabel={card.recipe.dietLabels}
-                            />
-                        </CardAnim>
-                    </Link>
-                    )}
-                
+                {searchResults.map((recipe, index) => {
+                    return(
+                      (id !== undefined && id === index) 
+                        ?<RecipeCardDetail 
+                            label={recipe.label}
+                            image={recipe.image}
+                            servings={recipe.yield}
+                            totalTime={recipe.totalTime}
+                            calories={(recipe.calories).toFixed(2)}
+                            allergyFilter={(recipe.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
+                            dietLabel={recipe.dietLabels}
+                            cholesterol={(recipe.totalNutrients.CHOLE.quantity).toFixed(2)}
+                            sodium={(recipe.totalNutrients.NA.quantity).toFixed(2)}
+                            fiber={(recipe.totalNutrients.FIBTG.quantity).toFixed(2)}
+                            Sugar={(recipe.totalNutrients.SUGAR.quantity).toFixed(2)}
+                            carbs={(recipe.totalNutrients.CHOCDF.quantity).toFixed(2)}
+                            proteins={(recipe.totalNutrients.PROCNT.quantity).toFixed(2)}
+                            fat={(recipe.totalNutrients.FAT.quantity).toFixed(2)}
+                            saturatedFat={(recipe.totalNutrients.FASAT.quantity).toFixed(2)}
+                            ingredients={(recipe.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
+                            url={recipe.url}/> 
+                        : <Link to={`/recipes/${index}`}>
+                            <CardAnim rotation={5} timing={150}>
+                                <RecipeCard
+                                key={index}
+                                label={recipe.label}
+                                image={recipe.image}
+                                servings={recipe.yield}
+                                totalTime={recipe.totalTime}
+                                dietLabel={recipe.dietLabels}
+                                />
+                            </CardAnim>
+                        </Link>
+                    )} 
                 )}
             </div>
         </div>
