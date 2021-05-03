@@ -8,8 +8,10 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
 
         <div id="card-detail" className='recipe-card-detail'>
             <div className='headSection'>
-                <h2 className='labelDetail'>{label}</h2>
-                <img src={image} alt={label} className='recipeImageDetail' />
+                <div>
+                    <h2 className='labelDetail'>{label}</h2>
+                    <img src={image} alt={label} className='recipeImageDetail' />
+                </div>
                 <div className='quickInfos'>
                     <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /> Servings: {servings} </p>
                     <p><FontAwesomeIcon icon="stopwatch" className='recipe-icon' /> Total time: {totalTime}</p>
@@ -33,7 +35,6 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
             </div>
             <div className='healthInfos'>
                 <p><FontAwesomeIcon icon="check-double" className='recipe-icon' /> Health Labels: {allergyFilter}</p>
-                
             </div>
         </div>
     )
