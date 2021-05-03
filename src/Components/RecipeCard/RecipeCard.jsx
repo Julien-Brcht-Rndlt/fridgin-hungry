@@ -9,7 +9,7 @@ const RecipeCard = ({ label, image, servings, totalTime, dietLabel }) => {
             <img src={image} alt={label} className='recipeImage' />
             <p className='servings'><FontAwesomeIcon icon="utensils" /> Servings: {servings}</p>
             <p className='totalTime'><FontAwesomeIcon icon="stopwatch" /> Total time: {totalTime}min</p>
-            <p className='dietLabel'><FontAwesomeIcon icon="balance-scale" /> Diet label: {dietLabel}</p>
+            { dietLabel.length > 0 && <p className='dietLabel'><FontAwesomeIcon icon="balance-scale" /> Diet label: {dietLabel}</p> }
         </div>
     )
 }
