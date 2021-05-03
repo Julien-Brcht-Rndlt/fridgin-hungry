@@ -3,6 +3,7 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import "./RecipeCards.css"
+import HashNavButton from '../NavButtons/HashNavButton'
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 import AlertMessage from '../AlertMessage/AlertMessage'
@@ -18,13 +19,8 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
     return (
         <div>
-            {/* <div>
-                <Link to='/'><button className="nav-button">Back</button></Link>
-            </div> */}
-            
-            {  }
+            <HashNavButton title={'Launch a new search'} to={'/home#filters'}/>
             <div className="recipe-cards">
-          
             { showCardDetail &&
                <Link to='/recipes'>
                     <RecipeCardDetail
