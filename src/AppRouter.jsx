@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer'
 import Header from './Components/Header/Header'
 import Home from './Components/Home/Home'
 import RecipeCards from './Components/RecipeCards/RecipeCards'
-import Contact from './Components/Contact/Contact'
+import AboutUs from './Components/AboutUs/AboutUs'
 
 const AppRouter = ({ hasToken, setHasToken, searchResults, setSearchResults}) => {
 
@@ -18,8 +18,8 @@ const AppRouter = ({ hasToken, setHasToken, searchResults, setSearchResults}) =>
                 </Route>
                 <ProtectedRecipesRoute exact path='/recipes' hasToken={hasToken} searchResults={searchResults} component={RecipeCards} />
                 <ProtectedRecipesRoute exact path='/recipes/:id' hasToken={hasToken} searchResults={searchResults} component={RecipeCards} />
-                <Route path='/contact'>
-                    <Contact />
+                <Route path='/aboutUs'>
+                    <AboutUs />
                 </Route>
             </Switch>
             <Footer />
