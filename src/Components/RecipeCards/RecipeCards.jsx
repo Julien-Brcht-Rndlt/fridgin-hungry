@@ -5,6 +5,7 @@ import { HashLink } from 'react-router-hash-link'
 import "./RecipeCards.css"
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
+import AlertMessage from '../AlertMessage/AlertMessage'
 
 const RecipeCards = ({ match, searchResults }) => {
 
@@ -14,13 +15,16 @@ const cardId = id ? parseInt(id) : undefined
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
+
     return (
         <div>
             {/* <div>
                 <Link to='/'><button className="nav-button">Back</button></Link>
             </div> */}
+            
+            {  }
             <div className="recipe-cards">
-
+          
             { showCardDetail &&
                <Link to='/recipes'>
                     <RecipeCardDetail
@@ -42,10 +46,9 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
                         url={cardDetail.url}/>
                 </Link>
-              
             }
 
-            {     
+            {  searchResults.length === 0 ? <AlertMessage />  : 
                 searchResults.map((card, index) => 
                     <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
                         { (!showCardDetail || cardId !== index) &&
@@ -62,9 +65,10 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         }
                     </HashLink>)
                 }
-
+        
             </div>
         </div>
+        
     )
 }
 
