@@ -22,27 +22,26 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
             <div className="recipe-cards">
 
             { showCardDetail &&
-               <Link to='/recipes'>
-                    <RecipeCardDetail
-                        label={cardDetail.label}
-                        image={cardDetail.image}
-                        servings={cardDetail.yield}
-                        totalTime={cardDetail.totalTime}
-                        calories={(cardDetail.calories).toFixed(2)}
-                        allergyFilter={(cardDetail.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
-                        dietLabel={cardDetail.dietLabels}
-                        cholesterol={(cardDetail.totalNutrients.CHOLE.quantity).toFixed(2)}
-                        sodium={(cardDetail.totalNutrients.NA.quantity).toFixed(2)}
-                        fiber={(cardDetail.totalNutrients.FIBTG.quantity).toFixed(2)}
-                        Sugar={(cardDetail.totalNutrients.SUGAR.quantity).toFixed(2)}
-                        carbs={(cardDetail.totalNutrients.CHOCDF.quantity).toFixed(2)}
-                        proteins={(cardDetail.totalNutrients.PROCNT.quantity).toFixed(2)}
-                        fat={(cardDetail.totalNutrients.FAT.quantity).toFixed(2)}
-                        saturatedFat={(cardDetail.totalNutrients.FASAT.quantity).toFixed(2)}
-                        ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
-                        url={cardDetail.url}/>
-                </Link>
-              
+            <Link to='/recipes'>
+                <RecipeCardDetail
+                    label={cardDetail.label}
+                    image={cardDetail.image}
+                    servings={cardDetail.yield}
+                    totalTime={cardDetail.totalTime}
+                    calories={(cardDetail.calories).toFixed(2)}
+                    allergyFilter={(cardDetail.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
+                    dietLabel={cardDetail.dietLabels}
+                    cholesterol={(cardDetail.totalNutrients.CHOLE.quantity).toFixed(2)}
+                    sodium={(cardDetail.totalNutrients.NA.quantity).toFixed(2)}
+                    fiber={(cardDetail.totalNutrients.FIBTG.quantity).toFixed(2)}
+                    Sugar={(cardDetail.totalNutrients.SUGAR.quantity).toFixed(2)}
+                    carbs={(cardDetail.totalNutrients.CHOCDF.quantity).toFixed(2)}
+                    proteins={(cardDetail.totalNutrients.PROCNT.quantity).toFixed(2)}
+                    fat={(cardDetail.totalNutrients.FAT.quantity).toFixed(2)}
+                    saturatedFat={(cardDetail.totalNutrients.FASAT.quantity).toFixed(2)}
+                    ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
+                    url={cardDetail.url}/>
+            </Link>
             }
 
             {     

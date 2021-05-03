@@ -10,10 +10,12 @@ const RecipeCardDetail = ({ label, image, ingredients, servings, totalTime, diet
             <div className='headSection'>
                 <h2 className='labelDetail'>{label}</h2>
                 <img src={image} alt={label} className='recipeImageDetail' />
-                <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /> Servings: {servings} </p>
-                <p><FontAwesomeIcon icon="stopwatch" className='recipe-icon' /> Total time: {totalTime}</p>
-                <p><FontAwesomeIcon icon="cubes" className='recipe-icon' /> Calories: {calories}</p>
-                { dietLabel.length > 0 && <p><FontAwesomeIcon icon="balance-scale" className='recipe-icon' /> Diet Label: {dietLabel}</p> }
+                <div className='quickInfos'>
+                    <p><FontAwesomeIcon icon="utensils" className='recipe-icon' /> Servings: {servings} </p>
+                    <p><FontAwesomeIcon icon="stopwatch" className='recipe-icon' /> Total time: {totalTime}</p>
+                    <p><FontAwesomeIcon icon="cubes" className='recipe-icon' /> Calories: {calories}</p>
+                    { dietLabel.length > 0 && <p><FontAwesomeIcon icon="balance-scale" className='recipe-icon' /> Diet Label: {dietLabel}</p> }
+                    </div>
             </div>
             <div className='ingredientsLines'>
             <p><FontAwesomeIcon icon="shopping-basket" className='recipe-icon' />{ingredients}</p>
