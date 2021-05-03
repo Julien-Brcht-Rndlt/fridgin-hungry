@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import RecipeCard from '../RecipeCard/RecipeCard'
+import './AboutUs.css'
 
 const ourProfile = [
-    {name: Sophie}
+    {
+    contactName: 'Sophie',
+    picture:'https://drive.google.com/drive/u/1/folders/1c9F7YAbQfT5UOvQKpfxQNeQPLVg970ma'
+    },
+    {contactName: 'Jérôme'},
+    {contactName: 'Sarah'},
+    {contactName: 'Julien'}
 ]
+const path = 'https://drive.google.com/uc?id=';
 
 const AboutUs = () => {
     return(
@@ -12,14 +19,16 @@ const AboutUs = () => {
         <div>
             <Link to='/'><button className='nav-button'>Back</button></Link>
         </div>
-        <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum optio architecto illo rem cupiditate illum facere veniam vitae facilis! Quis nihil suscipit consequatur in aliquid, asperiores ea blanditiis dolorum perferendis? </p>
+        <div className='aboutProject'>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, magnam temporibus! Dolor aut deleniti consectetur dolore beatae! Quae, aperiam mollitia quos, tempore aliquam autem, repudiandae suscipit repellat blanditiis deserunt delectus?</p>
         </div>
+        <div className='contactDisplay'>
+        {ourProfile.map((profile) => 
         <div className='contactCard'>
-            <h3 className='contactName'></h3>
-            <img src='' alt='' className='contactPic' />
-            <p className='servings'> Servings:</p>
-            <p className='totalTime'> Total time: min</p>
+            <h3 className='contactName'>{profile.contactName}</h3>
+            <img src={profile.picture} alt={profile.contactName} className='contactPic' />
+            <p className='servings'>Links</p>
+        </div>)}
         </div>
     </div>
         

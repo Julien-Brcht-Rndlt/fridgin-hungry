@@ -1,3 +1,16 @@
+.aboutProject {
+    display: flex;
+    height: 25rem;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutProject p {
+    font-size: 2rem;
+}
+
 .contactCard {
     padding: 1em;
     margin: 1em;
@@ -5,12 +18,18 @@
     width: 35rem;
     height: 60rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     flex-flow: column wrap;
     border-radius: 10px;
     color: black;
     box-shadow: 0px 8px 24px 1px rgb(55, 55, 55);
+}
+
+.contactDisplay {
+    display: flex;
+    justify-content: space-around;
 }
 
 .contactName {
@@ -22,6 +41,7 @@
     border-radius: 15px;
 }
 
-.servings, .totalTime {
+.servings {
     font-size: 2.5rem;
 }
+
