@@ -17,7 +17,7 @@ const AppRouter = ({ hasToken, setHasToken, searchUrl, setSearchUrl, searchResul
                     <Home setHasToken={setHasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} setSearchResults={setSearchResults}/>
                 </Route>
                 <Route path='/home'>
-                    <Home setHasToken={setHasToken} setSearchResults={setSearchResults}/>
+                    <Home setHasToken={setHasToken} setSearchResults={setSearchResults} searchUrl={searchUrl} setSearchUrl={setSearchUrl}/>
                 </Route>
                 <ProtectedRecipesRoute exact path='/recipes' hasToken={hasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
                 <ProtectedRecipesRoute path='/recipes/:id' hasToken={hasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
