@@ -5,7 +5,7 @@ import FadeSlideshow from './FadeSlideshow'
 import NavPlateButton from './NavPlateButton'
 import MealsDisplay from './MealsDisplay'
 
-const Home = ({ setHasToken, setSearchResults }) => {
+const Home = ({ searchUrl, setSearchUrl, setHasToken, setSearchResults }) => {
 
     useEffect(() => {
         setHasToken(true)
@@ -19,7 +19,7 @@ const Home = ({ setHasToken, setSearchResults }) => {
             </div>
                 
             <div id="filters" className="filters-container">
-                <RecipeResults setSearchResults={setSearchResults}/>
+                <RecipeResults searchUrl={searchUrl} setSearchUrl={setSearchUrl} setSearchResults={setSearchResults}/>
             </div>
                 <MealsDisplay />           
         </div>

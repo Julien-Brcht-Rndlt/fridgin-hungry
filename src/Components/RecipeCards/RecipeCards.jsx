@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
@@ -10,21 +11,61 @@ import AlertMessage from '../AlertMessage/AlertMessage'
 
 
 
-const RecipeCards = ({ match, searchResults }) => {
-    const interval = 3;
-    const start = 0;
+const RecipeCards = ({ searchUrl, searchResults, setSearchResults }) => {
+ 
+    const [start, setStart] = useState(0)
+    const [step, setStep] = useState(10)
 
-    const [end, setEnd] = useState(interval);
-    const [cardsToRender, setCardsToRender] = useState([]);
+    // random prep time
+    const prepTimes = [15, 30, 45, 60]
+    const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
-    useEffect(() => {
-        setCardsToRender(searchResults.slice(start, end)); // slice return all the values between start and end exclusively 
-    }, [searchResults, end])
+    const updateUrlNext = (url, param, value) => {
+        const startIndex = url.indexOf(param)
+        let endOfParam = url.substr(startIndex, url.length).indexOf('&')
+        endOfParam = endOfParam > -1 ? endOfParam : url.length
+        const urlPart = url.substr(startIndex, endOfParam)
+        url = url.replace(urlPart, `${param}${value}`)
+
+        return url;
+    }
 
     const onClickHandler = () => {
-        setEnd((prevEnd) => prevEnd + interval); // when user clicks on view more, end should increase by interval based on the previous end.
-      };
-      
+
+        // define next step
+        const end = start + step
+        
+        //https://api.edamam.com/search?q=chicken, tomato, cheese&app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&from=40&to=50
+        //searchUrl
+        searchUrl = searchUrl.includes('&from=') ? updateUrlNext(searchUrl, 'from=', start) : `${searchUrl}&from=${start}`
+        searchUrl = searchUrl.includes('&to=') ? updateUrlNext(searchUrl, 'to=', end) : `${searchUrl}&to=${end}`
+
+        console.log('searchUrl: ' + searchUrl)
+
+        // fetch API with axios
+        axios
+            .get(searchUrl)
+            .then((response) => response.data)
+            .then((data) => {
+                // grab API data + populate our own recipe JS objects
+                const recipeProperties = ['label', 'image', 'yield', 'totalTime', 'calories', 'healthLabels', 'dietLabels', 'totalNutrients', 'ingredientLines', 'url']
+                let recipes = []
+                data.hits.map((recipeData) => {
+                    const recipe = {}
+                    recipeProperties.forEach((property) => {
+                        recipe[property] = recipeData['recipe'][property]
+                    })
+                    recipe.totalTime = recipe.totalTime !== 0 ? recipe.totalTime : randomPrepTime()
+                    recipes = [...recipes, recipe]
+                })
+
+                 // save new recipes searchResults state
+                setSearchResults((prevState) => [...prevState, ...recipes] )
+            })
+        // next start
+        setStart(end)
+    }
+
 const { id } = useParams()
 const cardId = id ? parseInt(id) : undefined
 
@@ -59,10 +100,8 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                 </Link>
             }
 
-            {/* {     
-                cardsToRender.map((card, index) =>  */}
             {  searchResults.length === 0 ? <AlertMessage />  : 
-                cardsToRender.map((card, index) => 
+                searchResults.map((card, index) => 
                     <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
                         { (!showCardDetail || cardId !== index) &&
                             <CardAnim rotation={5} timing={150}>

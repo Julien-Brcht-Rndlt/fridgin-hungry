@@ -7,20 +7,20 @@ import Home from './Components/Home/Home'
 import RecipeCards from './Components/RecipeCards/RecipeCards'
 import Contact from './Components/Contact/Contact'
 
-const AppRouter = ({ hasToken, setHasToken, searchResults, setSearchResults}) => {
+const AppRouter = ({ hasToken, setHasToken, searchUrl, setSearchUrl, searchResults, setSearchResults}) => {
 
     return(
         <Router>
             <Header />
             <Switch>
                 <Route exact path='/'>
-                    <Home setHasToken={setHasToken} setSearchResults={setSearchResults}/>
+                    <Home setHasToken={setHasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} setSearchResults={setSearchResults}/>
                 </Route>
                 <Route path='/home'>
                     <Home setHasToken={setHasToken} setSearchResults={setSearchResults}/>
                 </Route>
-                <ProtectedRecipesRoute exact path='/recipes' hasToken={hasToken} searchResults={searchResults} component={RecipeCards} />
-                <ProtectedRecipesRoute path='/recipes/:id' hasToken={hasToken} searchResults={searchResults} component={RecipeCards} />
+                <ProtectedRecipesRoute exact path='/recipes' hasToken={hasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
+                <ProtectedRecipesRoute path='/recipes/:id' hasToken={hasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
                 <Route path='/contact'>
                     <Contact />
                 </Route>
