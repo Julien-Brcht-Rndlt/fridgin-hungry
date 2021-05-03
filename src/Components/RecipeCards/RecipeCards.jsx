@@ -3,8 +3,10 @@ import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import "./RecipeCards.css"
+import HashNavButton from '../NavButtons/HashNavButton'
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
+import AlertMessage from '../AlertMessage/AlertMessage'
 
 
 
@@ -29,13 +31,11 @@ const cardId = id ? parseInt(id) : undefined
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
+
     return (
         <div>
-            {/* <div>
-                <Link to='/'><button className="nav-button">Back</button></Link>
-            </div> */}
+            <HashNavButton title={'Launch a new search'} to={'/home#filters'}/>
             <div className="recipe-cards">
-
             { showCardDetail &&
                <Link to='/recipes'>
                     <RecipeCardDetail
@@ -57,10 +57,11 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
                         url={cardDetail.url}/>
                 </Link>
-              
             }
 
-            {     
+            {/* {     
+                cardsToRender.map((card, index) =>  */}
+            {  searchResults.length === 0 ? <AlertMessage />  : 
                 cardsToRender.map((card, index) => 
                     <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
                         { (!showCardDetail || cardId !== index) &&
@@ -77,13 +78,14 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         }
                     </HashLink>)
                 }
-
+        
             </div>
             <div className='viewmore-container'>
             <button onClick={onClickHandler} className='viewmore-button'>View More</button>
             </div>
            
         </div>
+        
     )
 }
 
