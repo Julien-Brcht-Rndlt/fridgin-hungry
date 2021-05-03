@@ -11,7 +11,7 @@ import AlertMessage from '../AlertMessage/AlertMessage'
 
 
 
-const RecipeCards = ({ searchUrl, searchResults, setSearchResults }) => {
+const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl }) => {
  
     const [start, setStart] = useState(0)
     const [step, setStep] = useState(10)
@@ -39,6 +39,8 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults }) => {
         //searchUrl
         searchUrl = searchUrl.includes('&from=') ? updateUrlNext(searchUrl, 'from=', start) : `${searchUrl}&from=${start}`
         searchUrl = searchUrl.includes('&to=') ? updateUrlNext(searchUrl, 'to=', end) : `${searchUrl}&to=${end}`
+
+        setSearchUrl(searchUrl)
 
         console.log('searchUrl: ' + searchUrl)
 
