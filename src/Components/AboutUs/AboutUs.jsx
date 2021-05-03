@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './AboutUs.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import HashNavButton from '../NavButtons/HashNavButton'
+import CardAnim from '../RecipeCards/CardAnim'
 
 const ourProfile = [
     {
@@ -51,6 +52,7 @@ const AboutUs = () => {
         </div>
         <div className='contactDisplay'>
         {ourProfile.map((profile) => 
+        <CardAnim rotation={5} timing={150}>
         <div className='contactCard'>
             <img src={profile.picture} alt={profile.contactName} className='contactPic' />
             <h3 className='contactName'>{profile.contactName}</h3>
@@ -61,6 +63,7 @@ const AboutUs = () => {
                 <a href={`mailto:${profile.mail}`} target='_blank'><FontAwesomeIcon icon={['fas', 'envelope-square']} className='socialIcon' /></a>
             </div>
         </div>
+        </CardAnim>
         )}
         </div>
         <div>
