@@ -8,11 +8,11 @@ import CardAnim from './CardAnim'
 
 const RecipeCards = ({ searchResults }) => {
 
-    const { id } = useParams()
-    const cardId = id ? parseInt(id) : undefined
+const { id } = useParams()
+const cardId = id ? parseInt(id) : undefined
     
-    const showCardDetail = cardId !== undefined && searchResults
-    const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
+const showCardDetail = cardId !== undefined && searchResults
+const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
     return (
         <div>
@@ -62,6 +62,7 @@ const RecipeCards = ({ searchResults }) => {
                         }
                     </HashLink>)
                 }
+
             </div>
         </div>
     )
