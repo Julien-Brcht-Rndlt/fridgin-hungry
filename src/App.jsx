@@ -12,9 +12,10 @@ library.add(
 
 function App() {
     const [searchResults, setSearchResults] = useState([])
+    const [hasToken, setHasToken] = useState(false)
 
     return (
-            <AppRouter searchResults={searchResults} setSearchResults={setSearchResults}/>
+            <AppRouter hasToken={hasToken} setHasToken={setHasToken} searchResults={searchResults} setSearchResults={setSearchResults}/>
     )
 }
 
