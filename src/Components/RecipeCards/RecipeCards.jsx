@@ -1,14 +1,26 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link,  useParams } from 'react-router-dom'
 import "./RecipeCards.css"
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 
-const RecipeCards = ({ match, searchResults }) => {
 
-   /*  const { id } = useParams();
-    console.log("id : " + id); */
+
+const RecipeCards = ({ match, searchResults }) => {
+    const interval = 3;
+    const start = 0;
+
+    const [end, setEnd] = useState(interval);
+    const [cardsToRender, setCardsToRender] = useState([]);
+
+    useEffect(() => {
+        setCardsToRender(searchResults.slice(start, end)); // slice return all the values between start and end exclusively 
+    }, [searchResults, end])
+
+    const onClickHandler = () => {
+        setEnd((prevEnd) => prevEnd + interval); // when user clicks on view more, end should increase by interval based on the previous end.
+      };
 
     const id = match && parseInt(match.params.id);
     console.log("id : " + id);
@@ -19,11 +31,11 @@ const RecipeCards = ({ match, searchResults }) => {
                 <Link to='/'><button className="nav-button">Back</button></Link>
             </div> */}
             <div className="recipe-cards">
-                {searchResults.map((card, index) => {
+                {cardsToRender.map((card, index) => {
                     console.log("here: " + id)
                     return (
                     (id !== undefined && id === index) 
-                    ?<RecipeCardDetail 
+                    ?<RecipeCardDetail
                         label={card.recipe.label}
                         image={card.recipe.image}
                         servings={card.recipe.yield}
@@ -57,6 +69,7 @@ const RecipeCards = ({ match, searchResults }) => {
                 
                 )}
             </div>
+            <button onClick={onClickHandler}>View More</button>
         </div>
     )
 }
