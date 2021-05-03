@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='contact'>
-                <p><Link to='/aboutUs' style={{ textDecoration: 'none' }}>About us</Link></p>
+                <p><Link to='/aboutUs'style={{ textDecoration: 'none' }}>About us</Link></p>
             </div> 
         </div>
     )

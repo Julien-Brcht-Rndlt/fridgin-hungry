@@ -5,6 +5,7 @@
     margin: auto;
     align-items: center;
     text-align: center;
+    justify-content: center;
 }
 
 .aboutProject p {
@@ -12,8 +13,8 @@
 }
 
 .contactCard {
-    padding: 1em;
-    margin: 1em;
+    padding: 1rem;
+    margin: 0rem 4rem 8rem 4rem;
     background: rgb(240, 235, 235);
     width: 35rem;
     height: 60rem;
@@ -30,6 +31,7 @@
 .contactDisplay {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .contactName {
@@ -39,35 +41,65 @@
 
 .contactPic {
     border-radius: 15px;
+    height: 35rem;
+    width: 35rem;
 }
 
 .servings {
     font-size: 2.5rem;
 }
 
-.social-icon {
+.socialIcon {
     font-size: 3rem;
 }
 
-a,
-a:hover,
-a:focus,
-a:active {
+.socialIcons a {
     text-decoration: none;
-    color: #fff;
+    color: black;
     padding: 1rem;
 }
 
-.social-medias a,
-a:hover,
-a:focus,
-a:active {
+.socialIcons a:hover {
     text-decoration: none;
-    color: inherit;
+    color: white;
     padding: 1rem;
 }
 
 .socialIcons {
     display: flex;
     flex-direction: row;
+}
+  
+@media (max-width: 567px) and (min-width: 401px) {
+    .aboutProject {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    .contactCard {
+        width: 30rem;
+        height: 50rem;
+    }
+
+    .contactPic {
+        height: 30rem;
+        width: 30rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .aboutProject {
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    .contactCard {
+        width: 25rem;
+        height: 45rem;
+    }
+
+    .contactPic {
+        height: 25rem;
+        width: 25rem;
+    }
 }
