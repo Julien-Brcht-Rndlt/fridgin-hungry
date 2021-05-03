@@ -45,3 +45,29 @@
     font-size: 2.5rem;
 }
 
+.social-icon {
+    font-size: 3rem;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+}
+
+.social-medias a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+}
+
+.socialIcons {
+    display: flex;
+    flex-direction: row;
+}
