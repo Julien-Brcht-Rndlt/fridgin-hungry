@@ -6,11 +6,11 @@ import "./RecipeCards.css"
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 
-const RecipeCards = ({ searchResults }) => {
+const RecipeCards = ({ match, searchResults }) => {
 
 const { id } = useParams()
 const cardId = id ? parseInt(id) : undefined
-    
+
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
 
