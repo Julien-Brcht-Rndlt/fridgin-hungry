@@ -1,0 +1,24 @@
+.slide-container {
+    width: 100%;
+    margin: auto; 
+}
+
+.each-fade {
+    display: flex;
+    height: 50rem;
+  }
+  
+  .each-fade .image-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .each-fade .image-container img {
+    width: 100%;
+  }
+
+/* @media (max-width: 319px) {
+    .top-container {
+        display: none;
+    }
+} */
