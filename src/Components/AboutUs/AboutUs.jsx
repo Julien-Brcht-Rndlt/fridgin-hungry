@@ -8,7 +8,7 @@ import CardAnim from '../RecipeCards/CardAnim'
 const ourProfile = [
     {
     contactName: 'Sophie',
-    quote: '',
+    quote: 'Life is meaningless without pizza',
     picture:'https://drive.google.com/uc?id=1L27qBZlFQqKeWTX_kz3V_nqyF57Zz4ZB',
     gitHub: 'https://github.com/SophieTopart',
     linkedin: 'https://www.linkedin.com/in/sophie-bailly-topart-59a0b893/',
@@ -16,7 +16,7 @@ const ourProfile = [
     },
     {
     contactName: 'Jérôme',
-    quote: '',
+    quote: 'In raclette we trust',
     picture:'https://drive.google.com/uc?id=1UJd4Ww-f05LCLEGbMN09W5tR61lQ65lL',
     gitHub: 'https://github.com/JeromeShaaban',
     linkedin: 'https://www.linkedin.com/in/j%C3%A9r%C3%B4me-shaaban/',
@@ -24,7 +24,8 @@ const ourProfile = [
     },
     {
     contactName: 'Sarah',
-    quote: 'Chocolate Lover',
+    quote: 'Chocolate every day',
+    quotebis: 'keeps the doctor away',
     picture:'https://drive.google.com/uc?id=1Nlm5ClZ1X61XTvhNNF81CiV3AZJplQEJ',
     gitHub: 'https://github.com/Sarahbsn',
     linkedin: 'https://www.linkedin.com/in/sarah-bensouna-b25779152/',
@@ -45,25 +46,25 @@ const path = 'https://drive.google.com/uc?id=';
 const AboutUs = () => {
     return(
     <div>
+        <h3 className='title'>How did we came about the idea for Fridgin' Hungry? </h3>
         <div className='aboutProject'>
-        <p>How did we came about the idea for Fridgin' Hungry? Well, first of all, we love food.<br/> But as wilders, we have very little free time on our hands and our fridge is often half empty. <br/>
-            This is why we wanted to create an app which would allow us <br/>to find recipes to use up the few ingredients left at our disposal.
+        <p>"Well, first of all, we love food.<br/> But as wilders, we have very little free time on our hands<br/> and our fridge is often half empty. <br/>
+            This is why we wanted to create an app which would allow us <br/>to find recipes to use up the few ingredients left at our disposal."
         </p>
         </div>
         <div className='contactDisplay'>
         {ourProfile.map((profile) => 
-        <CardAnim rotation={5} timing={150}>
         <div className='contactCard'>
             <img src={profile.picture} alt={profile.contactName} className='contactPic' />
             <h3 className='contactName'>{profile.contactName}</h3>
             <p>{profile.quote}</p>
+            <p>{profile.quotebis}</p>
             <div className='socialIcons'>
                 <a href={profile.gitHub} target='_blank'><FontAwesomeIcon icon={['fab', 'github-square']} className='socialIcon' /></a>
                 <a href={profile.linkedin} target='_blank'><FontAwesomeIcon icon={['fab', 'linkedin']} className='socialIcon' /></a>
                 <a href={`mailto:${profile.mail}`} target='_blank'><FontAwesomeIcon icon={['fas', 'envelope-square']} className='socialIcon' /></a>
             </div>
         </div>
-        </CardAnim>
         )}
         </div>
         <div>

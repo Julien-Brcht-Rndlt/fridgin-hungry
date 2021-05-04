@@ -6,10 +6,21 @@
     align-items: center;
     text-align: center;
     justify-content: center;
+    padding: 2rem 0 5rem 0;
 }
 
 .aboutProject p {
     font-size: 2.8rem;
+    font-style: italic;
+    line-height: 4rem;
+    opacity: 0.5;
+}
+
+.title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 5rem;
+    opacity: 0.5;
 }
 
 .contactCard {
@@ -26,10 +37,16 @@
     border-radius: 10px;
     color: black;
     box-shadow: 0px 8px 24px 1px rgb(55, 55, 55);
+    text-align: center;
 }
 
 .contactCard p {
     font-size: 2rem;
+    font-style: italic;
+}
+
+.contactCard p:third child {
+    font-size: 3rem;
 }
 
 .contactDisplay {
