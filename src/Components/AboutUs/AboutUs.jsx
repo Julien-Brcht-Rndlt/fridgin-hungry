@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './AboutUs.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import HashNavButton from '../NavButtons/HashNavButton'
-import CardAnim from '../RecipeCards/CardAnim'
+import { useAnimatePresence } from "use-animate-presence";
 
 const ourProfile = [
     {
@@ -33,26 +32,36 @@ const ourProfile = [
     },
     {
     contactName: 'Julien',
-    quote: '',
+    quote: 'Tea is the new coffee',
     picture: 'https://drive.google.com/uc?id=1CilJ4lN_4Fvemuixj9g5OWBrf6ooakQB',
     gitHub: 'https://github.com/Julien-Brcht-Rndlt',
     linkedin: 'https://www.linkedin.com/in/julien-nicolas-brachet-randoulet-229aa2136/',
     mail: 'jn.brachet.randlt@gmail.com'
     }
-
 ]
-const path = 'https://drive.google.com/uc?id=';
+
+const diff = window.innerWidth / 2 + 300;
+
+const variants = {
+  y: { from: -diff, to: 0 },
+  deg: 20
+};
 
 const AboutUs = () => {
+    const square = useAnimatePresence({
+        variants: variants,
+        initial: "visible",
+    });
+
     return(
     <div>
-        <h3 className='title'>How did we came about the idea for Fridgin' Hungry? </h3>
+        <h3 className='title'>How did we come about the idea for Fridgin' Hungry? </h3>
         <div className='aboutProject'>
         <p>"Well, first of all, we love food.<br/> But as wilders, we have very little free time on our hands<br/> and our fridge is often half empty. <br/>
             This is why we wanted to create an app which would allow us <br/>to find recipes to use up the few ingredients left at our disposal."
         </p>
         </div>
-        <div className='contactDisplay'>
+        <div className='contactDisplay'ref={square.ref}>
         {ourProfile.map((profile) => 
         <div className='contactCard'>
             <img src={profile.picture} alt={profile.contactName} className='contactPic' />
