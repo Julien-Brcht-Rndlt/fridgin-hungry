@@ -16,6 +16,8 @@
     font-size: 2.5rem;
     padding-bottom: 2rem;
     text-align: center;
+    font-style: italic;
+    font-weight: 600;
 }
 
 @media (max-width: 900px) and (min-width: 769px){
