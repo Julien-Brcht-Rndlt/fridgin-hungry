@@ -171,7 +171,7 @@
     }
 } 
 
-@media (min-width: 1104px) and (max-width: 1690px){
+@media (min-width: 1104px) and (max-width: 1199px){
     .recipe-card {
         padding: 1em;
         margin: 1em;
