@@ -4,10 +4,10 @@ import 'react-slideshow-image/dist/styles.css'
 import './FadeSlideshow.css'
 
 const fadeImages = [
+    '1HAFiRTOA1MmBp_F4W8W03af-SoFJ1jPJ',
+    '152XFfvp-i0oIVG2G-dkhoIJCWJVPwaAp',
     '1sD308-z9WrxA6uGsLQmgSEleix4siAom',
     '1QuCen6YfHa9keb4CvxmlSE6uDm1JBC96',
-    '152XFfvp-i0oIVG2G-dkhoIJCWJVPwaAp',
-    '17whXVE4PsV7cF5H_FNGOuXj2CVe4YGOn',
   ];
 
 const PATH = "https://drive.google.com/uc?id=";
