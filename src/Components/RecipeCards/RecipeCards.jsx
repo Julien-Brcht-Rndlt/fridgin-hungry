@@ -26,10 +26,11 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                     <RecipeCardDetail
                         label={cardDetail.label}
                         image={cardDetail.image}
-                        servings={cardDetail.yield}
+                        servings={(cardDetail.yield).toFixed()}
                         totalTime={cardDetail.totalTime}
                         calories={(cardDetail.calories).toFixed(2)}
                         allergyFilter={(cardDetail.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
+                        //(cardDetail.healthLabels).length)/2 ? <div><li key={i}>{label}</li></div> : ...
                         dietLabel={cardDetail.dietLabels}
                         cholesterol={(cardDetail.totalNutrients.CHOLE.quantity).toFixed(2)}
                         sodium={(cardDetail.totalNutrients.NA.quantity).toFixed(2)}
@@ -54,7 +55,7 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                                     key={index}
                                     label={card.label}
                                     image={card.image}
-                                    servings={card.yield}
+                                    servings={(card.yield).toFixed()}
                                     totalTime={card.totalTime}
                                     dietLabel={card.dietLabels}
                                     />
