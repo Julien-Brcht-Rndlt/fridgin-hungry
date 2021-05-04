@@ -13,7 +13,7 @@ import AlertMessage from '../AlertMessage/AlertMessage'
 
 const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl }) => {
  
-    const [start, setStart] = useState(0)
+    const [start, setStart] = useState(10)
     const [step, setStep] = useState(10)
 
     // random prep time
@@ -34,19 +34,28 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
 
         // define next step
         const end = start + step
+
+        let url = searchUrl;
         
         //https://api.edamam.com/search?q=chicken, tomato, cheese&app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&from=40&to=50
         //searchUrl
-        searchUrl = searchUrl.includes('&from=') ? updateUrlNext(searchUrl, 'from=', start) : `${searchUrl}&from=${start}`
-        searchUrl = searchUrl.includes('&to=') ? updateUrlNext(searchUrl, 'to=', end) : `${searchUrl}&to=${end}`
+        console.log("view +10 more")
+        console.log("url.includes('&from='): " + url.includes('&from='))
+        url = /* url.includes('&from=') ? updateUrlNext(url, 'from=', start) :*/ `${url}&from=${start}`
+        console.log("url after from: " + url)
 
-        setSearchUrl(searchUrl)
+        console.log("url.includes('&to='): " + url.includes('&to='))
+        console.log("url after to: " + url)
+        url = /*url.includes('&to=') ? updateUrlNext(url, 'to=', end) :*/ `${url}&to=${end}`
+        console.log('after adding "to" at searchUrl: ' + url)
 
-        console.log('searchUrl: ' + searchUrl)
+        //setSearchUrl(url)
+
+        console.log('searchUrl view more: ' + searchUrl)
 
         // fetch API with axios
         axios
-            .get(searchUrl)
+            .get(url)
             .then((response) => response.data)
             .then((data) => {
                 // grab API data + populate our own recipe JS objects
@@ -65,7 +74,7 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
                 setSearchResults((prevState) => [...prevState, ...recipes] )
             })
         // next start
-        setStart(end)
+        setStart(end + 1)
     }
 
 const { id } = useParams()
