@@ -17,8 +17,22 @@
     width: 100%;
   }
 
-/* @media (max-width: 319px) {
-    .top-container {
-        display: none;
+  @media (max-width: 768px) and (min-width: 568px){
+    .each-fade {
+      height: 35rem;
     }
-} */
+}
+
+  @media (max-width: 567px) and (min-width: 320px) {
+    .each-fade {
+      height: 20rem;
+    }
+}
+  
+  @media (max-width: 319px) {
+    .each-fade {
+      height: 20rem;
+    }
+}
+
+
