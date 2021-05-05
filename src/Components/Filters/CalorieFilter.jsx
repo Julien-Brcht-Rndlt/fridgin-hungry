@@ -106,7 +106,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                         valueLabelDisplay='auto'
                         getAriaValueText={() => `${setSearchCalories}`}
                         value={searchCalories}
-                        onChange={handleCaloriesSlider}
+                        onChange={(e, newValue) => handleCaloriesSlider(e, newValue)}
                     />
                 </div>
                 <div>
@@ -123,7 +123,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                         defaultValue={0}
                         valueLabelDisplay='auto'
                         value={searchProtein}
-                        onChange={handleProteinSlider}
+                        onChange={(e, newValue) => handleProteinSlider(e, newValue)}
                     />
                 </div>
                 <div>
@@ -140,7 +140,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                         defaultValue={0}
                         valueLabelDisplay='auto'
                         value={searchCarbs}
-                        onChange={handleCarbsSlider}
+                        onChange={(e, newValue) => handleCarbsSlider(e, newValue)}
                     />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
                         defaultValue={0}
                         valueLabelDisplay='auto'
                         value={searchFat}
-                        onChange={handleFatSlider}
+                        onChange={(e, newValue) => handleFatSlider(e, newValue)}
                     />
                 </div>
             </div>

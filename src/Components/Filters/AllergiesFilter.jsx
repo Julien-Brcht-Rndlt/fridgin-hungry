@@ -43,7 +43,7 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
               name='health'
               value={allergy.value}
               checked={allergy.selected}
-              onClick={handleClickAllergy} />
+              onClick={(e) => handleClickAllergy(e)} />
 
             <label htmlFor={allergy.value}>
               {allergy.label}

@@ -52,7 +52,7 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
                             name={input}
                             type='text'
                             value={ingredients[input]}
-                            onChange={handleIngredientsChange}
+                            onChange={(e) => handleIngredientsChange(e)}
                             placeholder={`ingredient ${index + 1} `}
                         />
                     </div>
