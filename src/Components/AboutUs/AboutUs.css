@@ -87,19 +87,18 @@
     flex-direction: row;
 }
 
-@media (max-width: 1200px) and (min-width: 769px){
+@media (max-width: 1200px) and (min-width: 769px) {
     .aboutProject {
         margin-top: 5rem;
         margin-bottom: 5rem;
     }
 }
-  
-@media (max-width: 768px) and (min-width: 568px){
+
+@media (max-width: 768px) and (min-width: 568px) {
     .aboutProject {
         margin-top: 5rem;
         margin-bottom: 5rem;
     }
-
     .aboutProject p {
         font-size: 2.5rem;
     }
@@ -110,21 +109,17 @@
         margin-top: 7rem;
         margin-bottom: 7rem;
     }
-
     .aboutProject p {
         font-size: 2.3rem;
     }
-
     .contactCard {
         width: 30rem;
         height: 50rem;
     }
-
     .contactPic {
         height: 30rem;
         width: 30rem;
     }
-    
     .title {
         font-size: 2.8rem;
     }
@@ -135,21 +130,17 @@
         margin-top: 7rem;
         margin-bottom: 7rem;
     }
-
     .aboutProject p {
         font-size: 2rem;
     }
-
     .contactCard {
         width: 25rem;
         height: 45rem;
     }
-
     .contactPic {
         height: 25rem;
         width: 25rem;
     }
-
     .title {
         font-size: 2.5rem;
     }
@@ -160,21 +151,17 @@
         margin-top: 12rem;
         margin-bottom: 12rem;
     }
-
     .aboutProject p {
         font-size: 2rem;
     }
-
     .contactCard {
         width: 25rem;
         height: 45rem;
     }
-
     .contactPic {
         height: 25rem;
         width: 25rem;
     }
-
     .title {
         font-size: 2.2rem;
     }
@@ -185,21 +172,17 @@
         margin-top: 15rem;
         margin-bottom: 15rem;
     }
-
     .aboutProject p {
         font-size: 2rem;
     }
-
     .contactCard {
         width: 25rem;
         height: 45rem;
     }
-
     .contactPic {
         height: 25rem;
         width: 25rem;
     }
-
     .title {
         font-size: 2.2rem;
     }

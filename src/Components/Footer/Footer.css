@@ -17,20 +17,13 @@
     justify-content: center;
 }
 
-
-a,
-a:hover,
-a:focus,
-a:active {
+a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: #fff;
     padding: 1rem;
 }
 
-.social-medias a,
-a:hover,
-a:focus,
-a:active {
+.social-medias a, a:hover, a:focus, a:active {
     text-decoration: none;
     color: inherit;
     padding: 1rem;
@@ -40,14 +33,12 @@ a:active {
     font-size: 3rem;
 }
 
-
 @media (max-width: 567px) {
     .footer {
         flex-direction: column;
         padding: 5px;
         height: 8rem;
     }
-
     p {
         padding: 5px;
     }

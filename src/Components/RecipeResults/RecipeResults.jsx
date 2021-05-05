@@ -5,25 +5,19 @@ import CalorieFilter from '../Filters/CalorieFilter'
 import AllergiesFilter from '../Filters/AllergiesFilter'
 import FilterDisplay from '../Filters/FilterDisplay'
 import RecipeCards from '../RecipeCards/RecipeCards'
-import "./RecipeResults.css"
-import { Link } from "react-router-dom"
+import './RecipeResults.css'
+import { Link } from 'react-router-dom'
 
 const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
-    
-    // random prep time
+
     const prepTimes = [15, 30, 45, 60]
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
-    // const finalUrl = urlIngredients
     const handleClick = () => {
-       
-        console.log('url:' + searchUrl)
-        
         axios
             .get(searchUrl)
             .then((response) => response.data)
             .then((data) => {
-                // grab API data + populate our own recipe JS objects
                 const recipeProperties = ['label', 'image', 'yield', 'totalTime', 'calories', 'healthLabels', 'dietLabels', 'totalNutrients', 'ingredientLines', 'url']
                 let recipes = []
                 data.hits.map((recipeData) => {
@@ -39,29 +33,27 @@ const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
     }
 
     return (
-        <div className="filterContainer">
-            <div className="recipeResults">
-                
+        <div className='filterContainer'>
+            <div className='recipeResults'>
                 <FilterDisplay title={'Ingredients'}>
                     <IngredientFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
                 </FilterDisplay>
 
                 <FilterDisplay title={'Macros'}>
-                <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                    <CalorieFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
                 </FilterDisplay>
 
                 <FilterDisplay title={'Health'}>
-                <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                    <AllergiesFilter searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
                 </FilterDisplay>
-
             </div>
             <div>
                 <Link to='/recipes'>
-                    <button className="action-button" onClick={handleClick}>Get recipes</button>
+                    <button className='action-button' onClick={handleClick}>Get recipes</button>
                 </Link>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default RecipeResults;
+export default RecipeResults

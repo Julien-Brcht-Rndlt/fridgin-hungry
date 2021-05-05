@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
+const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
@@ -43,15 +43,14 @@ const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
     }
 
     return (
-        <div className="ingredients">
-            
+        <div className='ingredients'>
             {inputs.map((input, index) => {
                 return (
-                    <div className="ingr-inputs">
+                    <div className='ingr-inputs'>
                         <input
                             key={index}
                             name={input}
-                            type="text"
+                            type='text'
                             value={ingredients[input]}
                             onChange={handleIngredientsChange}
                             placeholder={`ingredient ${index + 1} `}

@@ -50,7 +50,7 @@
     }
 }
 
-@media (min-width: 568px) and (max-width: 719px){
+@media (min-width: 568px) and (max-width: 719px) {
     .recipe-cards {
         display: flex;
         width: 100%;

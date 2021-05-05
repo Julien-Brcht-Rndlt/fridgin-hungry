@@ -16,7 +16,7 @@ function App() {
     const [hasToken, setHasToken] = useState(false)
 
     return (
-            <AppRouter hasToken={hasToken} setHasToken={setHasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults}/>
+        <AppRouter hasToken={hasToken} setHasToken={setHasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} />
     )
 }
 

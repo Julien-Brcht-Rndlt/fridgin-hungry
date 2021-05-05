@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import './AllergiesFilter.css'
 
-const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
+const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
 
   const initialAllergies = [
     { label: 'Vegetarian', value: 'vegetarian', selected: false },
@@ -12,15 +12,6 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
     { label: 'Sugar-free', value: 'low-sugar', selected: false },
     { label: 'Peanut-free', value: 'peanut-free', selected: false },
   ]
-
-  const Allergies = [
-    'Vegetarian',
-    'Vegan',
-    'Pork-Free',
-    'Gluten-Free',
-    'Low-Sugar',
-    'Peanut-Free',
-]
 
   const [allergies, setAllergies] = useState(initialAllergies)
 
@@ -33,7 +24,7 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
       else return false
     })
     checkedAllergy.selected = !checkedAllergy.selected
-    
+
     // dynamic refresh of the search url used for the filters.
     let url = searchUrl
     url = url.includes(`&health=${allergyValue}`) ? url.replace(`&health=${allergyValue}`, '') : `${url}&health=${allergyValue}`
@@ -42,13 +33,12 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
 
     setAllergies([...allergies])
   }
-  
+
   return (
-   
-       <div className='allergyFilter'>
+    <div className='allergyFilter'>
       { allergies.map(allergy => {
         return (
-             <div className='allergies'>
+          <div className='allergies'>
             <input type='checkbox'
               name='health'
               value={allergy.value}
@@ -58,12 +48,11 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
             <label htmlFor={allergy.value}>
               {allergy.label}
             </label>
-           </div>    
+          </div>
         )
       })
       }
-      </div>
-   
+    </div>
   )
 }
 
