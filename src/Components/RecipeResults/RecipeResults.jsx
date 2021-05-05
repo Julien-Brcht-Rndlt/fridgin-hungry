@@ -14,6 +14,7 @@ const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
     const handleClick = () => {
+        console.log(searchUrl)
         axios
             .get(searchUrl)
             .then((response) => response.data)
