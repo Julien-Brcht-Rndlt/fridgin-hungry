@@ -91,25 +91,26 @@ const CalorieFilter = ({ searchUrl, setSearchUrl, children }) => {
     return (
         <div className='calorieFilter'>
             <div className='sliders'>
-            <div>
-                <Typography
+                <div>
+                    <Typography
                     align='center'
-                    variant='h5'>Calories (kcal/pers)</Typography>
-                <Slider
-                    classes={{
-                        root: classes.root,
-                        valueLabel: classes.valueLabel
-                    }}
-                    min={0}
-                    max={1500}
-                    defaultValue={0}
-                    valueLabelDisplay='auto'
-                    getAriaValueText={() => `${setSearchCalories}`}
-                    value={searchCalories}
-                    onChange={handleCaloriesSlider}                
-                />
-             </div>
-            <div>
+                    variant='h5'>Calories (kcal/pers)
+                    </Typography>
+                    <Slider
+                        classes={{
+                            root: classes.root,
+                            valueLabel: classes.valueLabel
+                        }}
+                        min={0}
+                        max={1500}
+                        defaultValue={0}
+                        valueLabelDisplay='auto'
+                        getAriaValueText={() => `${setSearchCalories}`}
+                        value={searchCalories}
+                        onChange={handleCaloriesSlider}                
+                    />
+                </div>
+                <div>
                 <Typography
                     align='center'
                     variant='h5'>Protein (g/pers)</Typography>

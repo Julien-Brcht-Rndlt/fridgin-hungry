@@ -16,7 +16,6 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
     const [start, setStart] = useState(10)
     const [step, setStep] = useState(10)
 
-    // random prep time
     const prepTimes = [15, 30, 45, 60]
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
@@ -32,33 +31,17 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
 
     const onClickHandler = () => {
 
-        // define next step
         const end = start + step
 
         let url = searchUrl;
         
-        //https://api.edamam.com/search?q=chicken, tomato, cheese&app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&from=40&to=50
-        //searchUrl
-        console.log("view +10 more")
-        console.log("url.includes('&from='): " + url.includes('&from='))
-        url = /* url.includes('&from=') ? updateUrlNext(url, 'from=', start) :*/ `${url}&from=${start}`
-        console.log("url after from: " + url)
+        url = `${url}&from=${start}`
+        url = `${url}&to=${end}`
 
-        console.log("url.includes('&to='): " + url.includes('&to='))
-        console.log("url after to: " + url)
-        url = /*url.includes('&to=') ? updateUrlNext(url, 'to=', end) :*/ `${url}&to=${end}`
-        console.log('after adding "to" at searchUrl: ' + url)
-
-        //setSearchUrl(url)
-
-        console.log('searchUrl view more: ' + searchUrl)
-
-        // fetch API with axios
         axios
             .get(url)
             .then((response) => response.data)
             .then((data) => {
-                // grab API data + populate our own recipe JS objects
                 const recipeProperties = ['label', 'image', 'yield', 'totalTime', 'calories', 'healthLabels', 'dietLabels', 'totalNutrients', 'ingredientLines', 'url']
                 let recipes = []
                 data.hits.map((recipeData) => {
@@ -69,36 +52,28 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
                     recipe.totalTime = recipe.totalTime !== 0 ? recipe.totalTime : randomPrepTime()
                     recipes = [...recipes, recipe]
                 })
-
-                 // save new recipes searchResults state
                 setSearchResults((prevState) => [...prevState, ...recipes] )
             })
-        // next start
         setStart(end + 1)
     }
 
 const { id } = useParams()
 const cardId = id ? parseInt(id) : undefined
 
-console.log('searchResults: ', searchResults)
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
-console.log('cardId: ', cardId)
-console.log('showCardDetail', showCardDetail)
-
     return (
         <div>
             <HashNavButton title={'Launch a new search'} to={'/home#filters'}/>
-            <div className="recipe-cards">
-            { showCardDetail &&
-               <Link to='/recipes'>
+            <div className="top-card">
+                { showCardDetail &&
+                <Link to='/recipes'>
                     <RecipeCardDetail
                         label={cardDetail.label}
                         image={cardDetail.image}
-                        servings={cardDetail.yield}
+                        servings={(cardDetail.yield).toFixed()}
                         totalTime={cardDetail.totalTime}
                         calories={(cardDetail.calories).toFixed(2)}
-                        allergyFilter={(cardDetail.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
                         dietLabel={cardDetail.dietLabels}
                         cholesterol={(cardDetail.totalNutrients.CHOLE.quantity).toFixed(2)}
                         sodium={(cardDetail.totalNutrients.NA.quantity).toFixed(2)}
@@ -109,20 +84,23 @@ console.log('showCardDetail', showCardDetail)
                         fat={(cardDetail.totalNutrients.FAT.quantity).toFixed(2)}
                         saturatedFat={(cardDetail.totalNutrients.FASAT.quantity).toFixed(2)}
                         ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
-                        url={cardDetail.url}/>
+                        url={cardDetail.url}
+                        healthLabels={[cardDetail.healthLabels]}>
+                    </RecipeCardDetail>
                 </Link>
-            }
-
-            {  searchResults.length === 0 ? <AlertMessage />  : 
-                searchResults.map((card, index) => 
-                    <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
+                }
+            </div>
+            <div className="recipe-cards">
+                {  searchResults.length === 0 ? <AlertMessage />  : 
+                    searchResults.map((card, index) => 
+                    <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({    behavior: 'auto', block: 'center', inline: 'nearest' })}>
                         { (!showCardDetail || cardId !== index) &&
                             <CardAnim rotation={5} timing={150}>
                                 <RecipeCard
                                     key={index}
                                     label={card.label}
                                     image={card.image}
-                                    servings={card.yield}
+                                    servings={(card.yield).toFixed()}
                                     totalTime={card.totalTime}
                                     dietLabel={card.dietLabels}
                                     />
@@ -130,7 +108,6 @@ console.log('showCardDetail', showCardDetail)
                         }
                     </HashLink>)
                 }
-        
             </div>
             <div className='viewmore-container'>
             <button onClick={onClickHandler} className='viewmore-button'>View More</button>
