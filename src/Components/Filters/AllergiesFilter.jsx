@@ -13,6 +13,15 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
     { label: 'Peanut-free', value: 'peanut-free', selected: false },
   ]
 
+  const Allergies = [
+    'Vegetarian',
+    'Vegan',
+    'Pork-Free',
+    'Gluten-Free',
+    'Low-Sugar',
+    'Peanut-Free',
+]
+
   const [allergies, setAllergies] = useState(initialAllergies)
 
   const handleClickAllergy = (e) => {
@@ -26,9 +35,10 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
     checkedAllergy.selected = !checkedAllergy.selected
     
     // dynamic refresh of the search url used for the filters.
-    searchUrl = searchUrl.includes(`&health=${allergyValue}`) ? searchUrl.replace(`&health=${allergyValue}`, '') : `${searchUrl}&health=${allergyValue}`
+    let url = searchUrl
+    url = url.includes(`&health=${allergyValue}`) ? url.replace(`&health=${allergyValue}`, '') : `${url}&health=${allergyValue}`
 
-    setSearchUrl(searchUrl)
+    setSearchUrl(url)
 
     setAllergies([...allergies])
   }

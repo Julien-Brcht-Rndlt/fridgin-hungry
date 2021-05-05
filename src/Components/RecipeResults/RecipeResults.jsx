@@ -8,15 +8,17 @@ import RecipeCards from '../RecipeCards/RecipeCards'
 import "./RecipeResults.css"
 import { Link } from "react-router-dom"
 
-const RecipeResults = ({ setSearchResults = [] }) => {
-    const [searchUrl, setSearchUrl] = useState(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`);
-
+const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
+    
     // random prep time
     const prepTimes = [15, 30, 45, 60]
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
     // const finalUrl = urlIngredients
     const handleClick = () => {
+       
+        console.log('url:' + searchUrl)
+        
         axios
             .get(searchUrl)
             .then((response) => response.data)

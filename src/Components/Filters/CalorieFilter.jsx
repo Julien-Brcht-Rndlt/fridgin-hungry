@@ -40,44 +40,52 @@ const CalorieFilter = ({ searchUrl, setSearchUrl, children }) => {
         
         setSearchCalories((prevState) => prevState = newValue)
 
-        searchUrl = searchUrl.includes('calories=') ? updateUrlParams(searchUrl, 'calories', `calories=${searchCalories}`) : `${searchUrl}&calories=${searchCalories}`
+        let url = searchUrl;
 
-        searchUrl = removeUrlNullValues(searchUrl, 'calories')
+        url = url.includes('calories=') ? updateUrlParams(url, 'calories', `calories=${searchCalories}`) : `${url}&calories=${searchCalories}`
 
-        setSearchUrl(searchUrl)
+        url = removeUrlNullValues(url, 'calories')
+
+        setSearchUrl(url)
     }
 
     const handleProteinSlider = (e, newValue) => {
         
         setSearchProtein((prevState) => prevState = newValue)
 
-        searchUrl = searchUrl.includes('nutrients%5BPROCNT%5D5=') ? updateUrlParams(searchUrl, 'nutrients%5BPROCNT%5D5', `nutrients%5BPROCNT%5D5=${searchProtein}`) : `${searchUrl}&nutrients%5BPROCNT%5D5=${searchProtein}`
+        let url = searchUrl;
 
-        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BPROCNT%5D5')
+        url = url.includes('nutrients%5BPROCNT%5D5=') ? updateUrlParams(url, 'nutrients%5BPROCNT%5D5', `nutrients%5BPROCNT%5D5=${searchProtein}`) : `${url}&nutrients%5BPROCNT%5D5=${searchProtein}`
 
-        setSearchUrl(searchUrl)
+        url = removeUrlNullValues(url, 'nutrients%5BPROCNT%5D5')
+
+        setSearchUrl(url)
     }
 
     const handleCarbsSlider = (e, newValue) => {
         
         setSearchCarbs((prevState) => prevState = newValue)
 
-        searchUrl = searchUrl.includes('nutrients%5BCHOCDF%5D=') ? updateUrlParams(searchUrl, 'nutrients%5BCHOCDF%5D', `nutrients%5BCHOCDF%5D=${searchCarbs}`) : `${searchUrl}&nutrients%5BCHOCDF%5D=${searchCarbs}`
+        let url = searchUrl;
 
-        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BCHOCDF%5D')
+        url = url.includes('nutrients%5BCHOCDF%5D=') ? updateUrlParams(url, 'nutrients%5BCHOCDF%5D', `nutrients%5BCHOCDF%5D=${searchCarbs}`) : `${url}&nutrients%5BCHOCDF%5D=${searchCarbs}`
 
-        setSearchUrl(searchUrl)
+        url = removeUrlNullValues(url, 'nutrients%5BCHOCDF%5D')
+
+        setSearchUrl(url)
     }
 
     const handleFatSlider = (e, newValue) => {
         
         setSearchFat((prevState) => prevState = newValue)
 
-        searchUrl = searchUrl.includes('nutrients%5BFAT%5D=') ? updateUrlParams(searchUrl, 'nutrients%5BFAT%5D', `nutrients%5BFAT%5D=${searchFat}`) : `${searchUrl}&nutrients%5BFAT%5D=${searchFat}`
+        let url = searchUrl;
 
-        searchUrl = removeUrlNullValues(searchUrl, 'nutrients%5BFAT%5D')
+        url = url.includes('nutrients%5BFAT%5D=') ? updateUrlParams(url, 'nutrients%5BFAT%5D', `nutrients%5BFAT%5D=${searchFat}`) : `${url}&nutrients%5BFAT%5D=${searchFat}`
 
-        setSearchUrl(searchUrl)
+        url = removeUrlNullValues(url, 'nutrients%5BFAT%5D')
+
+        setSearchUrl(url)
     }
 
     return (
