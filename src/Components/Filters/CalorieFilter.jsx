@@ -35,7 +35,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
     const removeUrlNullValues = (url, param) => url.includes(`&${param}=0`) ? url.replace(`&${param}=0`, '') : url
 
     //TODO: factorise all the handleXXXXSlider()
-    const handleCaloriesSlider = (newValue) => {
+    const handleCaloriesSlider = (event, newValue) => {
 
         setSearchCalories((prevState) => prevState = newValue)
 
@@ -48,7 +48,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
         setSearchUrl(url)
     }
 
-    const handleProteinSlider = (newValue) => {
+    const handleProteinSlider = (event, newValue) => {
 
         setSearchProtein((prevState) => prevState = newValue)
 
@@ -61,7 +61,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
         setSearchUrl(url)
     }
 
-    const handleCarbsSlider = (newValue) => {
+    const handleCarbsSlider = (event, newValue) => {
 
         setSearchCarbs((prevState) => prevState = newValue)
 
@@ -74,7 +74,7 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
         setSearchUrl(url)
     }
 
-    const handleFatSlider = (newValue) => {
+    const handleFatSlider = (event, newValue) => {
 
         setSearchFat((prevState) => prevState = newValue)
 
