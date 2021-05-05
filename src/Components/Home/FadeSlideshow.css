@@ -1,38 +1,36 @@
 .slide-container {
-    width: 100%;
-    margin: auto; 
+  width: 100%;
+  margin: auto;
 }
 
 .each-fade {
-    display: flex;
-    height: 50rem;
-  }
-  
-  .each-fade .image-container {
-    width: 100%;
-    overflow: hidden;
-  }
-  
-  .each-fade .image-container img {
-    width: 100%;
-  }
-
-  @media (max-width: 768px) and (min-width: 568px){
-    .each-fade {
-      height: 35rem;
-    }
+  display: flex;
+  height: 50rem;
 }
 
-  @media (max-width: 567px) and (min-width: 320px) {
-    .each-fade {
-      height: 20rem;
-    }
-}
-  
-  @media (max-width: 319px) {
-    .each-fade {
-      height: 20rem;
-    }
+.each-fade .image-container {
+  width: 100%;
+  overflow: hidden;
 }
 
+.each-fade .image-container img {
+  width: 100%;
+}
 
+@media (max-width: 768px) and (min-width: 568px) {
+  .each-fade {
+    height: 35rem;
+  }
+}
+
+@media (max-width: 567px) and (min-width: 320px) {
+  .each-fade {
+    height: 20rem;
+  }
+}
+
+@media (max-width: 319px) {
+  .each-fade {
+    height: 20rem;
+  }
+}

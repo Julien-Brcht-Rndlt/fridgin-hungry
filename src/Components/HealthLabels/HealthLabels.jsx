@@ -17,11 +17,12 @@ const HealthLabels = ({ healthLabels }) => {
     useEffect(() => {
         const selectedLabels = healthLabels[0].filter(healthLabel => Allergies.includes(healthLabel))
         setAllergyFilters(selectedLabels)
-    },[healthLabels])
+    }, [healthLabels])
 
     return (
         <div>
-            <p><FontAwesomeIcon icon="check-double" className='recipe-icon' /> Health Labels: {allergyFilters.map((allergyFilter, index) => <li key={index}>{allergyFilter}</li> )}
+            <p>
+                <FontAwesomeIcon icon='check-double' className='recipe-icon' /> Health Labels: {allergyFilters.map((allergyFilter, index) => <li key={index}>{allergyFilter}</li>)}
             </p>
         </div>
     )

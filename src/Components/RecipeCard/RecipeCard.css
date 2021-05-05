@@ -33,19 +33,16 @@
         width: 50%;
         height: 100%;
         margin: auto;
-
     }
     .label {
         font-size: 1.5rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 30%;
         height: 30%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1rem;
     }
@@ -57,25 +54,22 @@
         width: 50%;
         height: 100%;
         margin: auto;
-
     }
     .label {
         font-size: 1.5rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 40%;
         height: 30%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1rem;
     }
 }
 
-@media (min-width: 568px) and (max-width: 719px){
+@media (min-width: 568px) and (max-width: 719px) {
     .recipe-card {
         padding: 1em;
         margin: 1em;
@@ -94,20 +88,18 @@
         font-size: 1.5rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 50%;
         height: 40%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1rem;
         text-align: center;
     }
-} 
+}
 
-@media (min-width: 720px) and (max-width: 900px){
+@media (min-width: 720px) and (max-width: 900px) {
     .recipe-card {
         padding: 1em;
         margin: 1em;
@@ -126,20 +118,18 @@
         font-size: 1.5rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 60%;
         height: 40%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1rem;
         text-align: center;
     }
-} 
+}
 
-@media (min-width: 901px) and (max-width: 1103px){
+@media (min-width: 901px) and (max-width: 1103px) {
     .recipe-card {
         padding: 1em;
         margin: 1em;
@@ -158,20 +148,18 @@
         font-size: 2rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 70%;
         height: 50%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1.5rem;
         text-align: center;
     }
-} 
+}
 
-@media (min-width: 1104px) and (max-width: 1199px){
+@media (min-width: 1104px) and (max-width: 1199px) {
     .recipe-card {
         padding: 1em;
         margin: 1em;
@@ -190,13 +178,11 @@
         font-size: 2rem;
         text-align: center;
     }
-    
     .recipeImage {
         border-radius: 15px;
         width: 70%;
         height: 50%;
     }
-
     .servings, .totalTime, .dietLabel {
         font-size: 1.5rem;
         text-align: center;
