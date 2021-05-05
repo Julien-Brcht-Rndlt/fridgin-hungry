@@ -15,7 +15,7 @@ const cardId = id ? parseInt(id) : undefined
 
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
-
+console.log('searchResults: ', searchResults)
     return (
         <div>
             <HashNavButton title={'Launch a new search'} to={'/home#filters'}/>
@@ -39,7 +39,7 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         saturatedFat={(cardDetail.totalNutrients.FASAT.quantity).toFixed(2)}
                         ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
                         url={cardDetail.url}
-                        healthLabels={cardDetail.healthLabels}>  
+                        healthLabels={[cardDetail.healthLabels]}>
                     </RecipeCardDetail>
                 </Link>
                 }
