@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import './AllergiesFilter.css'
 
@@ -43,7 +43,7 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
               name='health'
               value={allergy.value}
               checked={allergy.selected}
-              onClick={handleClickAllergy} />
+              onClick={(e) => handleClickAllergy(e)} />
 
             <label htmlFor={allergy.value}>
               {allergy.label}
