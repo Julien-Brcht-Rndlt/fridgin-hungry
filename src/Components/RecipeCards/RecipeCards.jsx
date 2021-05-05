@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
@@ -7,7 +7,6 @@ import HashNavButton from '../NavButtons/HashNavButton'
 import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 import AlertMessage from '../AlertMessage/AlertMessage'
-import HealthLabels from '../HealthLabels/HealthLabels'
 
 const RecipeCards = ({ match, searchResults }) => {
 
