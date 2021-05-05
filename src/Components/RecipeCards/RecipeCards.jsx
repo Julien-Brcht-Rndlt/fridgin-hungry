@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
@@ -11,6 +11,10 @@ import AlertMessage from '../AlertMessage/AlertMessage'
 
 const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl }) => {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+    
     const [start, setStart] = useState(10)
     const [step, setStep] = useState(10)
     const prepTimes = [15, 30, 45, 60]

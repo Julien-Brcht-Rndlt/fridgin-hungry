@@ -11,7 +11,7 @@ const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
 
     useEffect(()=> {
         if(searchUrl) {
-          setSearchUrl(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`)
+            setSearchUrl(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`)
         }
     }, [])
 
