@@ -1,20 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import IngredientFilter from '../Filters/IngredientFilter'
 import CalorieFilter from '../Filters/CalorieFilter'
 import AllergiesFilter from '../Filters/AllergiesFilter'
 import FilterDisplay from '../Filters/FilterDisplay'
-import RecipeCards from '../RecipeCards/RecipeCards'
 import './RecipeResults.css'
 import { Link } from 'react-router-dom'
 
 const RecipeResults = ({ searchUrl, setSearchUrl, setSearchResults = [] }) => {
 
+    useEffect(()=> {
+        if(searchUrl) {
+          setSearchUrl(`https://api.edamam.com/search?app_id=f604900f&app_key=b523b505a718166bca1753372a51616f&q=`)
+        }
+    }, [])
+
     const prepTimes = [15, 30, 45, 60]
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
     const handleClick = () => {
-        console.log(searchUrl)
         axios
             .get(searchUrl)
             .then((response) => response.data)
