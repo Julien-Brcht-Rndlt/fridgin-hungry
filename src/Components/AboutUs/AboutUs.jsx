@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './AboutUs.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import HashNavButton from '../NavButtons/HashNavButton'
@@ -48,6 +48,11 @@ const variants = {
 }
 
 const AboutUs = () => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     const square = useAnimatePresence({
         variants: variants,
         initial: 'visible',
