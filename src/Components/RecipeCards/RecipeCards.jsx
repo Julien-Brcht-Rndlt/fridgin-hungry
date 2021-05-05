@@ -80,9 +80,11 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
 const { id } = useParams()
 const cardId = id ? parseInt(id) : undefined
 
+console.log('searchResults: ', searchResults)
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
-
+console.log('cardId: ', cardId)
+console.log('showCardDetail', showCardDetail)
 
     return (
         <div>
