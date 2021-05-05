@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import RecipeCard from '../RecipeCard/RecipeCard'
 import { Link, useParams } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
@@ -15,21 +15,19 @@ const cardId = id ? parseInt(id) : undefined
 
 const showCardDetail = cardId !== undefined && searchResults
 const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
-
-
+console.log('searchResults: ', searchResults)
     return (
         <div>
             <HashNavButton title={'Launch a new search'} to={'/home#filters'}/>
-            <div className="recipe-cards">
-            { showCardDetail &&
-               <Link to='/recipes'>
+            <div className="top-card">
+                { showCardDetail &&
+                <Link to='/recipes'>
                     <RecipeCardDetail
                         label={cardDetail.label}
                         image={cardDetail.image}
-                        servings={cardDetail.yield}
+                        servings={(cardDetail.yield).toFixed()}
                         totalTime={cardDetail.totalTime}
                         calories={(cardDetail.calories).toFixed(2)}
-                        allergyFilter={(cardDetail.healthLabels).map((label, i) => <li key={i}>{label}</li>)}
                         dietLabel={cardDetail.dietLabels}
                         cholesterol={(cardDetail.totalNutrients.CHOLE.quantity).toFixed(2)}
                         sodium={(cardDetail.totalNutrients.NA.quantity).toFixed(2)}
@@ -40,20 +38,23 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         fat={(cardDetail.totalNutrients.FAT.quantity).toFixed(2)}
                         saturatedFat={(cardDetail.totalNutrients.FASAT.quantity).toFixed(2)}
                         ingredients={(cardDetail.ingredientLines).map((ingredient, i) => <li key={i}>{ingredient}</li>)} 
-                        url={cardDetail.url}/>
+                        url={cardDetail.url}
+                        healthLabels={[cardDetail.healthLabels]}>
+                    </RecipeCardDetail>
                 </Link>
-            }
-
-            {  searchResults.length === 0 ? <AlertMessage />  : 
-                searchResults.map((card, index) => 
-                    <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({ behavior: 'auto', block: 'center', inline: 'nearest' })}>
+                }
+            </div>
+            <div className="recipe-cards">
+                {  searchResults.length === 0 ? <AlertMessage />  : 
+                    searchResults.map((card, index) => 
+                    <HashLink to={`/recipes/${index}#card-detail`} scroll={(element) => element.scrollIntoView({    behavior: 'auto', block: 'center', inline: 'nearest' })}>
                         { (!showCardDetail || cardId !== index) &&
                             <CardAnim rotation={5} timing={150}>
                                 <RecipeCard
                                     key={index}
                                     label={card.label}
                                     image={card.image}
-                                    servings={card.yield}
+                                    servings={(card.yield).toFixed()}
                                     totalTime={card.totalTime}
                                     dietLabel={card.dietLabels}
                                     />
@@ -61,7 +62,6 @@ const cardDetail =  showCardDetail ? searchResults[cardId] : undefined
                         }
                     </HashLink>)
                 }
-        
             </div>
         </div>
         
