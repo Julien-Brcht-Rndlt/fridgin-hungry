@@ -14,16 +14,41 @@ const AppRouter = ({ hasToken, setHasToken, searchUrl, setSearchUrl, searchResul
             <Header />
             <Switch>
                 <Route exact path='/'>
-                    <Home setHasToken={setHasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} setSearchResults={setSearchResults} />
+                    <Home
+                        setHasToken={setHasToken}
+                        searchUrl={searchUrl}
+                        setSearchUrl={setSearchUrl}
+                        setSearchResults={setSearchResults}
+                    />
                 </Route>
 
                 <Route path='/home'>
-                    <Home setHasToken={setHasToken} setSearchResults={setSearchResults} searchUrl={searchUrl} setSearchUrl={setSearchUrl} />
+                    <Home 
+                        setHasToken={setHasToken}
+                        setSearchResults={setSearchResults}
+                        searchUrl={searchUrl}
+                        setSearchUrl={setSearchUrl} 
+                    />
                 </Route>
 
-                <ProtectedRecipesRoute exact path='/recipes' hasToken={hasToken} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
+                <ProtectedRecipesRoute
+                    exact path='/recipes'
+                    hasToken={hasToken}
+                    searchUrl={searchUrl}
+                    setSearchUrl={setSearchUrl}
+                    searchResults={searchResults}
+                    setSearchResults={setSearchResults}
+                    component={RecipeCards}
+                />
 
-                <ProtectedRecipesRoute exact path='/recipes/:id' hasToken={hasToken} searchUrl={searchUrl} searchResults={searchResults} setSearchResults={setSearchResults} component={RecipeCards} />
+                <ProtectedRecipesRoute
+                    exact path='/recipes/:id'
+                    hasToken={hasToken}
+                    searchUrl={searchUrl}
+                    searchResults={searchResults}
+                    setSearchResults={setSearchResults}
+                    component={RecipeCards}
+                />
 
                 <Route path='/aboutUs'>
                     <AboutUs />

@@ -6,7 +6,12 @@ const ProtectedRecipesRoute = ({ hasToken, path, searchUrl, setSearchUrl, search
     return (
         <Route {...rest} path={path} render={props => {
             return (
-                hasToken ? <Component {...props} searchUrl={searchUrl} setSearchUrl={setSearchUrl} searchResults={searchResults} setSearchResults={setSearchResults} /> : <Redirect to='/' />
+                hasToken ? <Component {...props}
+                                searchUrl={searchUrl}
+                                setSearchUrl={setSearchUrl}
+                                searchResults={searchResults}
+                                setSearchResults={setSearchResults} /> : <Redirect to='/'
+                            />
             )
         }} />
     )

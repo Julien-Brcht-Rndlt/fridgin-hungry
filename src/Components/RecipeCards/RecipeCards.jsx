@@ -9,7 +9,7 @@ import RecipeCardDetail from '../RecipeCardDetail/RecipeCardDetail'
 import CardAnim from './CardAnim'
 import AlertMessage from '../AlertMessage/AlertMessage'
 
-const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl }) => {
+const RecipeCards = ({ searchUrl, searchResults, setSearchResults }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -34,7 +34,7 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
         let url = searchUrl;
         url = `${url}&from=${start}`
         url = `${url}&to=${end}`
-        console.log('url: ' + url)
+
         axios
             .get(url)
             .then((response) => response.data)
@@ -49,7 +49,6 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
                     recipe.totalTime = recipe.totalTime !== 0 ? recipe.totalTime : randomPrepTime()
                     recipes = [...recipes, recipe]
                 })
-                console.log('data.count: ' + data.count)
                 setFinish(end >= data.count)
                 setSearchResults((prevState) => [...prevState, ...recipes])
             })
