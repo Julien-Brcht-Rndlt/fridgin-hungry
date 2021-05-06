@@ -60,7 +60,7 @@ const AboutUs = () => {
 
     return (
         <div>
-            <h3 className='title'>How did we come about the idea for Fridgin' Hungry? </h3>
+            <h3 className='title'>Why Fridgin' Hungry? </h3>
             <div className='aboutProject'>
                 <p>"Well, first of all, we love food.<br /> But as wilders, we have very little free time on our hands<br /> and our fridge is often half empty. <br />
             This is why we wanted to create an app which would allow us <br />to find recipes to use up the few ingredients left at our disposal."
@@ -82,7 +82,7 @@ const AboutUs = () => {
                 )}
             </div>
             <div>
-                <HashNavButton title={'Back to emptying your fridge'} to={'/home#filters'} />
+                <HashNavButton title={'Start emptying your fridge'} to={'/home#filters'} />
             </div>
         </div>
 
