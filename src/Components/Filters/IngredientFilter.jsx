@@ -10,7 +10,6 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
     })
     useEffect(() => {
         setSearchUrl(makeUrlPart(searchUrl))
-
     }, [ingredients])
 
     const [inputs, setInputs] = useState([
@@ -20,7 +19,7 @@ const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
         'ingredient4', //input4
     ])
 
-    // function to dynamically update/refresh url
+    // Function to dynamically update/refresh url
     const makeUrlPart = (url) => {
 
         const startIndex = url.indexOf('q=')

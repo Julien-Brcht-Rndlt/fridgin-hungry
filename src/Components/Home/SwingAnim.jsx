@@ -25,10 +25,10 @@ const SwingAnim = ({ x = 0, y = 0, rotation = 0, scale = 1, timing = 150, childr
         }
     }, [isActive, timing])
 
-
     const handleMouseEnter = () => {
         setIsActive(true)
     }
+    
     return (
         <animated.div style={style} onMouseOver={handleMouseEnter}>
             {children}
