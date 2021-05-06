@@ -4,9 +4,9 @@ import 'react-slideshow-image/dist/styles.css'
 import './FadeSlideshow.css'
 
 const fadeImages = [
-  '1HAFiRTOA1MmBp_F4W8W03af-SoFJ1jPJ',
-  '152XFfvp-i0oIVG2G-dkhoIJCWJVPwaAp',
   '1sD308-z9WrxA6uGsLQmgSEleix4siAom',
+  '152XFfvp-i0oIVG2G-dkhoIJCWJVPwaAp',
+  '1AqHh5eC1QOb1xvsNB3YeE5hthSJwHKPH',
   '1QuCen6YfHa9keb4CvxmlSE6uDm1JBC96',
 ]
 
