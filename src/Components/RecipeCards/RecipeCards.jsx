@@ -17,6 +17,15 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
     
     const [start, setStart] = useState(10)
     const [step, setStep] = useState(10)
+    const [finish, setFinish] = useState(false)
+    const [moreView, setMoreView] = useState(true)
+
+    useEffect(() => {
+        if(finish) {
+            setMoreView(false)
+        }
+    }, [finish])
+
     const prepTimes = [15, 30, 45, 60]
     const randomPrepTime = () => prepTimes[Math.floor(Math.random() * 4)]
 
@@ -25,7 +34,7 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
         let url = searchUrl;
         url = `${url}&from=${start}`
         url = `${url}&to=${end}`
-
+        console.log('url: ' + url)
         axios
             .get(url)
             .then((response) => response.data)
@@ -40,6 +49,8 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
                     recipe.totalTime = recipe.totalTime !== 0 ? recipe.totalTime : randomPrepTime()
                     recipes = [...recipes, recipe]
                 })
+                console.log('data.count: ' + data.count)
+                setFinish(end >= data.count)
                 setSearchResults((prevState) => [...prevState, ...recipes])
             })
         setStart(end + 1)
@@ -100,7 +111,7 @@ const RecipeCards = ({ searchUrl, searchResults, setSearchResults, setSearchUrl 
                 }
             </div>
             <div className='viewmore-container'>
-                <button onClick={onClickHandler} className='viewmore-button'>View More</button>
+                { moreView && <button onClick={onClickHandler} className='viewmore-button'>View More</button> }
             </div>
         </div>
     )
