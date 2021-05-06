@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './IngredientFilter.css'
 
-const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
+const IngredientFilter = ({ searchUrl, setSearchUrl }) => {
     const [ingredients, setIngredients] = useState({
         ingredient1: '',
         ingredient2: '',
@@ -10,7 +10,6 @@ const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
     })
     useEffect(() => {
         setSearchUrl(makeUrlPart(searchUrl))
-
     }, [ingredients])
 
     const [inputs, setInputs] = useState([
@@ -20,7 +19,7 @@ const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
         'ingredient4', //input4
     ])
 
-    // function to dynamically update/refresh url
+    // Function to dynamically update/refresh url
     const makeUrlPart = (url) => {
 
         const startIndex = url.indexOf('q=')
@@ -43,17 +42,16 @@ const IngredientFilter = ({ searchUrl, setSearchUrl, children}) => {
     }
 
     return (
-        <div className="ingredients">
-            
+        <div className='ingredients'>
             {inputs.map((input, index) => {
                 return (
-                    <div className="ingr-inputs">
+                    <div className='ingr-inputs'>
                         <input
                             key={index}
                             name={input}
-                            type="text"
+                            type='text'
                             value={ingredients[input]}
-                            onChange={handleIngredientsChange}
+                            onChange={(e) => handleIngredientsChange(e)}
                             placeholder={`ingredient ${index + 1} `}
                         />
                     </div>

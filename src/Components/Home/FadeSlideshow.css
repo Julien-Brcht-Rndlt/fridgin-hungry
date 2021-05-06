@@ -1,0 +1,44 @@
+.slide-container {
+  width: 100%;
+  margin: auto;
+  height: 40rem;
+}
+
+.each-fade {
+  display: flex;
+  height: 40rem;
+}
+
+.each-fade .image-container {
+  width: 100%;
+  overflow: hidden;
+  height: 40rem;
+}
+
+.each-fade .image-container img {
+  width: 100%;
+}
+
+@media (max-width: 768px) and (min-width: 568px) {
+  .slide-container {
+    height: 35rem;
+  }
+  .each-fade {
+    height: 35rem;
+  }
+  .each-fade .image-container {
+    height: 35rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .slide-container {
+    height: 20rem;
+  }
+  .each-fade {
+    height: 20rem;
+  }
+  .each-fade .image-container {
+    height: 20rem;
+  }
+}

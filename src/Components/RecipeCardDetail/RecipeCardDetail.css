@@ -1,34 +1,31 @@
 .recipe-card-detail {
-    padding: 2rem;
-    margin: 2rem;
+    padding: 0;
+    margin: 1rem;
     background-color: rgb(55, 55, 55);
     border-radius: 30px;
-    width: 90%;
-    height: 63rem;
+    width: 98%;
+    height: auto;
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .headSection {
-    margin: 0;
     padding: 1rem;
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 20%;
-    height: auto;
-    font-size: 2.5rem;
+    justify-content: space-evenly;
+    width: 25%;
+    height: 100%;
+    font-size: 2.2rem;
     color: whitesmoke;
-
+    align-content: flex-start;
 }
 
 .labelDetail {
     margin-bottom: 1rem;
     font-size: 3rem;
-    color: whitesmoke;
     text-align: center;
 }
 
@@ -40,76 +37,327 @@
 .ingredientsLines {
     display: flex;
     flex-flow: column wrap;
-    width: 30%;
+    margin-right: 3rem;
+    width: 25%;
     height: 100%;
     font-size: 2.2rem;
     color: whitesmoke;
     justify-content: space-evenly;
-    text-align: justify;
+    align-content: flex-start;
 }
 
 .directions {
     color: greenyellow;
 }
 
-.directions:hover{
+.directions:hover {
     text-decoration: underline;
 }
 
 .nutritionInfos {
     display: flex;
     flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    margin-right: 1rem;
     width: 20%;
     height: 100%;
-    justify-content: center;
     font-size: 2.2rem;
     color: whitesmoke;
 }
 
 .healthInfos {
     display: flex;
-    flex-flow: column wrap;
-    width: 20%;
+    flex-flow: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 25%;
     height: 100%;
     font-size: 2.2rem;
     color: whitesmoke;
-    justify-content: center;
 }
 
 .recipe-icon {
     color: greenyellow;
 }
 
-/* .headSection {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-flow: column wrap;
-    padding-left: 5rem;
+@media (max-width: 319px) {
+    .recipe-card-detail {
+        display: flex;
+        flex-flow: column wrap;
+        width: auto;
+        height: auto;
+        margin: auto;
+        align-items: center;
+    }
+    .headSection {
+        display: flex;
+        flex-flow: wrap;
+        font-size: 1rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        align-items: center;
+        text-align: center;
+    }
+    .ingredientsLines {
+        margin: 0;
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1rem;
+        width: 60%;
+        align-content: flex-start;
+        align-items: center;
+    }
+    .nutritionInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1rem;
+        width: 50%;
+        height: 40%;
+        margin-bottom: 0.5rem;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .healthInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1rem;
+        width: 50%;
+        height: 40%;
+        margin: 0;
+        align-content: flex-start;
+        align-items: flex-start;
+    }
+    .labelDetail {
+        font-size: 1.5rem;
+    }
+    .recipeImageDetail {
+        width: 30%;
+        height: 30%;
+    }
 }
 
-
-.labelDetail {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
+@media (min-width: 320px) and (max-width: 567px) {
+    .recipe-card-detail {
+        display: flex;
+        flex-flow: column wrap;
+        width: auto;
+        height: auto;
+        margin: auto;
+        align-items: center;
+    }
+    .headSection {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .ingredientsLines {
+        margin: 0;
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 60%;
+        align-content: flex-start;
+        align-items: center;
+    }
+    .labelDetail {
+        font-size: 2rem;
+    }
+    .recipeImageDetail {
+        width: 30%;
+        height: 30%;
+    }
+    .nutritionInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 50%;
+        height: 40%;
+        margin-bottom: 0.5rem;
+        align-content: flex-start;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    .healthInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 100%;
+        height: 40%;
+        margin: 0;
+        align-content: center;
+        align-items: flex-start;
+    }
 }
 
-.quickInfos, .dietInfos, .nutritionInfos {
-    font-size: 1.5rem;
+@media (min-width: 568px) and (max-width: 719px) {
+    .recipe-card-detail {
+        display: flex;
+        flex-flow: wrap;
+        width: auto;
+        height: auto;
+        margin: auto;
+        align-items: center;
+    }
+    .headSection {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 50%;
+        align-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+        margin-bottom: 0rem;
+    }
+    .ingredientsLines {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 40%;
+        align-content: flex-start;
+        align-items: center;
+    }
+    .recipeImageDetail {
+        width: 40%;
+        height: 40%;
+    }
+    .labelDetail {
+        font-size: 2rem;
+        text-align: left;
+    }
+    .nutritionInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 50%;
+        margin-bottom: 1rem;
+        align-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+    .healthInfos {
+        display: flex;
+        flex-flow: wrap;
+        font-size: 1.5rem;
+        width: 40%;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
 
-.quickInfos, .nutritionInfos {
-    border: 1px solid black;
-    border-radius: 3%;
-    background-color: whitesmoke;
+@media (min-width: 720px) and (max-width: 900px) {
+    .recipe-card-detail {
+        display: flex;
+        flex-flow: wrap;
+        width: auto;
+        height: auto;
+        margin: auto;
+        align-items: center;
+    }
+    .headSection {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 50%;
+        align-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+        margin-bottom: 0rem;
+    }
+    .ingredientsLines {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 40%;
+        align-content: flex-start;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .recipeImageDetail {
+        width: 40%;
+        height: 40%;
+    }
+    .labelDetail {
+        font-size: 2rem;
+        text-align: left;
+    }
+    .nutritionInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 1.5rem;
+        width: 50%;
+        margin-bottom: 1rem;
+        align-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+    .healthInfos {
+        display: flex;
+        flex-flow: wrap;
+        font-size: 1.5rem;
+        width: 40%;
+        align-items: center;
+        justify-content: flex-start;
+    }
 }
 
-.dietInfos, .ingredientsLines {
-    font-size: 1.5rem;
-    text-align: justify;
-    display: inline-flex;
-    width: 60%;
-    justify-content: center;
-    align-items: center;
-} */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .recipe-card-detail {
+        display: flex;
+        flex-flow: wrap;
+        width: auto;
+        height: auto;
+        margin: auto;
+        align-content: flex-start;
+    }
+    .headSection {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 2rem;
+        width: 50%;
+        justify-content: space-around;
+        align-items: flex-start;
+        align-content: flex-start;
+        margin-bottom: 0rem;
+    }
+    .recipeImageDetail {
+        width: 70%;
+        height: 70%;
+    }
+    .ingredientsLines {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 2rem;
+        width: 40%;
+        align-content: flex-start;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .labelDetail {
+        font-size: 2.5rem;
+        text-align: left;
+    }
+    .nutritionInfos {
+        display: flex;
+        flex-flow: column wrap;
+        font-size: 2rem;
+        width: 50%;
+        margin-bottom: 1rem;
+        align-content: flex-start;
+        align-items: flex-start;
+        align-self: flex-start;
+    }
+    .healthInfos {
+        display: flex;
+        flex-flow: wrap;
+        font-size: 2rem;
+        width: 40%;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}

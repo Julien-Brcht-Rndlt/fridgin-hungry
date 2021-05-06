@@ -1,8 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import './AllergiesFilter.css'
 
-const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
+const AllergiesFilter = ({ searchUrl, setSearchUrl }) => {
 
   const initialAllergies = [
     { label: 'Vegetarian', value: 'vegetarian', selected: false },
@@ -18,42 +17,39 @@ const AllergiesFilter = ({ searchUrl, setSearchUrl, children }) => {
   const handleClickAllergy = (e) => {
 
     const allergyValue = e.target.value
-
     const checkedAllergy = allergies.find(allergy => {
       if (allergy.value === allergyValue) return true
       else return false
     })
     checkedAllergy.selected = !checkedAllergy.selected
-    
-    // dynamic refresh of the search url used for the filters.
-    searchUrl = searchUrl.includes(`&health=${allergyValue}`) ? searchUrl.replace(`&health=${allergyValue}`, '') : `${searchUrl}&health=${allergyValue}`
 
-    setSearchUrl(searchUrl)
+    // Dynamic refresh of the search url used for the filters.
+    let url = searchUrl
+    url = url.includes(`&health=${allergyValue}`) ? url.replace(`&health=${allergyValue}`, '') : `${url}&health=${allergyValue}`
+    setSearchUrl(url)
 
     setAllergies([...allergies])
   }
-  
+
   return (
-   
-       <div className='allergyFilter'>
+    <div className='allergyFilter'>
       { allergies.map(allergy => {
         return (
-             <div className='allergies'>
+          <div className='allergies'>
             <input type='checkbox'
               name='health'
               value={allergy.value}
               checked={allergy.selected}
-              onClick={handleClickAllergy} />
+              onClick={(e) => handleClickAllergy(e)} />
 
             <label htmlFor={allergy.value}>
               {allergy.label}
             </label>
-           </div>    
+          </div>
         )
-      })
       }
-      </div>
-   
+      )}
+    </div>
   )
 }
 
