@@ -39,10 +39,8 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
         setSearchCalories((prevState) => prevState = newValue)
 
-        let url = searchUrl;
-
+        let url = searchUrl
         url = url.includes('calories=') ? updateUrlParams(url, 'calories', `calories=${newValue}`) : `${url}&calories=${newValue}`
-
         url = removeUrlNullValues(url, 'calories')
 
         setSearchUrl(url)
@@ -52,10 +50,8 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
         setSearchProtein((prevState) => prevState = newValue)
 
-        let url = searchUrl;
-
+        let url = searchUrl
         url = url.includes('nutrients%5BPROCNT%5D5=') ? updateUrlParams(url, 'nutrients%5BPROCNT%5D5', `nutrients%5BPROCNT%5D5=${newValue}`) : `${url}&nutrients%5BPROCNT%5D5=${newValue}`
-
         url = removeUrlNullValues(url, 'nutrients%5BPROCNT%5D5')
 
         setSearchUrl(url)
@@ -65,10 +61,8 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
         setSearchCarbs((prevState) => prevState = newValue)
 
-        let url = searchUrl;
-
+        let url = searchUrl
         url = url.includes('nutrients%5BCHOCDF%5D=') ? updateUrlParams(url, 'nutrients%5BCHOCDF%5D', `nutrients%5BCHOCDF%5D=${newValue}`) : `${url}&nutrients%5BCHOCDF%5D=${newValue}`
-
         url = removeUrlNullValues(url, 'nutrients%5BCHOCDF%5D')
 
         setSearchUrl(url)
@@ -78,10 +72,8 @@ const CalorieFilter = ({ searchUrl, setSearchUrl }) => {
 
         setSearchFat((prevState) => prevState = newValue)
 
-        let url = searchUrl;
-
+        let url = searchUrl
         url = url.includes('nutrients%5BFAT%5D=') ? updateUrlParams(url, 'nutrients%5BFAT%5D', `nutrients%5BFAT%5D=${newValue}`) : `${url}&nutrients%5BFAT%5D=${newValue}`
-
         url = removeUrlNullValues(url, 'nutrients%5BFAT%5D')
 
         setSearchUrl(url)

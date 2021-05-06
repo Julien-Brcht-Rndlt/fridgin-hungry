@@ -85,7 +85,6 @@ const AboutUs = () => {
                 <HashNavButton title={'Start emptying your fridge'} to={'/home#filters'} />
             </div>
         </div>
-
     )
 }
 
